@@ -10,7 +10,7 @@ pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-disqusShortname = "yourdiscussshortname"
+disqusShortname = "kksudo"
 
 [params]
 author = "Kirill Kazakov"
@@ -71,15 +71,12 @@ languageName = ":ru:"
 
 # Menu links
 [[languages.en.menu.main]]
-name = "Blog"
+name = "Home"
 weight = 1
-url  = "posts/"
+url  = "/"
 [[languages.en.menu.main]]
 name = "About"
 weight = 2
 url = "about/"
-[[languages.en.menu.main]]
-name = "Contact"
-weight = 2
-url = "contact/"
+
 
