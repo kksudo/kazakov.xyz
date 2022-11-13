@@ -1,0 +1,65 @@
+[categories]
+one = "категория"
+other = "categories"
+
+[tags]
+one = "тэг"
+other = "tags"
+
+[series]
+one = "серии"
+other = "series"
+
+[authors]
+one = "автор"
+other = "authors"
+
+[posts]
+other = "статьи"
+
+[reading_time]
+one = "Читать одну минуту"
+few = "Читать около {{ .Count }} минут"
+many = "Читать около {{ .Count }} минут"
+
+[page_not_found]
+other = "Страница не найдена"
+
+[page_does_not_exist]
+other = "Извините, но этой страницы не существует."
+
+[head_back]
+other = "Можете вернуться обратно на <a href=\"{{ . }}\">домашнюю страницу</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "Работает на"
+
+[see_also]
+other = "Также смотреть"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
+
+[link_to_heading]
+other = "Link to heading"

@@ -1,6 +1,6 @@
 baseurl = "https://kazakov.xyz"
 title = "DevOps with love"
-theme = "hugo-coder"
+theme = "hugo-coder-forked"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
