@@ -48,35 +48,38 @@ weight = 1
 url = "https://github.com/kksudo/"
 target = "_blank"
 [[params.social]]
-name = "Gitlab"
-icon = "fa fa-gitlab fa-2x"
-weight = 2
-url = "https://gitlab.com/kksudo/"
-target = "_blank"
-[[params.social]]
-name = "Twitter"
-icon = "fa fa-twitter fa-2x"
+name = "Instagram"
+icon = "fa fa-instagram fa-2x"
 weight = 3
-url = "https://twitter.com/kk_sudo/"
+url = "https://www.instagram.com/kk_sudo/"
 target = "_blank"
 [[params.social]]
 name = "Linkedin"
 icon = "fa fa-linkedin fa-2x"
-weight = 4
+weight = 5
 url = "https://www.linkedin.com/in/kazakovk/"
 target = "_blank"
+[[params.social]]
+name = "k@kazakov.xyz"
+icon = "fa fa-envelope fa-2x"
+weight = 6
+url = "mailto:k@kazakov.xyz"
+target = "_blank"
 
+[languages.en]
+languageName = ":ru:"
 
 # Menu links
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "Blog"
 weight = 1
 url  = "posts/"
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "About"
 weight = 2
 url = "about/"
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "Contact"
 weight = 2
 url = "contact/"
+
