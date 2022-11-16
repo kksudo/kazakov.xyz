@@ -48,9 +48,9 @@ weight = 1
 url = "https://github.com/kksudo/"
 target = "_blank"
 [[params.social]]
-name = "Github"
+name = "Gitlab"
 icon = "fa fa-gitlab fa-2x"
-weight = 1
+weight = 2
 url = "https://gitlab.com/kksudo"
 target = "_blank"
 [[params.social]]
