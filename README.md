@@ -1,4 +1,5 @@
-# A public personal website 
+# Description
 
+A public personal website of [kazakov.xyz](https://kazakov.xyz) based on [Hugo](https://gohugo.io/).
 
-[kazakov.xyz](https://kazakov.xyz)
+This site is hosted on [Cloudflare Pages](https://pages.cloudflare.com/).
