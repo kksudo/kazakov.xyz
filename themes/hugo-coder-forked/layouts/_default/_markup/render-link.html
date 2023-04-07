@@ -1,1 +1,1 @@
-<a href="{{ .Destination }}" {{ with .Title }} title="{{ . }}"{{ end }} {{ if strings.HasPrefix .Destination "https" }} target="_blank"{{ end }}>{{ .Text }}</a>{{ if strings.HasPrefix .Destination "https" }}{{ end }}
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }} {{ if findRE "^(https?:)?//" (lower .Destination) }} class="external-link" target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
