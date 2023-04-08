@@ -72,6 +72,9 @@ weight = 6
 url = "mailto:k@kazakov.xyz"
 target = "_blank"
 
+[params.cloudflare]
+token = "fa7f3b8568e6446192b3f0886e83407b"
+
 [languages.en]
 languageName = ":ru:"
 
