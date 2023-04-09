@@ -72,9 +72,6 @@ weight = 6
 url = "mailto:k@kazakov.xyz"
 target = "_blank"
 
-[languages.en]
-languageName = ":ru:"
-
 # Menu links
 [[languages.en.menu.main]]
 name = "Home"
