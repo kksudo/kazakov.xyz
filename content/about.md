@@ -2,7 +2,7 @@
 title = "About"
 description = "Few words about my self"
 date = "2022-11-08T12:43:38+03:00"
-aliases = ["about-us", "about-kirill", "contact"]
+aliases = ["about", "about-us", "about-kirill", "contact"]
 +++
 
 
