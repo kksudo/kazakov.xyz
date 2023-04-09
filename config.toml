@@ -14,29 +14,21 @@ disqusShortname = "kksudo"
 
 [params]
 author = "Kirill Kazakov"
-info = "Full Stack DevOps and Magician"
-description = "Kirill Kazakov's personal website"
-keywords = "blog,developer,personal,devops"
-#avatarurl = "images/avatar.jpg"
+info = ["Full Stack DevOps and Magician","Full Stack DevOps", "Magician"]
+description = "Kirill Kazakov's personal page"
+keywords = "blog,businesscard,personal,devops,kksudo,kirill,kazakov"
 gravatar = "k@kazakov.xyz"
 
-#favicon_32 = "/img/favicon-32x32.png"
-#favicon_16 = "/img/favicon-16x16.png"
-
 since = 2010
-
 enableTwemoji = true
-
 colorScheme = "auto"
 hidecolorschemetoggle = false
-
-#customCSS = ["css/custom.css"]
-#customSCSS = ["scss/custom.scss"]
-#customJS = ["js/custom.js"]
+# Git Commit in Footer, uncomment the line below to enable it
+commit = "https://github.com/kksudo/kazakov.xyz/tree/"
+# Series see also post count
+maxSeeAlsoItems = 5
 
 [taxonomies]
-category = "categories"
-series = "series"
 tag = "tags"
 author = "authors"
 
@@ -71,9 +63,6 @@ icon = "fa fa-envelope fa-2x"
 weight = 6
 url = "mailto:k@kazakov.xyz"
 target = "_blank"
-
-[languages.en]
-languageName = ":ru:"
 
 # Menu links
 [[languages.en.menu.main]]
