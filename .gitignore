@@ -1,3 +1,9 @@
+# IDE
 /.idea/
 *.iml
+
+# OS
 .DS_Store
+
+# Dynamic asstes
+/resources/_gen
