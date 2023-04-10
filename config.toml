@@ -15,7 +15,7 @@ enableGitInfo = true
 
 [params]
 author = "Kirill Kazakov"
-info = ["Full Stack DevOps", "Magician"]
+info = ["Full Stack DevOps and Magician"]
 description = "Kirill Kazakov's personal page"
 keywords = "blog,businesscard,personal,devops,kksudo,kirill,kazakov"
 gravatar = "k@kazakov.xyz"
