@@ -1,8 +1,7 @@
 <footer class="footer">
   <section class="container">
-    ©
     {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}
-      {{ .Site.Params.since }} -
+    ©  {{ .Site.Params.since }} -
     {{ end }}
     {{ now.Year }}
     {{ with .Site.Params.author }} {{ . }} {{ end }}
@@ -14,7 +13,7 @@
     · {{ i18n "powered_by" }} <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
     {{ end }}
     {{ if (and .Site.Params.commit .GitInfo) }}
-    · Git revision: <a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a>
+    <br> Git revision: <a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a>
     {{ end }}
   </section>
 </footer>
