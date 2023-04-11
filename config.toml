@@ -45,3 +45,13 @@ icon = "fa fa-envelope fa-2x"
 weight = 6
 url = "mailto:<your email address>"
 target = "_blank"
+
+# Menu links
+[[languages.en.menu.main]]
+name = "Home"
+weight = 1
+url  = "/"
+[[languages.en.menu.main]]
+name = "About"
+weight = 2
+url = "about/"
