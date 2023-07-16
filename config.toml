@@ -12,6 +12,13 @@ pygmentscodefencesguesssyntax = true
 
 disqusShortname = "kksudo"
 enableGitInfo = true
+enableRobotsTXT = true
+
+# Hugo settings
+[sitemap]
+changefreq = 'weekly'
+filename = 'sitemap.xml'
+priority = 0.5
 
 [params]
 author = "Kirill Kazakov"
@@ -19,6 +26,9 @@ info = ["Full Stack DevOps and Magician"]
 description = "Kirill Kazakov's personal page"
 keywords = "blog,businesscard,personal,devops,kksudo,kirill,kazakov"
 gravatar = "k@kazakov.xyz"
+
+faviconSVG = "/img/favicon.svg"
+favicon_32 = "/img/favicon.png"
 
 since = 2010
 enableTwemoji = true
@@ -31,8 +41,8 @@ powered_by = true
 maxSeeAlsoItems = 5
 
 [taxonomies]
-tag = "tags"
-author = "authors"
+#tag = "tags"
+#author = "authors"
 
 # Social links
 [[params.social]]
