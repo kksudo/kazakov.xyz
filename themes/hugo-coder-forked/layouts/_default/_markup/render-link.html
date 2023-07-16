@@ -1,2 +1,1 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }} {{ if findRE "^(https?:)?//" (lower .Destination) }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
-{{- /* This comment removes trailing newlines. */ -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }} {{ if findRE "^(https?:)?//" (lower .Destination) }} class="external-link" target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
