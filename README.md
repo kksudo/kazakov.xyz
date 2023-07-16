@@ -4,6 +4,10 @@ A public personal website of [kazakov.xyz](https://kazakov.xyz) based on [Hugo](
 
 This site is hosted on [Cloudflare Pages](https://pages.cloudflare.com/).
 
+# Live demo
+
+[kazakov.xyz](https://kazakov.xyz/)
+
 ## What I should todo, if I would like exactly the same personal page 
 
 1. Fork me and update files below:
