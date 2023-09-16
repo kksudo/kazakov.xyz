@@ -30,10 +30,12 @@ jobs:
           
       - name: Build
         run: hugo --minify --gc
-        
-      - name: Publish to Cloudflare Workers Sites
-        uses: cloudflare/wrangler-action@v3
+      
+      - name: Publish
+        uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          workingDirectory: ${{ github.workspace }}/public
+          projectName: kazakov-xyz
+          directory: ./public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
