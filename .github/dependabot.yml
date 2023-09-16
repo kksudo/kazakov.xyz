@@ -5,3 +5,8 @@ updates:
     schedule:
       interval: "weekly"
       time: '08:00'
+  - package-ecosystem: "gitsubmodule"
+    directory: "/themes/hugo-coder-forked"
+    schedule:
+      interval: "weekly"
+      time: '08:00'
