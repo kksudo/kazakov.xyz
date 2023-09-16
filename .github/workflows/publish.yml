@@ -34,9 +34,10 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: kazakov-xyz
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          branch: main
           directory: ./public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: kazakov-xyz
           wranglerVersion: '3'
