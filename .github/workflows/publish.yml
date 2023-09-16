@@ -36,7 +36,6 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          branch: main
           directory: ./public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           projectName: kazakov-xyz
