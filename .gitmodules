@@ -1,4 +1,4 @@
-[submodule "hugo-coder-forked"]
-	path = hugo-coder-forked
+[submodule "themes/hugo-coder-forked"]
+	path = themes/hugo-coder-forked
 	url = https://github.com/luizdepra/hugo-coder.git
 	update = merge
