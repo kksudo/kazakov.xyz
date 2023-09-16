@@ -39,3 +39,4 @@ jobs:
           projectName: kazakov-xyz
           directory: ./public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
