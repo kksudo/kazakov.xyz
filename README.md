@@ -1,3 +1,5 @@
+[![Publish to Cloudflare Pages](https://github.com/kksudo/kazakov.xyz/actions/workflows/publish.yml/badge.svg)](https://github.com/kksudo/kazakov.xyz/actions/workflows/publish.yml)
+
 # Description
 
 A public personal website of [kazakov.xyz](https://kazakov.xyz) based on [Hugo](https://gohugo.io/) framework and [hugo-coder](https://github.com/luizdepra/hugo-coder) theme.
