@@ -64,6 +64,12 @@ weight = 3
 url = "https://www.instagram.com/kk_sudo/"
 target = "_blank"
 [[params.social]]
+name = "X-Twitter"
+icon = "fa fa-brands fa-x-twitter fa-2x"
+weight = 3
+url = "https://x.com/kk_sudo/"
+target = "_blank"
+[[params.social]]
 name = "Linkedin"
 icon = "fa fa-linkedin fa-2x"
 weight = 5
