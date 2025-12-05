@@ -96,8 +96,8 @@ Bachelor of Science in Cybersecurity | Expected September 2027
 
 ## Certifications
 
-**Microsoft Security Compliance (In Progress)**
-- SC-900: Microsoft Security, Compliance, and Identity Fundamentals (Actively Preparing)
+**Microsoft Security Compliance Path**
+- SC-900: Microsoft Security, Compliance, and Identity Fundamentals ✓
 - Pursuing expert-level certifications in Identity and Compliance domains
 
 **Industry Certifications**
@@ -116,6 +116,7 @@ Bachelor of Science in Cybersecurity | Expected September 2027
 - AWS Cloud Practitioner
 - AWS Solutions Architect, Associate
 - Azure Fundamentals (AZ-900)
+- Microsoft Security, Compliance, and Identity Fundamentals (SC-900)
 - SentinelOne Incident Responder
 - Linux Essentials from LPI
 - JNCIA Juniper Networking Associate
