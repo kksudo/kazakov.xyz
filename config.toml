@@ -4,7 +4,8 @@ theme = "hugo-coder-forked"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
+[pagination]
+pagerSize = 20
 
 pygmentsstyle = "bw"
 pygmentscodefences = true
