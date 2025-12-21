@@ -2,7 +2,7 @@
 
 <i class="fa fa-envelope"></i> [scott@scottschlangen.com](mailto:scott@scottschlangen.com) | <i class="fa fa-github"></i> [GitHub](https://github.com/schlangens) | <i class="fa fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/scottschlangen)
 
-Cybersecurity professional with extensive experience in threat analysis, incident response, and cloud security operations. Proven track record of implementing security controls, leading incident investigations, and protecting critical infrastructure across private sector and municipal environments. Currently expanding expertise in identity and access management and regulatory compliance through the Microsoft Security Compliance certification path, while pursuing a Bachelor's in Cybersecurity with plans to advance into a Master's in Information Assurance.
+Cybersecurity professional securing municipal critical infrastructure and leading enterprise security operations. 10+ years progressing from NOC operations through cloud security to threat analysis and security administration. Hands-on deploying SIEM infrastructure (Wazuh, Sentinel), managing vulnerability programs (Nessus), and administering identity platforms (Microsoft Entra ID). Advancing Microsoft Security certifications (SC-900 achieved, SC-200 in progress) while pursuing BS in Cybersecurity.
 
 ## Career Experience
 
@@ -96,12 +96,11 @@ Bachelor of Science in Cybersecurity | Expected September 2027
 
 ## Certifications
 
-**Microsoft Security Compliance (In Progress)**
-- SC-900: Microsoft Security, Compliance, and Identity Fundamentals (Actively Preparing)
-- Pursuing expert-level certifications in Identity and Compliance domains
+**Microsoft Security Certifications**
+- SC-900: Microsoft Security, Compliance, and Identity Fundamentals ✓ (December 2025)
+- SC-200: Microsoft Security Operations Analyst (In Progress)
 
 **Industry Certifications**
-- Ransomware Negotiation and Threat Intelligence (Security Blue Team)
 - BTL1 (Security Blue Team)
 - Certified CyberDefender (CCD)
 - CompTIA CySA+
@@ -119,6 +118,10 @@ Bachelor of Science in Cybersecurity | Expected September 2027
 - SentinelOne Incident Responder
 - Linux Essentials from LPI
 - JNCIA Juniper Networking Associate
+
+## Professional Training
+- **Wazuh SIEM Administration** - Premium instructor-led training: deployment, custom rule development, log decoders, and threat correlation (2025)
+- **Ransomware Negotiation & Threat Intelligence** - Security Blue Team
 
 ## Professional and Technical Proficiencies
 
