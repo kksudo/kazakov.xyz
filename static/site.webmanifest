@@ -1,0 +1,16 @@
+{
+  "name": "Kirill Kazakov — DevOps & Platform Engineering",
+  "short_name": "kazakov.xyz",
+  "description": "Senior Platform & DevOps Engineer, Kubernetes expert, CTO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

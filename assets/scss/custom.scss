@@ -54,7 +54,7 @@
 
 // Showcases page — Variant A (Vercel-style cards)
 .content .showcases-variant-a {
-  max-width: 56rem;
+  max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
 
@@ -250,9 +250,6 @@
     gap: 1.5rem;
     grid-template-columns: 1fr;
     @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (min-width: 900px) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
