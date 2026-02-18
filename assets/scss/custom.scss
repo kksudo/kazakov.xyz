@@ -7,3 +7,495 @@
     padding: 1rem;
   }
 }
+
+// Showcases page — accordion items (fallback when not using variant A)
+.content .list:not(.showcases-variant-a) details {
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 6px;
+  padding: 0;
+  overflow: hidden;
+
+  summary {
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    list-style: none;
+    transition: background-color 0.2s ease;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "▸ ";
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      background-color: var(--alt-bg-color, rgba(0, 0, 0, 0.03));
+    }
+  }
+
+  &[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  > p,
+  > div {
+    padding: 0 1.2rem 1rem;
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.7;
+  }
+}
+
+// Showcases page — Variant A (Vercel-style cards)
+.content .showcases-variant-a {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  header {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  header h1 {
+    margin: 0 0 0.5rem;
+  }
+
+  .intro {
+    font-size: 1em;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .intro-nav {
+    font-size: 0.9em;
+    margin: 0.5rem 0 0;
+    opacity: 0.7;
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  // Controls row (collapse all)
+  .showcases-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.75rem;
+    min-height: 2rem;
+  }
+
+  .collapse-all-btn {
+    font-size: 0.85em;
+    color: #1565c0;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #1565c0;
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-family: inherit;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background: #1565c0;
+      color: #fff;
+    }
+  }
+
+  .showcases-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .showcase-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.35rem 1.25rem;
+    background: #fafafa;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .showcase-quote {
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+
+  .showcase-outcome {
+    font-size: 1em;
+    line-height: 1.65;
+    margin: 0 0 1rem;
+    display: none;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+
+    &::before {
+      content: "Outcome";
+      display: block;
+      font-size: 0.7em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  .showcase-card.expanded .showcase-outcome {
+    display: block;
+  }
+
+  // Hide the always-visible CTA when the card is expanded (outcome CTA takes over)
+  .showcase-card.expanded .showcase-cta-always {
+    display: none;
+  }
+
+  .showcase-outcome-cta {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  .showcase-toggle {
+    font-size: 1em;
+    color: #1565c0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.15rem 0.25rem;
+    font-family: inherit;
+    border-radius: 3px;
+    transition: background 0.15s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #1565c0;
+      outline-offset: 2px;
+    }
+  }
+
+  .showcase-cta-always {
+    font-size: 0.9em;
+    margin: 0.5rem 0 0;
+    opacity: 0.75;
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .showcases-cta-block {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    font-size: 1em;
+    background: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+
+  .showcases-cta-pricing-hint {
+    font-size: 0.85em;
+    opacity: 0.7;
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
+
+  .showcases-pricing {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .showcases-pricing h2 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  .showcases-pricing-intro {
+    font-size: 1em;
+    margin-bottom: 2rem;
+  }
+
+  .showcases-pricing-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .showcase-price-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.35rem 1.25rem;
+    background: #fafafa;
+    position: relative;
+    font-size: 1em;
+
+    &.popular {
+      border-color: #1565c0;
+      box-shadow: 0 0 0 1px #1565c0;
+    }
+
+    .badge-popular {
+      display: inline-block;
+      font-size: 0.7em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1565c0;
+      border: 1px solid #1565c0;
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.15em;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+
+    ul {
+      margin: 0 0 1rem;
+      padding-left: 1.2rem;
+      font-size: 1em;
+      line-height: 1.55;
+      opacity: 0.9;
+    }
+
+    .timeline {
+      font-size: 0.95em;
+      opacity: 0.85;
+      margin-bottom: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-size: 1em;
+      font-weight: 500;
+    }
+
+    &.hourly {
+      padding: 1rem 1.25rem;
+      text-align: center;
+
+      h3, p, .price-range, .note, .cta-btn {
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .price-range {
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 0.25rem auto 0.5rem;
+      }
+
+      .note {
+        font-size: 0.95em;
+        opacity: 0.85;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        margin-bottom: 0.25rem;
+      }
+
+      @media (min-width: 640px) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  .showcase-price-card.hourly {
+    @media (min-width: 640px) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// Reduce motion
+@media (prefers-reduced-motion: reduce) {
+  .content .showcases-variant-a {
+    .showcase-card,
+    .showcase-toggle,
+    .collapse-all-btn {
+      transition: none;
+    }
+  }
+}
+
+// Dark theme for Showcases variant A
+body.colorscheme-dark .content .showcases-variant-a {
+  header {
+    border-bottom-color: #424242;
+  }
+
+  .intro-nav a {
+    color: #42a5f5;
+  }
+
+  .collapse-all-btn {
+    color: #42a5f5;
+    border-color: #42a5f5;
+
+    &:hover {
+      background: #42a5f5;
+      color: #1e1e1e;
+    }
+  }
+
+  .showcase-card {
+    border-color: #424242;
+    background: #2d2d2d;
+
+    &:hover {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .showcase-outcome {
+    border-top-color: #505050;
+
+    &::before {
+      color: #999;
+    }
+  }
+
+  .showcase-toggle {
+    color: #42a5f5;
+
+    &:focus-visible {
+      outline-color: #42a5f5;
+    }
+  }
+
+  .showcases-cta-block {
+    background: #424242;
+    border-color: #424242;
+  }
+
+  .showcases-pricing {
+    border-top-color: #424242;
+  }
+
+  .showcase-price-card {
+    border-color: #505050;
+    background: #2d2d2d;
+
+    .badge-popular {
+      color: #42a5f5;
+      border-color: #42a5f5;
+    }
+
+    &.popular {
+      border-color: #42a5f5;
+      box-shadow: 0 0 0 1px #42a5f5;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .content .showcases-variant-a {
+    header {
+      border-bottom-color: #424242;
+    }
+
+    .intro-nav a {
+      color: #42a5f5;
+    }
+
+    .collapse-all-btn {
+      color: #42a5f5;
+      border-color: #42a5f5;
+
+      &:hover {
+        background: #42a5f5;
+        color: #1e1e1e;
+      }
+    }
+
+    .showcase-card {
+      border-color: #424242;
+      background: #2d2d2d;
+
+      &:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    .showcase-outcome {
+      border-top-color: #505050;
+
+      &::before {
+        color: #999;
+      }
+    }
+
+    .showcase-toggle {
+      color: #42a5f5;
+
+      &:focus-visible {
+        outline-color: #42a5f5;
+      }
+    }
+
+    .showcases-cta-block {
+      background: #424242;
+      border-color: #424242;
+    }
+
+    .showcases-pricing {
+      border-top-color: #424242;
+    }
+
+    .showcase-price-card {
+      border-color: #505050;
+      background: #2d2d2d;
+
+      .badge-popular {
+        color: #42a5f5;
+        border-color: #42a5f5;
+      }
+
+      &.popular {
+        border-color: #42a5f5;
+        box-shadow: 0 0 0 1px #42a5f5;
+      }
+    }
+  }
+}
