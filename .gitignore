@@ -8,3 +8,11 @@
 # Dynamic asstes
 /resources/_gen
 /public
+
+# AI generated files
+_bmad-output/
+_bmad/
+.agent
+.claude
+.github/agents/
+.cursor/

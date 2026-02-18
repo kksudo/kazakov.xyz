@@ -1,0 +1,9 @@
+// Custom overrides for kazakov.xyz
+// Mobile-friendly certifications table on About page
+@media (max-width: 768px) {
+  .content table td,
+  .content table th {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}

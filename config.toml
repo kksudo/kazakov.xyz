@@ -22,6 +22,7 @@ filename = 'sitemap.xml'
 priority = 0.5
 
 [params]
+customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
 info = ["Full Stack DevOps and Magician"]
 description = "Kirill Kazakov's personal page"
