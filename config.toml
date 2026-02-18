@@ -15,6 +15,10 @@ disqusShortname = "kksudo"
 enableGitInfo = true
 enableRobotsTXT = true
 
+# Allow raw HTML in markdown (showcases content). All content is from trusted sources.
+[markup.goldmark.renderer]
+unsafe = true
+
 # Hugo settings
 [sitemap]
 changefreq = 'weekly'
@@ -22,14 +26,20 @@ filename = 'sitemap.xml'
 priority = 0.5
 
 [params]
+customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
 info = ["Full Stack DevOps and Magician"]
-description = "Kirill Kazakov's personal page"
-keywords = "blog,businesscard,personal,devops,kksudo,kirill,kazakov"
+# SEO: aligned with job-search 10-profile and cv-tailoring (keyword alignment, recruiter visibility)
+description = "Kirill Kazakov — Senior Platform & DevOps Engineer, Kubernetes expert, CTO. 17+ years in IT, 9+ in Kubernetes, AWS, Terraform, CI/CD. Author, instructor, GlobalDots."
+keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, GitOps, cloud, kazakov.xyz"
+# SERP title (default for all pages; theme uses this in <title>)
+HeadTitle = "Kirill Kazakov — DevOps & Platform Engineering"
 gravatar = "k@kazakov.xyz"
 
 faviconSVG = "/img/favicon.svg"
 favicon_32 = "/img/favicon.png"
+# og:image for social sharing (LinkedIn, Twitter, Telegram)
+images = ["/img/og-image.png"]
 
 since = 2010
 enableTwemoji = true
@@ -92,5 +102,9 @@ url  = "/"
 name = "About"
 weight = 2
 url = "about/"
+[[languages.en.menu.main]]
+name = "Showcases"
+weight = 3
+url = "showcases/"
 
 

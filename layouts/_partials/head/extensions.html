@@ -1,0 +1,5 @@
+{{/* Override og:title for showcases (keyword-rich for social sharing) */}}
+{{ if and (eq .Section "showcases") .Params.headTitle }}
+<meta property="og:title" content="{{ .Params.headTitle }}">
+<meta name="twitter:title" content="{{ .Params.headTitle }}">
+{{ end }}

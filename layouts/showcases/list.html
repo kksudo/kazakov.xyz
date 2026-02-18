@@ -1,0 +1,138 @@
+{{ define "title" }}{{ .Params.headTitle | default (print .Title " · " .Site.Title) }}{{ end }}
+{{ define "content" }}
+{{ $contact := "mailto:k@kazakov.xyz" }}
+{{ with (index (where .Site.Params.social "name" "k@kazakov.xyz") 0) }}{{ $contact = .url }}{{ end }}
+<section class="container list showcases-variant-a">
+  <header>
+    <h1 class="title">
+      <a class="title-link" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
+    </h1>
+    {{ with .Content }}
+    <div class="intro">{{ . }}</div>
+    {{ else }}
+    <p class="intro">A few things I've helped teams with. Click "Read outcome" on any card to see what we did.</p>
+    {{ end }}
+    <p class="intro-nav">
+      <a href="#pricing-heading">Jump to Pricing</a>
+    </p>
+  </header>
+
+  <div class="showcases-controls">
+    <button type="button" class="collapse-all-btn" data-collapse-all aria-label="Collapse all cards" style="display:none;">Collapse all</button>
+  </div>
+
+  <div class="showcases-cards">
+    {{ range sort .Paginator.Pages ".Params.weight" }}
+    <article class="showcase-card" data-card>
+      <p class="showcase-quote">{{ .Title }}</p>
+      <details class="showcase-details">
+        <summary class="showcase-toggle" data-toggle aria-expanded="false" title="Expand to read outcome">Read outcome</summary>
+        <div class="showcase-outcome" role="region" aria-label="Outcome">
+          {{ .Content }}
+          <a href="{{ $contact }}" class="showcase-outcome-cta">Let's talk</a>
+        </div>
+      </details>
+      <p class="showcase-cta-always"><a href="{{ $contact }}">Let's talk</a></p>
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="showcases-cta-block">
+    Want to discuss your stack? <a href="{{ $contact }}">Get in touch</a>.<br>
+    <span class="showcases-cta-pricing-hint">From $200/h and fixed-scope audits — <a href="#pricing-heading">see Pricing</a>.</span>
+  </div>
+
+  <section class="showcases-pricing" aria-labelledby="pricing-heading">
+    <h2 id="pricing-heading">Pricing</h2>
+    <p class="showcases-pricing-intro">Transparent pricing for fixed-scope audits and roadmaps. Custom engagements available.</p>
+    <div class="showcases-pricing-grid">
+      <div class="showcase-price-card">
+        <h3>Platform & CI/CD Audit</h3>
+        <ul>
+          <li>Pipeline and tooling review</li>
+          <li>Self-service and Golden Path recommendations</li>
+        </ul>
+        <p class="timeline">Delivery: ~1–2 weeks</p>
+        <a href="{{ $contact }}" class="cta-btn">Get started</a>
+      </div>
+      <div class="showcase-price-card popular">
+        <span class="badge-popular">Popular</span>
+        <h3>Observability & SRE Review</h3>
+        <ul>
+          <li>Metrics, logs, traces gap analysis</li>
+          <li>SLO and runbook recommendations</li>
+        </ul>
+        <p class="timeline">Delivery: ~1 week</p>
+        <a href="{{ $contact }}" class="cta-btn">Get started</a>
+      </div>
+      <div class="showcase-price-card">
+        <h3>GitOps & Delivery Roadmap</h3>
+        <ul>
+          <li>Argo CD / Flux adoption assessment</li>
+          <li>Namespace and repo structure</li>
+        </ul>
+        <p class="timeline">Delivery: ~2 weeks</p>
+        <a href="{{ $contact }}" class="cta-btn">Get started</a>
+      </div>
+      <div class="showcase-price-card hourly">
+        <h3>Hourly consultation</h3>
+        <p>Troubleshooting, architecture review, team interviews.</p>
+        <p class="price-range">$200 – $450 / hour</p>
+        <p class="note">Rate depends on scope and engagement length.</p>
+        <a href="{{ $contact }}" class="cta-btn">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<script>
+(function() {
+  var section = document.querySelector('.showcases-variant-a');
+  if (!section) return;
+  var cardsContainer = section.querySelector('.showcases-cards');
+  var collapseBtn = section.querySelector('[data-collapse-all]');
+  var expandedCount = 0;
+
+  function updateCollapseBtn() {
+    if (collapseBtn) collapseBtn.style.display = expandedCount > 0 ? '' : 'none';
+  }
+
+  function updateSummaryText(details) {
+    var summary = details.querySelector('[data-toggle]');
+    if (summary) {
+      summary.textContent = details.open ? 'Hide outcome' : 'Read outcome';
+      summary.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+    }
+  }
+
+  if (cardsContainer) {
+    cardsContainer.addEventListener('toggle', function(e) {
+      if (e.target.tagName !== 'DETAILS' || !e.target.classList.contains('showcase-details')) return;
+      expandedCount += e.target.open ? 1 : -1;
+      updateSummaryText(e.target);
+      updateCollapseBtn();
+      if (e.target.open) {
+        var ctaLink = e.target.querySelector('.showcase-outcome-cta');
+        if (ctaLink) ctaLink.focus();
+      }
+    });
+    section.querySelectorAll('.showcase-details').forEach(function(d) {
+      updateSummaryText(d);
+      if (d.open) expandedCount++;
+    });
+    updateCollapseBtn();
+  }
+
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', function() {
+      section.querySelectorAll('.showcase-details[open]').forEach(function(d) {
+        d.removeAttribute('open');
+        updateSummaryText(d);
+      });
+      expandedCount = 0;
+      updateCollapseBtn();
+    });
+  }
+})();
+</script>
+{{ end }}
