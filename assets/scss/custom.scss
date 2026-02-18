@@ -139,11 +139,37 @@
     margin: 0 0 1rem;
   }
 
+  .showcase-details {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .showcase-toggle {
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "▸ ";
+      display: inline-block;
+      margin-right: 0.2em;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .showcase-details[open] .showcase-toggle::before {
+    content: "▾ ";
+    transform: none;
+  }
+
   .showcase-outcome {
     font-size: 1em;
     line-height: 1.65;
-    margin: 0 0 1rem;
-    display: none;
+    margin: 0;
     border-top: 1px solid #e0e0e0;
     padding-top: 0.75rem;
     margin-top: 0.75rem;
@@ -164,12 +190,7 @@
     }
   }
 
-  .showcase-card.expanded .showcase-outcome {
-    display: block;
-  }
-
-  // Hide the always-visible CTA when the card is expanded (outcome CTA takes over)
-  .showcase-card.expanded .showcase-cta-always {
+  .showcase-card details[open] ~ .showcase-cta-always {
     display: none;
   }
 
@@ -296,7 +317,7 @@
 
     .timeline {
       font-size: 0.95em;
-      opacity: 0.85;
+      color: #555;
       margin-bottom: 1rem;
     }
 
@@ -324,7 +345,7 @@
 
       .note {
         font-size: 0.95em;
-        opacity: 0.85;
+        color: #555;
         margin-bottom: 0.75rem;
       }
 
@@ -356,143 +377,45 @@
   }
 }
 
-// Dark theme for Showcases variant A
-body.colorscheme-dark .content .showcases-variant-a {
-  header {
-    border-bottom-color: #424242;
-  }
-
-  .intro-nav a {
-    color: #42a5f5;
-  }
-
+// Dark theme for Showcases variant A (shared by explicit dark and auto+dark)
+@mixin showcases-dark-theme {
+  header { border-bottom-color: #424242; }
+  .intro-nav a { color: #42a5f5; }
   .collapse-all-btn {
     color: #42a5f5;
     border-color: #42a5f5;
-
-    &:hover {
-      background: #42a5f5;
-      color: #1e1e1e;
-    }
+    &:hover { background: #42a5f5; color: #1e1e1e; }
   }
-
   .showcase-card {
     border-color: #424242;
     background: #2d2d2d;
-
-    &:hover {
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-    }
+    &:hover { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
   }
-
   .showcase-outcome {
     border-top-color: #505050;
-
-    &::before {
-      color: #999;
-    }
+    &::before { color: #999; }
   }
-
   .showcase-toggle {
     color: #42a5f5;
-
-    &:focus-visible {
-      outline-color: #42a5f5;
-    }
+    &:focus-visible { outline-color: #42a5f5; }
   }
-
-  .showcases-cta-block {
-    background: #424242;
-    border-color: #424242;
-  }
-
-  .showcases-pricing {
-    border-top-color: #424242;
-  }
-
+  .showcases-cta-block { background: #424242; border-color: #424242; }
+  .showcases-pricing { border-top-color: #424242; }
   .showcase-price-card {
     border-color: #505050;
     background: #2d2d2d;
-
-    .badge-popular {
-      color: #42a5f5;
-      border-color: #42a5f5;
-    }
-
-    &.popular {
-      border-color: #42a5f5;
-      box-shadow: 0 0 0 1px #42a5f5;
-    }
+    .timeline, .note { color: #999; }
+    .badge-popular { color: #42a5f5; border-color: #42a5f5; }
+    &.popular { border-color: #42a5f5; box-shadow: 0 0 0 1px #42a5f5; }
   }
+}
+
+body.colorscheme-dark .content .showcases-variant-a {
+  @include showcases-dark-theme;
 }
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .content .showcases-variant-a {
-    header {
-      border-bottom-color: #424242;
-    }
-
-    .intro-nav a {
-      color: #42a5f5;
-    }
-
-    .collapse-all-btn {
-      color: #42a5f5;
-      border-color: #42a5f5;
-
-      &:hover {
-        background: #42a5f5;
-        color: #1e1e1e;
-      }
-    }
-
-    .showcase-card {
-      border-color: #424242;
-      background: #2d2d2d;
-
-      &:hover {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-      }
-    }
-
-    .showcase-outcome {
-      border-top-color: #505050;
-
-      &::before {
-        color: #999;
-      }
-    }
-
-    .showcase-toggle {
-      color: #42a5f5;
-
-      &:focus-visible {
-        outline-color: #42a5f5;
-      }
-    }
-
-    .showcases-cta-block {
-      background: #424242;
-      border-color: #424242;
-    }
-
-    .showcases-pricing {
-      border-top-color: #424242;
-    }
-
-    .showcase-price-card {
-      border-color: #505050;
-      background: #2d2d2d;
-
-      .badge-popular {
-        color: #42a5f5;
-        border-color: #42a5f5;
-      }
-
-      &.popular {
-        border-color: #42a5f5;
-        box-shadow: 0 0 0 1px #42a5f5;
-      }
-    }
+    @include showcases-dark-theme;
   }
 }

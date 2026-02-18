@@ -36,7 +36,7 @@ He teaches the [Kubernetes-Based Infrastructure Platform](https://otus.ru/lesson
 
 ## Publications
 
-Selected articles and books (same style as [Medium](https://kksudo.medium.com/), [Habr](https://habr.com/ru/users/kksudo/), [Dzone](https://dzone.com/users/4670608/kk-sudo.html), [HackerNoon](https://hackernoon.com/u/kksudo)):
+Selected books and articles (same style as [Medium](https://kksudo.medium.com/), [Habr](https://habr.com/ru/users/kksudo/), [Dzone](https://dzone.com/users/4670608/kk-sudo.html), [HackerNoon](https://hackernoon.com/u/kksudo)):
 
 #### Books
 

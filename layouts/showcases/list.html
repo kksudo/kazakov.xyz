@@ -23,15 +23,17 @@
 
   <div class="showcases-cards">
     {{ range sort .Paginator.Pages ".Params.weight" }}
-    <div class="showcase-card" data-card>
+    <article class="showcase-card" data-card>
       <p class="showcase-quote">{{ .Title }}</p>
-      <div class="showcase-outcome" role="region" aria-label="Outcome">
-        {{ .Content }}
-        <a href="{{ $contact }}" class="showcase-outcome-cta">Let's talk</a>
-      </div>
-      <button type="button" class="showcase-toggle" data-toggle aria-expanded="false" title="Expand to read outcome">▸ Read outcome</button>
+      <details class="showcase-details">
+        <summary class="showcase-toggle" data-toggle aria-expanded="false" title="Expand to read outcome">Read outcome</summary>
+        <div class="showcase-outcome" role="region" aria-label="Outcome">
+          {{ .Content }}
+          <a href="{{ $contact }}" class="showcase-outcome-cta">Let's talk</a>
+        </div>
+      </details>
       <p class="showcase-cta-always"><a href="{{ $contact }}">Let's talk</a></p>
-    </div>
+    </article>
     {{ end }}
   </div>
 
@@ -87,7 +89,7 @@
 (function() {
   var section = document.querySelector('.showcases-variant-a');
   if (!section) return;
-  var cards = section.querySelectorAll('[data-card]');
+  var cardsContainer = section.querySelector('.showcases-cards');
   var collapseBtn = section.querySelector('[data-collapse-all]');
   var expandedCount = 0;
 
@@ -95,34 +97,37 @@
     if (collapseBtn) collapseBtn.style.display = expandedCount > 0 ? '' : 'none';
   }
 
-  cards.forEach(function(card) {
-    var btn = card.querySelector('[data-toggle]');
-    if (!btn) return;
-    btn.addEventListener('click', function() {
-      var isOpen = card.classList.contains('expanded');
-      card.classList.toggle('expanded');
-      btn.textContent = isOpen ? '▸ Read outcome' : '▾ Hide outcome';
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      expandedCount += isOpen ? -1 : 1;
+  function updateSummaryText(details) {
+    var summary = details.querySelector('[data-toggle]');
+    if (summary) {
+      summary.textContent = details.open ? 'Hide outcome' : 'Read outcome';
+      summary.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+    }
+  }
+
+  if (cardsContainer) {
+    cardsContainer.addEventListener('toggle', function(e) {
+      if (e.target.tagName !== 'DETAILS' || !e.target.classList.contains('showcase-details')) return;
+      expandedCount += e.target.open ? 1 : -1;
+      updateSummaryText(e.target);
       updateCollapseBtn();
-      if (!isOpen) {
-        var ctaLink = card.querySelector('.showcase-outcome-cta');
+      if (e.target.open) {
+        var ctaLink = e.target.querySelector('.showcase-outcome-cta');
         if (ctaLink) ctaLink.focus();
       }
     });
-  });
+    section.querySelectorAll('.showcase-details').forEach(function(d) {
+      updateSummaryText(d);
+      if (d.open) expandedCount++;
+    });
+    updateCollapseBtn();
+  }
 
   if (collapseBtn) {
     collapseBtn.addEventListener('click', function() {
-      cards.forEach(function(card) {
-        if (card.classList.contains('expanded')) {
-          card.classList.remove('expanded');
-          var btn = card.querySelector('[data-toggle]');
-          if (btn) {
-            btn.textContent = '▸ Read outcome';
-            btn.setAttribute('aria-expanded', 'false');
-          }
-        }
+      section.querySelectorAll('.showcase-details[open]').forEach(function(d) {
+        d.removeAttribute('open');
+        updateSummaryText(d);
       });
       expandedCount = 0;
       updateCollapseBtn();

@@ -15,6 +15,7 @@ disqusShortname = "kksudo"
 enableGitInfo = true
 enableRobotsTXT = true
 
+# Allow raw HTML in markdown (showcases content). All content is from trusted sources.
 [markup.goldmark.renderer]
 unsafe = true
 
