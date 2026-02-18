@@ -16,3 +16,7 @@ _bmad/
 .claude
 .github/agents/
 .cursor/
+
+# Other
+.playwright/
+.playwright-mcp/

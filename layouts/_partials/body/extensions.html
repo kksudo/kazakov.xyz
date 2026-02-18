@@ -1,0 +1,34 @@
+{{ if and (eq .Section "showcases") (eq .Kind "section") }}
+{{ $pages := sort .Pages ".Params.weight" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "Kirill Kazakov — DevOps & Platform Engineering",
+      "description": "Senior Platform & DevOps Engineer, Kubernetes expert, CTO. Platform, CI/CD, observability consulting and audits.",
+      "url": "{{ .Site.BaseURL }}",
+      "image": "{{ "/img/og-image.png" | absURL }}",
+      "sameAs": ["https://github.com/kksudo/", "https://www.linkedin.com/in/kazakovk/", "https://x.com/kk_sudo/"]
+    },
+    {
+      "@type": "ItemList",
+      "name": "DevOps Showcases — Platform, CI/CD & Observability Cases",
+      "description": "Problems I've helped teams with — platform, observability, GitOps. Real outcomes: self-service CI/CD, observability stacks, Terraform automation.",
+      "numberOfItems": {{ len $pages }},
+      "itemListElement": [
+        {{ range $i, $p := $pages }}{{ if $i }},{{ end }}
+        {
+          "@type": "ListItem",
+          "position": {{ add $i 1 }},
+          "name": {{ $p.Title | jsonify }},
+          "url": {{ $p.Permalink | jsonify }},
+          "description": {{ ($p.Params.description | default $p.Summary) | jsonify }}
+        }{{ end }}
+      ]
+    }
+  ]
+}
+</script>
+{{ end }}

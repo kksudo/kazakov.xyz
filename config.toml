@@ -37,6 +37,8 @@ gravatar = "k@kazakov.xyz"
 
 faviconSVG = "/img/favicon.svg"
 favicon_32 = "/img/favicon.png"
+# og:image for social sharing (LinkedIn, Twitter, Telegram)
+images = ["/img/og-image.png"]
 
 since = 2010
 enableTwemoji = true
