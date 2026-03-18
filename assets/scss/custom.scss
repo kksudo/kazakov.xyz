@@ -2,6 +2,58 @@
 // Import theme variables so we can use $link-color, $bg-color, etc.
 @import "scss/_variables";
 
+// ============================================
+// Subtle animated background gradient
+// ============================================
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 50%, $link-color 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: bg-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bg-drift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 50% 100%; }
+}
+
+body.colorscheme-dark::before {
+  opacity: 0.06;
+  background:
+    radial-gradient(ellipse at 20% 50%, $link-color-dark 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto::before {
+    opacity: 0.06;
+    background:
+      radial-gradient(ellipse at 20% 50%, $link-color-dark 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,
