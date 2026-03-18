@@ -83,13 +83,13 @@ target = "_blank"
 [[params.social]]
 name = "Notes"
 icon = "fa fa-book fa-2x"
-weight = 6
+weight = 5
 url = "https://notes.kazakov.xyz"
 target = "_blank"
 [[params.social]]
 name = "k@kazakov.xyz"
 icon = "fa fa-envelope fa-2x"
-weight = 7
+weight = 6
 url = "mailto:k@kazakov.xyz"
 target = "_blank"
 
