@@ -227,7 +227,7 @@
       }
 
       // Show message
-      if (frameCount > 30 && frameCount < 150) {
+      if (frameCount > 30 && frameCount < 1700) {
         ctx.save();
         ctx.font = '14px monospace';
         ctx.textAlign = 'center';
@@ -238,8 +238,8 @@
         ctx.restore();
       }
 
-      // After 5 seconds, restore normal mode
-      if (frameCount < 180) {
+      // After 30 seconds, restore normal mode (~1800 frames at 60fps)
+      if (frameCount < 1800) {
         raf = requestAnimationFrame(konamiDraw);
       } else {
         // Reset
