@@ -41,6 +41,7 @@ favicon_32 = "/img/favicon.png"
 # og:image for social sharing (LinkedIn, Twitter, Telegram)
 images = ["/img/og-image.png"]
 
+customJS = ["js/particles.js"]
 since = 2010
 enableTwemoji = true
 colorScheme = "auto"

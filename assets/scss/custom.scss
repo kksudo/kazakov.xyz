@@ -54,6 +54,30 @@ body.colorscheme-dark::before {
   }
 }
 
+// ============================================
+// Homepage particles canvas
+// ============================================
+
+.centered {
+  position: relative;
+}
+
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+// Ensure content stays above canvas
+.centered .about {
+  position: relative;
+  z-index: 1;
+}
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,
