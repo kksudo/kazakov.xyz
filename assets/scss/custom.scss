@@ -1,4 +1,7 @@
 // Custom overrides for kazakov.xyz
+// Import theme variables so we can use $link-color, $bg-color, etc.
+@import "scss/_variables";
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,
@@ -423,15 +426,13 @@ body.colorscheme-dark .content .showcases-variant-a {
 // ============================================
 // About / Single Page Styling
 // Scoped to .page so it does NOT affect .list (Showcases)
+// Uses theme SCSS variables for light/dark compatibility
 // ============================================
 
 // Section headings — subtle left accent (single pages only)
 .page .content h2 {
   position: relative;
-  margin-top: 2.5rem;
-  margin-bottom: 1.2rem;
   padding-left: 1rem;
-  padding-bottom: 0.3rem;
 
   &::before {
     content: "";
@@ -440,47 +441,64 @@ body.colorscheme-dark .content .showcases-variant-a {
     top: 0.15em;
     bottom: 0.15em;
     width: 3px;
-    background: var(--link-color, #1565c0);
+    background: $link-color;
     border-radius: 2px;
   }
 }
 
-// Tables — clean styling (single pages only)
+// Tables — cleaner styling (single pages only)
+// Override theme default thick black borders with subtler lines
 .page .content table {
   width: 100%;
   margin-bottom: 2rem;
-  border-collapse: collapse;
+
+  td, th {
+    border-color: $alt-bg-color;
+  }
 
   thead th {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 600;
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--tertiary-color, #999);
-    border-bottom: 2px solid var(--border-color, #e0e0e0);
-  }
-
-  tbody tr {
-    border-bottom: 1px solid var(--border-color, #e0e0e0);
-
-    &:last-child {
-      border-bottom: none;
-    }
-
-    td {
-      padding: 0.7rem 1rem;
-      vertical-align: top;
-    }
   }
 }
 
 // Horizontal rule — subtle separator
 .page .content hr {
   border: none;
-  border-top: 1px solid var(--border-color, #e0e0e0);
+  border-top: 1px solid $alt-bg-color;
   margin: 2rem 0;
+}
+
+// ============================================
+// Dark mode overrides for single pages
+// ============================================
+
+@mixin page-dark-theme {
+  .page .content {
+    h2::before {
+      background: $link-color-dark;
+    }
+
+    table td,
+    table th {
+      border-color: $alt-bg-color-dark;
+    }
+
+    hr {
+      border-top-color: $alt-bg-color-dark;
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include page-dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include page-dark-theme;
+  }
 }
 
 // ============================================
@@ -490,15 +508,5 @@ body.colorscheme-dark .content .showcases-variant-a {
 @media (max-width: 768px) {
   .page .content h2 {
     padding-left: 0.8rem;
-  }
-}
-
-// ============================================
-// Reduce motion
-// ============================================
-
-@media (prefers-reduced-motion: reduce) {
-  .page .content h2::before {
-    transition: none;
   }
 }
