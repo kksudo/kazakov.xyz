@@ -421,297 +421,84 @@ body.colorscheme-dark .content .showcases-variant-a {
 }
 
 // ============================================
-// About Page Styling
+// About / Single Page Styling
+// Scoped to .page so it does NOT affect .list (Showcases)
 // ============================================
 
-// About page hero intro (first paragraph + divider)
-.about-hero {
-  margin-bottom: 3rem;
-
-  p {
-    &:first-child {
-      font-size: 1.4em;
-      font-weight: 600;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      color: var(--accent-color, #1565c0);
-    }
-  }
-
-  hr {
-    border: none;
-    border-top: 2px solid #e0e0e0;
-    margin: 2rem 0;
-  }
-}
-
-// About page main intro text
-.about-intro {
-  font-size: 1.05em;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
-}
-
-// Section headings styling (h2s on About)
-.content h2 {
+// Section headings — subtle left accent (single pages only)
+.page .content h2 {
   position: relative;
   margin-top: 2.5rem;
   margin-bottom: 1.2rem;
   padding-left: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.8em;
-  font-weight: 600;
-  line-height: 1.4;
+  padding-bottom: 0.3rem;
 
-  // Left border accent
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, #1565c0 0%, #42a5f5 100%);
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 3px;
+    background: var(--link-color, #1565c0);
     border-radius: 2px;
   }
 }
 
-// Open Source & Projects section links (card-like styling)
-.content ul {
-  &:has(li a[href*="github.com"]),
-  &:has(li a[href*="notes.kazakov.xyz"]) {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-
-    li {
-      margin-bottom: 0.9rem;
-
-      a {
-        display: block;
-        padding: 0.9rem 1rem 0.9rem 1.2rem;
-        border-left: 3px solid #1565c0;
-        border-radius: 4px;
-        background: #fafafa;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        font-weight: 500;
-
-        &:hover {
-          background: #f0f5ff;
-          border-left-color: #42a5f5;
-          transform: translateX(4px);
-        }
-
-        strong {
-          font-weight: 600;
-          color: #1565c0;
-        }
-      }
-    }
-  }
-}
-
-// Certifications table styling
-.content table {
+// Tables — clean styling (single pages only)
+.page .content table {
   width: 100%;
   margin-bottom: 2rem;
   border-collapse: collapse;
-  font-size: 0.95em;
 
-  thead {
-    background: #f5f5f5;
-
-    th {
-      padding: 0.9rem 1rem;
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.85em;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #555;
-      border-bottom: 2px solid #e0e0e0;
-    }
+  thead th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--tertiary-color, #999);
+    border-bottom: 2px solid var(--border-color, #e0e0e0);
   }
 
-  tbody {
-    tr {
-      border-bottom: 1px solid #e0e0e0;
-      transition: background-color 0.2s ease;
+  tbody tr {
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
 
-      &:hover {
-        background: #fafafa;
-      }
+    &:last-child {
+      border-bottom: none;
+    }
 
-      td {
-        padding: 0.85rem 1rem;
-        vertical-align: top;
-      }
-
-      &:last-child {
-        border-bottom: none;
-      }
+    td {
+      padding: 0.7rem 1rem;
+      vertical-align: top;
     }
   }
 }
 
-// Book section styling
-.content {
-  p:has(a[href*="amazon.com"]),
-  p:has(a[href*="ridero.ru"]) {
-    margin-bottom: 1.5rem;
-  }
-}
-
-// Teaching & Speaking section list styling
-.content {
-  ol {
-    &:has(li a[href*="youtu.be"]),
-    &:has(li a[href*="youtube.com"]),
-    &:has(li a[href*="brighttalk.com"]) {
-      margin-left: 1.5rem;
-      line-height: 1.8;
-
-      li {
-        margin-bottom: 0.7rem;
-
-        a {
-          font-weight: 500;
-          text-decoration: underline;
-          text-underline-offset: 3px;
-        }
-      }
-    }
-  }
-}
-
-// Footer CTA section
-.about-footer-cta {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
-
-  p {
-    font-size: 1.1em;
-    font-weight: 500;
-    line-height: 1.6;
-
-    a {
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-  }
+// Horizontal rule — subtle separator
+.page .content hr {
+  border: none;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+  margin: 2rem 0;
 }
 
 // ============================================
-// Dark Theme for About Page
-// ============================================
-
-@mixin about-dark-theme {
-  .about-hero {
-    hr {
-      border-top-color: #505050;
-    }
-
-    p:first-child {
-      color: #42a5f5;
-    }
-  }
-
-  .content h2::before {
-    background: linear-gradient(180deg, #42a5f5 0%, #64b5f6 100%);
-  }
-
-  .content ul {
-    &:has(li a[href*="github.com"]),
-    &:has(li a[href*="notes.kazakov.xyz"]) {
-      li a {
-        border-left-color: #42a5f5;
-        background: #2d2d2d;
-
-        &:hover {
-          background: #363636;
-          border-left-color: #64b5f6;
-        }
-
-        strong {
-          color: #42a5f5;
-        }
-      }
-    }
-  }
-
-  .content table {
-    thead {
-      background: #3a3a3a;
-
-      th {
-        color: #bbb;
-        border-bottom-color: #505050;
-      }
-    }
-
-    tbody {
-      tr {
-        border-bottom-color: #505050;
-
-        &:hover {
-          background: #363636;
-        }
-      }
-    }
-  }
-
-  .about-footer-cta {
-    border-top-color: #505050;
-  }
-}
-
-body.colorscheme-dark .content {
-  @include about-dark-theme;
-}
-
-@media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .content {
-    @include about-dark-theme;
-  }
-}
-
-// ============================================
-// Responsive adjustments for About page
+// Responsive — single pages
 // ============================================
 
 @media (max-width: 768px) {
-  .content h2 {
-    font-size: 1.5em;
+  .page .content h2 {
     padding-left: 0.8rem;
-
-    &::before {
-      width: 3px;
-    }
-  }
-
-  .about-hero p:first-child {
-    font-size: 1.2em;
-  }
-
-  .content ul {
-    &:has(li a[href*="github.com"]),
-    &:has(li a[href*="notes.kazakov.xyz"]) {
-      li a {
-        padding: 0.8rem 0.9rem 0.8rem 1rem;
-        font-size: 1rem;
-      }
-    }
   }
 }
 
-// Reduce motion for About page elements
+// ============================================
+// Reduce motion
+// ============================================
+
 @media (prefers-reduced-motion: reduce) {
-  .content h2::before,
-  .content ul li a {
+  .page .content h2::before {
     transition: none;
   }
 }
