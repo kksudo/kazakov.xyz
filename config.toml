@@ -28,7 +28,7 @@ priority = 0.5
 [params]
 customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
-info = ["Full Stack DevOps and Magician"]
+info = ["Platform & DevOps Engineer · CTO · Author"]
 # SEO: aligned with job-search 10-profile and cv-tailoring (keyword alignment, recruiter visibility)
 description = "Kirill Kazakov — Senior Platform & DevOps Engineer, Kubernetes expert, CTO. 17+ years in IT, 9+ in Kubernetes, AWS, Terraform, CI/CD. Author, instructor, GlobalDots."
 keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, GitOps, cloud, kazakov.xyz"
@@ -41,6 +41,7 @@ favicon_32 = "/img/favicon.png"
 # og:image for social sharing (LinkedIn, Twitter, Telegram)
 images = ["/img/og-image.png"]
 
+customJS = ["js/particles.js", "js/console-terminal.js"]
 since = 2010
 enableTwemoji = true
 colorScheme = "auto"
@@ -63,15 +64,9 @@ weight = 1
 url = "https://github.com/kksudo/"
 target = "_blank"
 [[params.social]]
-name = "Gitlab"
-icon = "fa fa-gitlab fa-2x"
-weight = 2
-url = "https://gitlab.com/kksudo"
-target = "_blank"
-[[params.social]]
 name = "Instagram"
 icon = "fa fa-instagram fa-2x"
-weight = 3
+weight = 2
 url = "https://www.instagram.com/kk_sudo/"
 target = "_blank"
 [[params.social]]
@@ -83,8 +78,14 @@ target = "_blank"
 [[params.social]]
 name = "Linkedin"
 icon = "fa fa-linkedin fa-2x"
-weight = 5
+weight = 4
 url = "https://www.linkedin.com/in/kazakovk/"
+target = "_blank"
+[[params.social]]
+name = "Notes"
+icon = "fa fa-book fa-2x"
+weight = 5
+url = "https://notes.kazakov.xyz"
 target = "_blank"
 [[params.social]]
 name = "k@kazakov.xyz"
@@ -106,5 +107,9 @@ url = "about/"
 name = "Showcases"
 weight = 3
 url = "showcases/"
+[[languages.en.menu.main]]
+name = "Notes"
+weight = 4
+url = "https://notes.kazakov.xyz"
 
 

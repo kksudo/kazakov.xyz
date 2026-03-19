@@ -1,4 +1,202 @@
 // Custom overrides for kazakov.xyz
+// Import theme variables so we can use $link-color, $bg-color, etc.
+@import "_variables";
+
+// ============================================
+// Subtle animated background gradient
+// ============================================
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 50%, $link-color 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: bg-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bg-drift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 50% 100%; }
+}
+
+body.colorscheme-dark::before {
+  opacity: 0.06;
+  background:
+    radial-gradient(ellipse at 20% 50%, $link-color-dark 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto::before {
+    opacity: 0.06;
+    background:
+      radial-gradient(ellipse at 20% 50%, $link-color-dark 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, #7c4dff 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, #00bcd4 0%, transparent 50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+// ============================================
+// Homepage particles canvas
+// ============================================
+
+.centered {
+  position: relative;
+}
+
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+// Ensure content stays above canvas
+.centered .about {
+  position: relative;
+  z-index: 1;
+}
+
+// Konami hint — sits below social links, fades in then out
+.konami-hint {
+  text-align: center;
+  font-family: "SF Mono", Consolas, monospace;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0;
+  opacity: 0;
+  animation: hint-ghost 20s 3s ease-in-out forwards;
+
+  kbd {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+  }
+}
+
+@keyframes hint-ghost {
+  0%   { opacity: 0; }
+  5%   { opacity: 0.25; }
+  15%  { opacity: 0.25; }
+  20%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+// ============================================
+// Konami quick-links panel
+// ============================================
+
+.konami-panel {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: auto;
+}
+
+.konami-panel-inner {
+  display: inline-block;
+  background: $bg-color;
+  border: 1px solid $alt-bg-color;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.konami-panel-title {
+  display: block;
+  font-family: "SF Mono", Consolas, monospace;
+  font-size: 1.2rem;
+  color: $link-color;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.konami-panel-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+
+  a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border: 1px solid $alt-bg-color;
+    border-radius: 5px;
+    color: $fg-color;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      border-color: $link-color;
+      color: $link-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Dark mode for konami panel
+@mixin konami-panel-dark {
+  .konami-panel-inner {
+    background: $bg-color-dark;
+    border-color: $alt-bg-color-dark;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .konami-panel-title {
+    color: $link-color-dark;
+  }
+
+  .konami-panel-links a {
+    border-color: $alt-bg-color-dark;
+    color: $fg-color-dark;
+
+    &:hover {
+      border-color: $link-color-dark;
+      color: $link-color-dark;
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include konami-panel-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include konami-panel-dark;
+  }
+}
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,
@@ -417,5 +615,196 @@ body.colorscheme-dark .content .showcases-variant-a {
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .content .showcases-variant-a {
     @include showcases-dark-theme;
+  }
+}
+
+// ============================================
+// About / Single Page Styling
+// Scoped to .page so it does NOT affect .list (Showcases)
+// Uses theme SCSS variables for light/dark compatibility
+// ============================================
+
+// Section headings — subtle left accent (single pages only)
+.page .content h2 {
+  position: relative;
+  padding-left: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 3px;
+    background: $link-color;
+    border-radius: 2px;
+  }
+}
+
+// Tables — cleaner styling (single pages only)
+// Override theme default thick black borders with subtler lines
+.page .content table {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  td, th {
+    border-color: $alt-bg-color;
+  }
+
+  thead th {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+
+// Horizontal rule — subtle separator
+.page .content hr {
+  border: none;
+  border-top: 1px solid $alt-bg-color;
+  margin: 2rem 0;
+}
+
+// ============================================
+// Dark mode overrides for single pages
+// ============================================
+
+@mixin page-dark-theme {
+  .page .content {
+    h2::before {
+      background: $link-color-dark;
+    }
+
+    table td,
+    table th {
+      border-color: $alt-bg-color-dark;
+    }
+
+    hr {
+      border-top-color: $alt-bg-color-dark;
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include page-dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include page-dark-theme;
+  }
+}
+
+// ============================================
+// Responsive — single pages
+// ============================================
+
+@media (max-width: 768px) {
+  .page .content h2 {
+    padding-left: 0.8rem;
+  }
+}
+
+// ============================================
+// 404 page — Kubernetes CrashLoopBackOff style
+// ============================================
+
+.centered .k8s-404 {
+  text-align: left;
+  max-width: 64rem;
+  margin: 0 auto;
+  width: 100%;
+
+  .k8s-output {
+    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    background: $bg-color;
+    border: 1px solid $alt-bg-color;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 0 0 1.5rem;
+    overflow-x: auto;
+    white-space: pre;
+    text-align: left;
+    color: $fg-color;
+  }
+
+  .k8s-prompt {
+    color: $link-color;
+    font-weight: 700;
+  }
+
+  .k8s-red {
+    color: #e53935;
+    font-weight: 600;
+  }
+
+  .k8s-yellow {
+    color: #ff9800;
+  }
+
+  .k8s-green {
+    color: #4caf50;
+    font-weight: 600;
+  }
+
+  .k8s-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+
+    a {
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $link-color;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border: 2px solid $link-color;
+      border-radius: 6px;
+      transition: background 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background: $link-color;
+        color: $bg-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Dark mode for 404
+@mixin k8s-404-dark {
+  .k8s-404 {
+    .k8s-output {
+      background: $bg-color-dark;
+      border-color: $alt-bg-color-dark;
+      color: $fg-color-dark;
+    }
+
+    .k8s-prompt {
+      color: $link-color-dark;
+    }
+
+    .k8s-cta a {
+      color: $link-color-dark;
+      border-color: $link-color-dark;
+
+      &:hover {
+        background: $link-color-dark;
+        color: $bg-color-dark;
+      }
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include k8s-404-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include k8s-404-dark;
   }
 }
