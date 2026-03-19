@@ -106,6 +106,97 @@ body.colorscheme-dark::before {
   100% { opacity: 0; }
 }
 
+// ============================================
+// Konami quick-links panel
+// ============================================
+
+.konami-panel {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: auto;
+}
+
+.konami-panel-inner {
+  display: inline-block;
+  background: $bg-color;
+  border: 1px solid $alt-bg-color;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.konami-panel-title {
+  display: block;
+  font-family: "SF Mono", Consolas, monospace;
+  font-size: 1.2rem;
+  color: $link-color;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.konami-panel-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+
+  a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border: 1px solid $alt-bg-color;
+    border-radius: 5px;
+    color: $fg-color;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      border-color: $link-color;
+      color: $link-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Dark mode for konami panel
+@mixin konami-panel-dark {
+  .konami-panel-inner {
+    background: $bg-color-dark;
+    border-color: $alt-bg-color-dark;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .konami-panel-title {
+    color: $link-color-dark;
+  }
+
+  .konami-panel-links a {
+    border-color: $alt-bg-color-dark;
+    color: $fg-color-dark;
+
+    &:hover {
+      border-color: $link-color-dark;
+      color: $link-color-dark;
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include konami-panel-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include konami-panel-dark;
+  }
+}
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,

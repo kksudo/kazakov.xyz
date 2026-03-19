@@ -226,17 +226,26 @@
         }
       }
 
-      // Show message — fixed position below site navigation
+      // Show quick-links panel below navigation
       if (frameCount === 1) {
-        // Hide the konami hint
         var hint = document.getElementById('konami-hint');
         if (hint) hint.style.display = 'none';
 
         var overlay = document.createElement('div');
         overlay.id = 'konami-overlay';
-        overlay.style.cssText = 'position:fixed;top:6rem;left:0;right:0;z-index:100;text-align:center;font:13px/1.7 "SF Mono",Consolas,monospace;pointer-events:none;opacity:0;transition:opacity 0.5s ease;';
-        overlay.style.color = isDark() ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.7)';
-        overlay.innerHTML = '$ kubectl get easter-egg<br>NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;&nbsp;AGE<br>konami-pod&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;just now';
+        overlay.className = 'konami-panel';
+        overlay.innerHTML =
+          '<div class="konami-panel-inner">' +
+            '<span class="konami-panel-title">$ kubectl get resources</span>' +
+            '<div class="konami-panel-links">' +
+              '<a href="https://github.com/kksudo/" target="_blank">GitHub</a>' +
+              '<a href="https://www.linkedin.com/in/kazakovk/" target="_blank">LinkedIn</a>' +
+              '<a href="https://notes.kazakov.xyz" target="_blank">Notes</a>' +
+              '<a href="https://www.amazon.com/Kubernetes-Cookbook-Practical-Mastering-Production-ebook/dp/B0D9V441VQ/" target="_blank">Book</a>' +
+              '<a href="https://github.com/kksudo/prgate" target="_blank">PRGate</a>' +
+              '<a href="mailto:k@kazakov.xyz">Email</a>' +
+            '</div>' +
+          '</div>';
         document.body.appendChild(overlay);
         setTimeout(function () { overlay.style.opacity = '1'; }, 50);
       }
