@@ -245,24 +245,33 @@
       if (frameCount < 600) {
         raf = requestAnimationFrame(konamiDraw);
       } else {
-        // Reset
-        getColor = origGetColor;
-        konamiActive = false;
-        // Remove overlay
-        var overlay = document.getElementById('konami-overlay');
-        if (overlay) {
-          overlay.style.opacity = '0';
-          setTimeout(function () { overlay.remove(); }, 500);
-        }
-        for (var i = 0; i < particles.length; i++) {
-          particles[i].r = Math.random() * 2 + 1;
-          particles[i].vx = (Math.random() - 0.5) * SPEED;
-          particles[i].vy = (Math.random() - 0.5) * SPEED;
-          delete particles[i]._hue;
-        }
-        draw();
+        // Reset (timeout)
+        document.removeEventListener('click', dismissKonami);
+        dismissKonami();
       }
     }
+
+    // Click anywhere to dismiss
+    function dismissKonami() {
+      document.removeEventListener('click', dismissKonami);
+      // Stop konami loop, clean up, restore normal
+      getColor = origGetColor;
+      konamiActive = false;
+      var overlay = document.getElementById('konami-overlay');
+      if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(function () { overlay.remove(); }, 500);
+      }
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].r = Math.random() * 2 + 1;
+        particles[i].vx = (Math.random() - 0.5) * SPEED;
+        particles[i].vy = (Math.random() - 0.5) * SPEED;
+        delete particles[i]._hue;
+      }
+      cancelAnimationFrame(raf);
+      draw();
+    }
+    document.addEventListener('click', dismissKonami);
 
     cancelAnimationFrame(raf);
     konamiDraw();

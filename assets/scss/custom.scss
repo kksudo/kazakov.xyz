@@ -85,7 +85,7 @@ body.colorscheme-dark::before {
   font-size: 1.2rem;
   margin: 1.5rem 0 0;
   opacity: 0;
-  animation: hint-ghost 12s 3s ease-in-out forwards;
+  animation: hint-ghost 20s ease-in-out infinite;
 
   kbd {
     font-family: inherit;
@@ -100,8 +100,9 @@ body.colorscheme-dark::before {
 
 @keyframes hint-ghost {
   0%   { opacity: 0; }
-  10%  { opacity: 0.25; }
-  50%  { opacity: 0.25; }
+  5%   { opacity: 0.25; }
+  25%  { opacity: 0.25; }
+  35%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
