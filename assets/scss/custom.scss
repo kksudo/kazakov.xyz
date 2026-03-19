@@ -78,26 +78,38 @@ body.colorscheme-dark::before {
   z-index: 1;
 }
 
-// Konami hint
+// Konami hint — fades in after 5s, visible for 4s, then fades out
 .konami-hint {
-  position: relative;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
   z-index: 1;
   text-align: center;
-  font-size: 1.2rem;
-  opacity: 0.35;
-  margin-top: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 0.02em;
+  opacity: 0;
+  animation: hint-ghost 10s 5s ease-in-out forwards;
+  pointer-events: none;
 
   kbd {
     display: inline-block;
     font-family: "SF Mono", Consolas, monospace;
-    font-size: 1.1rem;
-    padding: 0.15rem 0.45rem;
+    font-size: 1rem;
+    padding: 0.1rem 0.35rem;
     border: 1px solid $alt-bg-color;
     border-radius: 3px;
-    margin: 0 0.1rem;
+    margin: 0 0.05rem;
     background: $bg-color;
+    opacity: 0.7;
   }
+}
+
+@keyframes hint-ghost {
+  0%   { opacity: 0; }
+  15%  { opacity: 0.2; }
+  60%  { opacity: 0.2; }
+  100% { opacity: 0; }
 }
 
 // Mobile-friendly certifications table on About page
