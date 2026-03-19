@@ -238,11 +238,12 @@
           '<div class="konami-panel-inner">' +
             '<span class="konami-panel-title">$ kubectl get resources</span>' +
             '<div class="konami-panel-links">' +
+              '<a href="https://kazakov.xyz/cv" target="_blank">CV</a>' +
+              '<a href="https://kazakov.xyz/cal" target="_blank">Book a call</a>' +
               '<a href="https://github.com/kksudo/" target="_blank">GitHub</a>' +
               '<a href="https://www.linkedin.com/in/kazakovk/" target="_blank">LinkedIn</a>' +
               '<a href="https://notes.kazakov.xyz" target="_blank">Notes</a>' +
               '<a href="https://www.amazon.com/Kubernetes-Cookbook-Practical-Mastering-Production-ebook/dp/B0D9V441VQ/" target="_blank">Book</a>' +
-              '<a href="https://github.com/kksudo/prgate" target="_blank">PRGate</a>' +
               '<a href="mailto:k@kazakov.xyz">Email</a>' +
             '</div>' +
           '</div>';
