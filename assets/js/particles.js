@@ -226,16 +226,16 @@
         }
       }
 
-      // Show message
-      if (frameCount > 30 && frameCount < 500) {
-        ctx.save();
-        ctx.font = '14px monospace';
-        ctx.textAlign = 'center';
-        ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)';
-        ctx.fillText('$ kubectl get easter-egg', cx, cy);
-        ctx.fillText('NAME         READY   STATUS    AGE', cx, cy + 20);
-        ctx.fillText('konami-pod   1/1     Running   just now', cx, cy + 40);
-        ctx.restore();
+      // Show message — positioned at bottom, above konami-hint area
+      if (frameCount === 1) {
+        // Create a DOM overlay instead of canvas text to avoid overlap
+        var overlay = document.createElement('div');
+        overlay.id = 'konami-overlay';
+        overlay.style.cssText = 'position:absolute;bottom:4rem;left:0;right:0;z-index:2;text-align:center;font:13px/1.6 "SF Mono",Consolas,monospace;pointer-events:none;opacity:0;transition:opacity 0.5s ease;';
+        overlay.style.color = isDark() ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.6)';
+        overlay.innerHTML = '$ kubectl get easter-egg<br>NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;&nbsp;AGE<br>konami-pod&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;just now';
+        canvas.parentElement.appendChild(overlay);
+        setTimeout(function () { overlay.style.opacity = '1'; }, 50);
       }
 
       // After 10 seconds, restore normal mode (~600 frames at 60fps)
@@ -245,6 +245,12 @@
         // Reset
         getColor = origGetColor;
         konamiActive = false;
+        // Remove overlay
+        var overlay = document.getElementById('konami-overlay');
+        if (overlay) {
+          overlay.style.opacity = '0';
+          setTimeout(function () { overlay.remove(); }, 500);
+        }
         for (var i = 0; i < particles.length; i++) {
           particles[i].r = Math.random() * 2 + 1;
           particles[i].vx = (Math.random() - 0.5) * SPEED;
