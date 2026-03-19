@@ -241,8 +241,8 @@
         setTimeout(function () { overlay.style.opacity = '1'; }, 50);
       }
 
-      // After 10 seconds, restore normal mode (~600 frames at 60fps)
-      if (frameCount < 600) {
+      // After 3 seconds, restore normal mode (~180 frames at 60fps)
+      if (frameCount < 180) {
         raf = requestAnimationFrame(konamiDraw);
       } else {
         // Reset (timeout)
