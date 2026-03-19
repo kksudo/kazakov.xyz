@@ -226,15 +226,18 @@
         }
       }
 
-      // Show message — positioned at bottom, above konami-hint area
+      // Show message — fixed position below site navigation
       if (frameCount === 1) {
-        // Create a DOM overlay instead of canvas text to avoid overlap
+        // Hide the konami hint
+        var hint = document.getElementById('konami-hint');
+        if (hint) hint.style.display = 'none';
+
         var overlay = document.createElement('div');
         overlay.id = 'konami-overlay';
-        overlay.style.cssText = 'position:absolute;bottom:4rem;left:0;right:0;z-index:2;text-align:center;font:13px/1.6 "SF Mono",Consolas,monospace;pointer-events:none;opacity:0;transition:opacity 0.5s ease;';
-        overlay.style.color = isDark() ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.6)';
+        overlay.style.cssText = 'position:fixed;top:6rem;left:0;right:0;z-index:100;text-align:center;font:13px/1.7 "SF Mono",Consolas,monospace;pointer-events:none;opacity:0;transition:opacity 0.5s ease;';
+        overlay.style.color = isDark() ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.7)';
         overlay.innerHTML = '$ kubectl get easter-egg<br>NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;&nbsp;AGE<br>konami-pod&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;just now';
-        canvas.parentElement.appendChild(overlay);
+        document.body.appendChild(overlay);
         setTimeout(function () { overlay.style.opacity = '1'; }, 50);
       }
 

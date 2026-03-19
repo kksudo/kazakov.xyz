@@ -78,19 +78,14 @@ body.colorscheme-dark::before {
   z-index: 1;
 }
 
-// Konami hint — fades in after 5s, visible for 4s, then fades out
+// Konami hint — sits below social links, fades in then out
 .konami-hint {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 0;
-  right: 0;
-  z-index: 1;
   text-align: center;
   font-size: 1.1rem;
   letter-spacing: 0.02em;
+  margin: 1.5rem 0 0;
   opacity: 0;
-  animation: hint-ghost 10s 5s ease-in-out forwards;
-  pointer-events: none;
+  animation: hint-ghost 12s 3s ease-in-out forwards;
 
   kbd {
     display: inline-block;
@@ -107,8 +102,8 @@ body.colorscheme-dark::before {
 
 @keyframes hint-ghost {
   0%   { opacity: 0; }
-  15%  { opacity: 0.2; }
-  60%  { opacity: 0.2; }
+  10%  { opacity: 0.25; }
+  50%  { opacity: 0.25; }
   100% { opacity: 0; }
 }
 
