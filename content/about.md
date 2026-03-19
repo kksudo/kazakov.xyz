@@ -11,6 +11,7 @@ aliases = ["about", "about-us", "about-kirill", "contact"]
 
 17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability — the things that let teams move fast without breaking things.
 
+<<<<<<< HEAD
 **CTO at [Aura X Capital](https://auraxcapital.com/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
 
 Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family.
@@ -29,6 +30,15 @@ Pick the version that matches your opening — same experience, different emphas
 ## Open Source
 
 - **[PRGate](https://github.com/prgate)** — AI-powered, policy-aware code review for GitHub pull requests
+=======
+**CTO at [Aura X Capital](https://www.linkedin.com/in/kazakovk/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
+
+Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family.
+
+## Open Source
+
+- **[PRGate](https://github.com/kksudo/prgate)** — AI-powered code review for GitHub pull requests
+>>>>>>> 621ec8a (Improve site for career visibility and job search (#45))
 - **[Digital Garden](https://notes.kazakov.xyz)** — public knowledge base on AI, DevOps, and engineering practices
 
 ## Book & Technical Review
