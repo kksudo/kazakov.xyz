@@ -250,27 +250,18 @@
         setTimeout(function () { overlay.style.opacity = '1'; }, 50);
       }
 
-      // After 3 seconds, restore normal mode (~180 frames at 60fps)
+      // After 3 seconds, restore particles but keep panel visible
       if (frameCount < 180) {
         raf = requestAnimationFrame(konamiDraw);
       } else {
-        // Reset (timeout)
-        document.removeEventListener('click', dismissKonami);
-        dismissKonami();
+        restoreParticles();
       }
     }
 
-    // Click anywhere to dismiss
-    function dismissKonami() {
-      document.removeEventListener('click', dismissKonami);
-      // Stop konami loop, clean up, restore normal
+    // Restore particles to normal (but keep panel)
+    function restoreParticles() {
       getColor = origGetColor;
       konamiActive = false;
-      var overlay = document.getElementById('konami-overlay');
-      if (overlay) {
-        overlay.style.opacity = '0';
-        setTimeout(function () { overlay.remove(); }, 500);
-      }
       for (var i = 0; i < particles.length; i++) {
         particles[i].r = Math.random() * 2 + 1;
         particles[i].vx = (Math.random() - 0.5) * SPEED;
@@ -280,7 +271,23 @@
       cancelAnimationFrame(raf);
       draw();
     }
-    document.addEventListener('click', dismissKonami);
+
+    // Dismiss panel on click outside it
+    function dismissPanel(e) {
+      var overlay = document.getElementById('konami-overlay');
+      if (!overlay) return;
+      // If click is inside panel links, let it through
+      if (overlay.contains(e.target) && e.target.tagName === 'A') return;
+      // Otherwise dismiss
+      document.removeEventListener('click', dismissPanel);
+      overlay.style.opacity = '0';
+      setTimeout(function () { overlay.remove(); }, 500);
+    }
+
+    // Start: dismiss panel on outside click (with delay so the triggering keypress doesn't count)
+    setTimeout(function () {
+      document.addEventListener('click', dismissPanel);
+    }, 200);
 
     cancelAnimationFrame(raf);
     konamiDraw();
