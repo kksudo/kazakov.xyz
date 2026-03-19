@@ -78,6 +78,28 @@ body.colorscheme-dark::before {
   z-index: 1;
 }
 
+// Konami hint
+.konami-hint {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.35;
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+
+  kbd {
+    display: inline-block;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 1.1rem;
+    padding: 0.15rem 0.45rem;
+    border: 1px solid $alt-bg-color;
+    border-radius: 3px;
+    margin: 0 0.1rem;
+    background: $bg-color;
+  }
+}
+
 // Mobile-friendly certifications table on About page
 @media (max-width: 768px) {
   .content table td,
