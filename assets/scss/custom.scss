@@ -710,10 +710,11 @@ body.colorscheme-dark {
 // 404 page — Kubernetes CrashLoopBackOff style
 // ============================================
 
-.k8s-404 {
+.centered .k8s-404 {
   text-align: left;
   max-width: 64rem;
   margin: 0 auto;
+  width: 100%;
 
   .k8s-output {
     font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
@@ -726,6 +727,7 @@ body.colorscheme-dark {
     margin: 0 0 1.5rem;
     overflow-x: auto;
     white-space: pre;
+    text-align: left;
     color: $fg-color;
   }
 
