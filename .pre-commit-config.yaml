@@ -1,0 +1,22 @@
+# Local checks before every commit. Install once: pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(themes/|public/|static/files/)
+      - id: end-of-file-fixer
+        exclude: ^(themes/|public/|static/files/)
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]
+
+  - repo: local
+    hooks:
+      - id: site-check
+        name: hugo build + redirects + CV PDFs (make check)
+        entry: make check
+        language: system
+        pass_filenames: false
+        always_run: true
