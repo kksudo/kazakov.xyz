@@ -1,0 +1,7 @@
+# CV short links — serve PDFs directly from this site (200 = rewrite, URL stays clean).
+# NOTE: zone-level Cloudflare redirect rules (dashboard) for /cv* must be removed,
+# they take precedence over Pages _redirects.
+/cv         /files/Kirill-Kazakov-CV.pdf         200
+/cv-sre     /files/Kirill-Kazakov-CV-SRE.pdf     200
+/cv-lead    /files/Kirill-Kazakov-CV-Lead.pdf    200
+/cv-crypto  /files/Kirill-Kazakov-CV-Crypto.pdf  200

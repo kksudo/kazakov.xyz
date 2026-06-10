@@ -11,13 +11,24 @@ aliases = ["about", "about-us", "about-kirill", "contact"]
 
 17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability — the things that let teams move fast without breaking things.
 
-**CTO at [Aura X Capital](https://www.linkedin.com/in/kazakovk/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
+**CTO at [Aura X Capital](https://auraxcapital.com/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
 
 Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family.
 
+## CV / Résumé
+
+Pick the version that matches your opening — same experience, different emphasis:
+
+| Version | Focus | Link |
+|---------|-------|------|
+| **Universal** | Senior Platform & DevOps Engineer | [kazakov.xyz/cv](/cv) |
+| SRE | Reliability, SLO/SLI, observability | [kazakov.xyz/cv-sre](/cv-sre) |
+| Lead | Team building, platform leadership | [kazakov.xyz/cv-lead](/cv-lead) |
+| Web3 | DeFi/crypto infrastructure | [kazakov.xyz/cv-crypto](/cv-crypto) |
+
 ## Open Source
 
-- **[PRGate](https://github.com/kksudo/prgate)** — AI-powered code review for GitHub pull requests
+- **[PRGate](https://github.com/prgate)** — AI-powered, policy-aware code review for GitHub pull requests
 - **[Digital Garden](https://notes.kazakov.xyz)** — public knowledge base on AI, DevOps, and engineering practices
 
 ## Book & Technical Review

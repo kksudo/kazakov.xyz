@@ -238,7 +238,7 @@
           '<div class="konami-panel-inner">' +
             '<span class="konami-panel-title">$ kubectl get resources</span>' +
             '<div class="konami-panel-links">' +
-              '<a href="https://kazakov.xyz/cv" target="_blank">CV</a>' +
+              '<a href="/cv" target="_blank">CV</a>' +
               '<a href="https://kazakov.xyz/cal" target="_blank">Calendar</a>' +
               '<a href="https://github.com/kksudo/" target="_blank">GitHub</a>' +
               '<a href="https://www.linkedin.com/in/kazakovk/" target="_blank">LinkedIn</a>' +
