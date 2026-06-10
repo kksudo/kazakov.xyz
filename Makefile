@@ -34,10 +34,11 @@ check: build redirects-check cv-verify ## Full local validation (build + redirec
 redirects-check: ## Every _redirects target must exist in the build output
 	@test -f static/_redirects || { echo "[ERROR] static/_redirects missing"; exit 1; }
 	@fail=0; \
-	grep -Ev '^\s*(#|$$)' static/_redirects | while read -r src dst code; do \
+	while read -r src dst code; do \
+		case "$$src" in ""|"#"*) continue ;; esac; \
 		f="$(PUBLIC_DIR)$$dst"; \
 		if [ ! -f "$$f" ]; then echo "[ERROR] $$src -> $$dst : file not found in $(PUBLIC_DIR)/"; fail=1; fi; \
-	done; \
+	done < static/_redirects; \
 	[ "$$fail" = "0" ] && echo "[SUCCESS] redirects targets exist"
 
 cv-verify: ## CV PDFs present and non-empty in static/files
