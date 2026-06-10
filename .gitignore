@@ -9,13 +9,27 @@
 /resources/_gen
 /public
 
-# AI generated files
+# AI agents & tooling (Claude, Cursor, Codex, opencode, etc.)
 _bmad-output/
 _bmad/
 .agent
+.claude/
 .claude
-.github/agents/
+.omc/
 .cursor/
+.github/agents/
+CLAUDE.md
+AGENTS.md
+.aider*
+.codex/
+.opencode/
+opencode.json
+.gemini/
+.windsurf/
+.cline/
+.roo/
+.continue/
+.specstory/
 
 # Other
 .playwright/
