@@ -4,6 +4,7 @@ description = "Inference on Kubernetes, GPU/spot usage, AI pipeline observabilit
 date = "2026-02-18"
 weight = 8
 keywords = ["AI/ML Kubernetes", "GPU inference", "spot instances", "AI pipeline observability", "ML infrastructure", "Kirill Kazakov"]
+category = "AI/ML · Infrastructure"
 +++
 
 From inference on Kubernetes to GPU/spot usage and scaling: right-sizing, spot mixes, and observability for AI pipelines. I've optimized infra where AI workloads run so cost and performance are predictable instead of a black box.

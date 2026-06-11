@@ -4,6 +4,7 @@ description = "Observability stacks with Grafana, Prometheus, Loki, OpenTelemetr
 date = "2026-02-18"
 weight = 2
 keywords = ["observability", "Grafana", "Prometheus", "Loki", "OpenTelemetry", "SRE", "incident response", "Golden Signals", "Kirill Kazakov"]
+category = "Observability · SRE"
 +++
 
 Observability stacks (Grafana, Prometheus, Loki, OpenTelemetry) across four enterprises; 4 Golden Signals dashboards; node warm-up from 3 hours to seconds for 1000+ pods. Scale doesn't have to mean a black box.

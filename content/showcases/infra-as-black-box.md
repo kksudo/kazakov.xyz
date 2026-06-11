@@ -4,6 +4,7 @@ description = "Company-wide Terraform registry with versioned modules, IaC train
 date = "2026-02-18"
 weight = 7
 keywords = ["Terraform registry", "IaC training", "Zero Trust", "Cloudflare", "infrastructure visibility", "Kirill Kazakov"]
+category = "IaC · Enablement"
 +++
 
 Company-wide Terraform registry with versioned modules, plus IaC training for dev and QA. Teams consume infra as code on their own. Same idea with Zero Trust: Cloudflare + IaC + CI/CD so access and boundaries are explicit and auditable.
