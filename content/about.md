@@ -17,14 +17,7 @@ Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Serv
 
 ## CV / Résumé
 
-Pick the version that matches your opening — same experience, different emphasis:
-
-| Version | Focus | Link |
-|---------|-------|------|
-| **Universal** | Senior Platform & DevOps Engineer | [kazakov.xyz/cv](/cv) |
-| SRE | Reliability, SLO/SLI, observability | [kazakov.xyz/cv-sre](/cv-sre) |
-| Lead | Team building, platform leadership | [kazakov.xyz/cv-lead](/cv-lead) |
-| Web3 | DeFi/crypto infrastructure | [kazakov.xyz/cv-crypto](/cv-crypto) |
+Available on request — [email me](mailto:k@kazakov.xyz?subject=CV%20request) or DM on [LinkedIn](https://www.linkedin.com/in/kazakovk/) / [Telegram](https://t.me/kk_sudo). I'll send the version that matches your opening (Platform/DevOps, SRE, Lead, or Web3 focus).
 
 ## Open Source
 

@@ -31,6 +31,9 @@ opencode.json
 .continue/
 .specstory/
 
+# CV PDFs are by-request only, never committed
+static/files/
+
 # Other
 .playwright/
 .playwright-mcp/
