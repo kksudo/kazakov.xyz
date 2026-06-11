@@ -28,10 +28,10 @@ priority = 0.5
 [params]
 customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
-info = ["Platform & DevOps Engineer · CTO · Author"]
+info = ["Senior Platform & DevOps Engineer · CTO · Author", "Open to senior Platform/DevOps roles — Remote (UTC+3) or relocation worldwide"]
 # SEO: aligned with job-search 10-profile and cv-tailoring (keyword alignment, recruiter visibility)
-description = "Kirill Kazakov — Senior Platform & DevOps Engineer, Kubernetes expert, CTO. 17+ years in IT, 9+ in Kubernetes, AWS, Terraform, CI/CD. Author, instructor, GlobalDots."
-keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, GitOps, cloud, kazakov.xyz"
+description = "Kirill Kazakov — Senior Platform & DevOps Engineer, Kubernetes expert, CTO. 17+ years in IT, 9+ in Kubernetes, AWS, Terraform, CI/CD. AWS Well-Architected practitioner, author, instructor. Open to senior platform roles."
+keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, EKS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, Argo Workflows, GitOps, FluxCD, Karpenter, KEDA, AWS Well-Architected, Prometheus, Grafana, observability, cloud, kazakov.xyz"
 # SERP title (default for all pages; theme uses this in <title>)
 HeadTitle = "Kirill Kazakov — DevOps & Platform Engineering"
 gravatar = "k@kazakov.xyz"

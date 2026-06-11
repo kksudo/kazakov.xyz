@@ -7,13 +7,15 @@ aliases = ["about", "about-us", "about-kirill", "contact"]
 
 **I build platforms that let engineering teams ship faster and sleep better.**
 
+> Open to senior Platform/DevOps roles — remote (UTC+3) or relocation worldwide. [Get in touch](mailto:k@kazakov.xyz?subject=Role).
+
 ---
 
-17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability — the things that let teams move fast without breaking things.
+17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability — the things that let teams move fast without breaking things. Day to day that includes SLO/SLI design, incident response, post-mortems, and 4 Golden Signals dashboards.
 
-**CTO at [Aura X Capital](https://auraxcapital.com/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
+**Part-time CTO at [Aura X Capital](https://auraxcapital.com/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
 
-Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family.
+Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family. On the AWS side I owned projects from business case to delivery: Scope of Work, **AWS Well-Architected reviews**, MORA/MODA assessments — within an official AWS Partner, where my client migrations qualified for AWS partner funding.
 
 ## CV / Résumé
 
@@ -34,8 +36,8 @@ Available on request — [email me](mailto:k@kazakov.xyz?subject=CV%20request) o
 | Certification | Issuer | Year |
 |------|--------|------|
 | Certified Kubernetes Administrator (CKA) | CNCF / Linux Foundation | 2021 |
-| AWS Solutions Architect — Associate | AWS | 2022 / 2025 |
-| Professional Cloud Architect | Google Cloud | 2025 |
+| AWS Solutions Architect — Associate | AWS | 2022 / 2025 (valid through 2028) |
+| Professional Cloud Architect | Google Cloud | 2025 (valid through 2027) |
 | GitOps Fundamentals | Codefresh | 2022 |
 
 ## Speaking & Teaching
@@ -55,8 +57,21 @@ Published on [Medium](https://kksudo.medium.com/), [Habr](https://habr.com/ru/us
 - [10 Steps to Troubleshoot ArgoCD](https://www.globaldots.com/resources/ebooks/10-most-important-steps-for-troubleshooting-argocd-issues/) — GlobalDots eBook
 - [I Thought I Had Observability](https://hackernoon.com/i-thought-i-had-observability-my-short-dns-story) — a short DNS story
 - [Tips to Pass CKA Exam](https://hackernoon.com/tips-and-tricks-to-pass-certified-kubernetes-application-cka-exam-px13349o)
+- Production Readiness framework — adopted by a VP at Deutsche Bank Technology Centre
 
 More in my [Digital Garden](https://notes.kazakov.xyz).
+
+## What Colleagues Say
+
+> "Kirill played an essential role in the platform's development and contributed to our common victory, namely winning this prestigious industry award."
+>
+> — **Steffen Geyer**, Founder & CEO, Simplinic GmbH (Eugen Münch Prize)
+
+> "Kirill impressed our team not only with his extensive expertise, but with his exceedingly impressive dedication. […] With these innovations Kirill reduced our company costs by 10% and improved our web app time to respond by 12%."
+>
+> — **Dmitry Pavlov**, Head of Engineering, Genestack (ex-Simplinic)
+
+More recommendations on [LinkedIn](https://www.linkedin.com/in/kazakovk/).
 
 ---
 
