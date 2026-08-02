@@ -1,0 +1,18 @@
+<footer class="footer">
+  <section class="container">
+    ©
+    {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}
+      {{ .Site.Params.since }} -
+    {{ end }}
+    {{ now.Year }}
+    {{ with .Site.Params.author }} {{ . }} {{ end }}
+    {{ if (and .Site.Params.license) }}
+      ·
+      {{ i18n "licensed_under" }} {{ .Site.Params.license | safeHTML }}
+    {{ end }}
+    {{ if (and .Site.Params.commit .GitInfo) }}
+      ·
+      [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>]
+    {{ end }}
+  </section>
+</footer>

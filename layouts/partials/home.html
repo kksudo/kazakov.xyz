@@ -2,9 +2,13 @@
   <div class="portfolio-hero">
     <div class="portfolio-hero__atmosphere" aria-hidden="true"></div>
     <div class="portfolio-hero__inner">
-      {{ partialCached "home/avatar.html" . }}
-      <p class="portfolio-kicker">Security engineering · Detection · Response</p>
-      <h1 class="portfolio-brand">{{ .Site.Params.author }}</h1>
+      <div class="portfolio-title-row">
+        {{ partialCached "home/avatar.html" . }}
+        <div class="portfolio-title-copy">
+          <p class="portfolio-kicker">Security engineering · Detection · Response</p>
+          <h1 class="portfolio-brand">{{ .Site.Params.author }}</h1>
+        </div>
+      </div>
       <p class="portfolio-lede">
         I help teams cut through alert noise, close real risk, and build the tooling a security program can actually run on.
       </p>
@@ -115,24 +119,6 @@
         <li>Running AI coding agents and MCP-integrated automation in sandboxed, credential-scoped workflows</li>
       </ul>
       <a class="text-link" href="{{ "now/" | relURL }}">Full Now page →</a>
-    </div>
-  </section>
-
-  <section class="portfolio-section portfolio-voice">
-    <div class="portfolio-wrap">
-      <p class="portfolio-label">Who I help</p>
-      <h2>Municipal teams, operators, and leaders who need clarity under pressure</h2>
-      <div class="quote-grid">
-        <blockquote class="voice-quote">
-          <p>“Scott turned a month of vulnerability noise into a briefing we could act on the same afternoon.”</p>
-          <cite>— Placeholder, Municipal IT Director</cite>
-        </blockquote>
-        <blockquote class="voice-quote">
-          <p>“He owns the incident end to end — triage, containment, and the executive conversation.”</p>
-          <cite>— Placeholder, MSSP Practice Lead</cite>
-        </blockquote>
-      </div>
-      <p class="portfolio-note">Testimonials above are placeholders — swap in real quotes when ready.</p>
     </div>
   </section>
 

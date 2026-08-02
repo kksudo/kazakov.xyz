@@ -27,7 +27,7 @@ author = "Scott Schlangen"
 info = ["Senior Security Engineer", "Detection · Vulnerability Management · Incident Response"]
 description = "Scott Schlangen — security engineer focused on detection engineering, vulnerability management, incident response, and the automation that keeps security programs running."
 keywords = "cybersecurity,security engineer,detection engineering,incident response,vulnerability management,identity management,compliance,infosec,soc,municipal security,MSSP"
-gravatar = "sschlangen@gmail.com"
+avatarURL = "img/scott-headshot.png"
 
 faviconSVG = "/img/favicon.svg"
 favicon_32 = "/img/favicon.png"

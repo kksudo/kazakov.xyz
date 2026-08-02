@@ -177,25 +177,45 @@ hr {
   padding-left: 1.6rem;
 }
 
-.portfolio-hero .avatar {
+.portfolio-title-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   margin: 0 0 2.2rem;
+}
+
+.portfolio-hero .avatar {
+  margin: 0;
+  flex: 0 0 auto;
 
   img {
-    width: 9.6rem;
-    height: 9.6rem;
+    // Match approximate height of kicker + name + blue underline
+    display: block;
+    width: 10rem !important;
+    height: 10rem !important;
+    max-width: none;
     border-radius: 28%;
+    object-fit: cover;
     border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
-    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.45);
     transition: transform 0.4s ease;
   }
 }
 
 .portfolio-hero .avatar:hover img {
-  transform: translateY(-0.3rem) scale(1.02);
+  transform: translateY(-0.2rem) scale(1.02);
+}
+
+.portfolio-title-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .portfolio-kicker {
-  margin: 0 0 1rem;
+  margin: 0 0 0.6rem;
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -204,8 +224,8 @@ hr {
 }
 
 .portfolio-brand {
-  margin: 0 0 1.4rem;
-  font-size: #{"clamp(4.2rem, 9vw, 7.2rem)"};
+  margin: 0;
+  font-size: #{"clamp(3.6rem, 7vw, 6.4rem)"};
   line-height: 0.95;
   font-weight: 800;
   position: relative;
@@ -216,7 +236,7 @@ hr {
   display: block;
   width: 5.6rem;
   height: 3px;
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   background: var(--blue-line);
   box-shadow: 0 0 12px color-mix(in srgb, var(--blue-line) 50%, transparent);
 }
@@ -639,6 +659,15 @@ body.colorscheme-dark .company-header .company-logo {
 
   .portfolio-hero__atmosphere::before {
     left: 1.2rem;
+  }
+
+  .portfolio-title-row {
+    gap: 1.4rem;
+  }
+
+  .portfolio-hero .avatar img {
+    width: 7.6rem !important;
+    height: 7.6rem !important;
   }
 }
 
