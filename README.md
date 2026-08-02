@@ -1,14 +1,16 @@
 # scottschlangen.com
 
-Personal portfolio and resume site for Scott Schlangen, built with [Hugo](https://gohugo.io/) and the [Coder](https://github.com/luizdepra/hugo-coder) theme.
+Personal portfolio and resume site for Scott Schlangen, built with [Hugo](https://gohugo.io/) and the [Coder](https://github.com/luizdepra/hugo-coder) theme. Deployed to Cloudflare Pages.
 
 ## Structure
 
-- `content/` - Markdown content files (About, CV, Tools)
-- `config.toml` - Hugo site configuration
-- `assets/scss/` - Custom SCSS styles
-- `static/img/` - Images and logos
-- `themes/` - Hugo theme (hugo-coder-forked)
+- `content/` — About, Now, Projects, Resume
+- `layouts/` — Homepage and head overrides for the portfolio experience
+- `config.toml` — Site configuration, social links, navigation
+- `assets/scss/` — Custom portfolio styles
+- `assets/js/` — Subtle scroll reveal interactions
+- `static/img/` — Images and company logos
+- `themes/` — Hugo Coder theme (git submodule)
 
 ## Development
 

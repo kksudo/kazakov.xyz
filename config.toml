@@ -24,9 +24,9 @@ priority = 0.5
 
 [params]
 author = "Scott Schlangen"
-info = ["Cybersecurity Administrator", "City of Carmel, IN"]
-description = "Scott Schlangen's personal page - Cybersecurity professional specializing in threat analysis, incident response, identity and access management, and compliance"
-keywords = "cybersecurity,threat analysis,incident response,identity management,compliance,cloud security,infosec,soc,security operations,microsoft security"
+info = ["Senior Security Engineer", "Detection · Vulnerability Management · Incident Response"]
+description = "Scott Schlangen — security engineer focused on detection engineering, vulnerability management, incident response, and the automation that keeps security programs running."
+keywords = "cybersecurity,security engineer,detection engineering,incident response,vulnerability management,identity management,compliance,infosec,soc,municipal security,MSSP"
 gravatar = "sschlangen@gmail.com"
 
 faviconSVG = "/img/favicon.svg"
@@ -34,15 +34,12 @@ favicon_32 = "/img/favicon.png"
 
 since = 2012
 enableTwemoji = false
-colorScheme = "auto"
+colorScheme = "dark"
 hidecolorschemetoggle = false
-# Git Commit in Footer, uncomment the line below to enable it
-#commit = "https://github.com/kksudo/kazakov.xyz/tree/"
 powered_by = false
-# Series see also post count
 maxSeeAlsoItems = 5
-# Custom SCSS for minimal, sleek design
 customSCSS = ["scss/custom.scss"]
+customJS = ["js/portfolio.js"]
 
 [taxonomies]
 #tag = "tags"
@@ -62,9 +59,15 @@ weight = 2
 url = "https://www.linkedin.com/in/scottschlangen/"
 target = "_blank"
 [[params.social]]
+name = "Scott's Lab"
+icon = "fa fa-flask fa-2x"
+weight = 3
+url = "https://scottslab.io/"
+target = "_blank"
+[[params.social]]
 name = "scott@scottschlangen.com"
 icon = "fa fa-envelope fa-2x"
-weight = 3
+weight = 4
 url = "mailto:scott@scottschlangen.com"
 target = "_blank"
 
@@ -79,13 +82,18 @@ name = "About"
 weight = 2
 url = "about/"
 [[languages.en.menu.main]]
-name = "Tools & Projects"
+name = "Now"
 weight = 3
+url = "now/"
+[[languages.en.menu.main]]
+name = "Projects"
+weight = 4
 url = "tools/"
 [[languages.en.menu.main]]
-name = "Resume/CV"
+name = "Lab"
 weight = 5
+url = "https://scottslab.io/"
+[[languages.en.menu.main]]
+name = "Resume"
+weight = 6
 url = "cv/"
-
-
-

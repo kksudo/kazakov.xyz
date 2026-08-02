@@ -1,182 +1,146 @@
 +++
-title = "Resume/CV"
-description = "Scott Schlangen - Cybersecurity Professional Resume"
+title = "Resume"
+description = "Scott Schlangen — Security Engineer resume"
 aliases = ["cv", "resume"]
 +++
 
 # Scott Schlangen
 
-<i class="fa fa-envelope"></i> [scott@scottschlangen.com](mailto:scott@scottschlangen.com) | <i class="fa fa-github"></i> [GitHub](https://github.com/schlangens) | <i class="fa fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/scottschlangen)
+**Security Engineer** · Detection Engineering · Vulnerability Management · Incident Response · Security Automation
 
-Cybersecurity professional with extensive experience in threat analysis, incident response, and cloud security operations. Proven track record of implementing security controls, leading incident investigations, and protecting critical infrastructure across private sector and municipal environments. Currently expanding expertise in identity and access management and regulatory compliance through the Microsoft Security Compliance certification path, while pursuing a Bachelor's in Cybersecurity with plans to advance into a Master's in Information Assurance.
+<i class="fa fa-envelope"></i> [scott@scottschlangen.com](mailto:scott@scottschlangen.com) · <i class="fa fa-github"></i> [GitHub](https://github.com/schlangens) · <i class="fa fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/scottschlangen) · <i class="fa fa-pencil"></i> [scottslab.io](https://scottslab.io)
 
-## Career Experience
+Indianapolis, IN · Eastern Time
+
+## Summary
+
+Security engineer with eight years in cybersecurity, currently the incident response lead and vulnerability management owner for municipal government clients as an MSSP subject matter expert. Builds the tooling a security program actually runs on: a Python vulnerability-reporting framework that cut monthly analysis from hours to under 30 seconds, a Rapid7 detection exception that ended a 154-ticket false-positive flood without losing coverage, and a public GitHub of self-built security tooling. Owned a 25+ domain cybersecurity risk program end to end for a city of 100,000 residents, raising its posture score 6.7% in six months. Works across detection engineering, vulnerability management, incident response, IAM, and GRC — with current hands-on experience running AI-agent and MCP-based automation platforms and a certification track (CISSP, Databricks, Google Cloud) aimed at AI security.
+
+## Core Competencies
+
+**Detection Engineering & SIEM** — Rapid7 InsightIDR · Microsoft Sentinel · Microsoft Defender XDR · Wazuh · MITRE ATT&CK mapping · alert tuning · detection rule authoring
+
+**Vulnerability Management** — Rapid7 InsightVM · Tenable Nessus · ConnectSecure · prioritization and remediation at 11,000+ finding scale
+
+**Security Automation** — Python reporting frameworks · scripted ingestion across 40+ segments · dual-format reporting · infrastructure automation
+
+**AI Agent & LLM Tooling** — AI coding agents · MCP-integrated automation · sandboxed execution · credential-scoped workflows
+
+**Incident Response** — IR lead for confirmed intrusions, ATO, BEC, and vendor email compromise · forensic triage · executive and insurer coordination
+
+**Identity & Access** — Microsoft Entra ID · Conditional Access · Active Directory · Duo MFA · Varonis · RBAC / least privilege
+
+**Compliance & Risk (GRC)** — NIST CSF 2.0 · CIS Controls · HIPAA · PCI DSS · ISO 27001 · CJIS · Cynomi risk register · policy authoring
+
+## Experience
+
+### Resultant (MSSP) · Mar 2026 – Present · Remote
+
+**Senior Security Engineer**
+
+Subject matter expert delivering managed cybersecurity services to municipal government clients across Indiana, including a city and county serving 300,000+ residents. Owns security assessments, incident response, vulnerability management, and detection engineering across multi-agency environments spanning public safety, public utilities, and critical infrastructure.
+
+- Authored a Rapid7 detection exception that eliminated a fleet-wide false-positive class generating 154 tickets in a single burst — ending a recurring alert flood without reducing coverage.
+- Serve as incident response lead for a confirmed cryptominer intrusion (XMRig via IIS deserialization) at a major Indiana municipality, running forensic triage, containment scoping, and executive briefing for the CIO and cyber insurance stakeholders.
+- Lead 20–30 documented investigations per month across identity, endpoint, email, and network telemetry, including account takeover, BEC, and a third-party vendor email compromise identified through header analysis where the sender passed SPF, DKIM, and DMARC.
+- Conduct baseline security assessments across municipal clients using ConnectSecure and Rapid7; manage identity security (Entra ID, Conditional Access, Duo, Varonis), endpoint protection (CrowdStrike Falcon, JAMF), and awareness (KnowBe4).
+- Deliver threat intelligence aligned to NIST CSF 2.0 and CIS Controls; author the company-wide security SOP library for the firm’s runbook system of record.
 
 <div class="company-header">
   <img src="/img/logos/carmel.png" alt="City of Carmel" class="company-logo">
-  <h3>City of Carmel, IN</h3>
+  <h3>City of Carmel, Indiana · Sep 2025 – Mar 2026 · Carmel, IN</h3>
 </div>
 
-**Cybersecurity Administrator**
+**System Administrator, Cybersecurity**
 
-- Lead vulnerability management program using Nessus Professional, conducting enterprise-wide scans and coordinating remediation efforts across IT infrastructure.
-- Manage enterprise risk register using Cynomi platform, documenting security controls, entering evidence, and tracking compliance requirements aligned with NIST and municipal standards.
-- Architect and deploy Ansible automation infrastructure, establishing control node for automated Linux patch management and configuration management across municipal systems.
-- Administer Microsoft Entra ID (Azure AD) as primary identity provider, managing user provisioning, access controls, and conducting security investigations for flagged at-risk user accounts.
-- Design and execute monthly phishing simulation campaigns using KnowBe4, selecting realistic attack scenarios, analyzing results, and delivering targeted security awareness training based on user behavior patterns.
-- Serve on Change Management Review Board, evaluating security implications of proposed IT changes and ensuring compliance with security policies and risk tolerance.
-- Deploy and maintain Wazuh SIEM infrastructure with custom detection rules and log decoders, correlating security events across municipal networks and systems.
-- Coordinate with MS-ISAC for threat intelligence sharing, incident response support, and leveraging federal resources for municipal cybersecurity operations.
+Owned the cybersecurity risk program for municipal government infrastructure serving 100,000+ residents across 25+ security policy domains.
+
+- Built a Python reporting framework ingesting exports from 40+ network segments, cutting monthly vulnerability analysis from hours to under 30 seconds with MITRE ATT&CK mappings and dual-format output.
+- Triaged 11,777+ vulnerability findings (3 critical, 112 high-severity) mapped to 39 organizational risks, reducing high-severity hosts 33% (281 to 187) in three months while advancing CJIS compliance to 59% and NIST CSF 2.0 alignment to 55%.
+- Improved cybersecurity posture score 6.7% (5.28 to 6.0) in six months, driving 284 of 553 security tasks to completion and closing 86% of critical-priority items.
+- Assessed critical infrastructure vulnerabilities across water treatment, wastewater, police, fire, and emergency operations networks; authored a 9-section operational runbook and handoff package covering 40+ segments.
+- Reduced phish-prone rate from 25% to 1.8% (93% improvement) across 861 users — ten times better than the 18.6% government sector benchmark — and led an Abnormal AI deployment across 1,051 mailboxes that reduced social-engineering BEC from 13 incidents to 0.
 
 <div class="company-header">
   <img src="/img/logos/quadrant.png" alt="Quadrant Information Security" class="company-logo">
-  <h3>Quadrant Information Security</h3>
+  <h3>Quadrant Information Security · Jan 2024 – Sep 2025 · Remote</h3>
 </div>
 
-**Threat Analyst**
+**Cyber Threat Analyst**
 
-- Monitor network traffic and security alerts to identify and investigate potential cyber threats and incidents from customer sensors.
-- Lead investigations from detection to resolution, owning the entire process without tiered escalation.
-- Analyze log files from multiple sources (host logs, network traffic, firewall logs, IDS logs) to identify, assess, and respond to security incidents.
-- Communicate and report security incidents to customers within SLA timelines, ensuring clear and prompt updates.
-- Proactively hunt for threats, analyze emerging trends, and enhance the organization's detection capabilities.
+- Monitored and analyzed security alerts across client environments using SIEM platforms; performed real-time threat detection, triage, and escalation for managed security operations.
+- Investigated malware, phishing, unauthorized access, and anomalous network activity; refined detection rules and correlation logic to reduce false positives and improve alert fidelity.
 
 <div class="company-header">
-  <img src="/img/logos/mie.png" alt="MIE Medical Information Engineering" class="company-logo">
-  <h3>MIE Medical Information Engineering</h3>
+  <img src="/img/logos/mie.png" alt="Medical Informatics Engineering" class="company-logo">
+  <h3>Medical Informatics Engineering · Apr 2023 – Aug 2023 · Fort Wayne, IN</h3>
 </div>
 
-**AWS DevOps Tech**
+**DevOps Technician**
 
-- Managed cloud infrastructure as code using Terraform and Ansible, automating deployments and reducing manual intervention across AWS environments.
-- Implemented and enforced IAM policies and security best practices to safeguard critical healthcare application resources and ensure HIPAA compliance.
-- Integrated automated security testing and vulnerability scanning within CI/CD pipelines, identifying and mitigating risks early in the development lifecycle.
-- Administered HashiCorp Vault for secrets management, ensuring secure access to sensitive healthcare data and maintaining compliance with industry standards.
-- Deployed and maintained AWS infrastructure supporting electronic health record (EHR) systems, ensuring high availability and disaster recovery capabilities.
+- Managed infrastructure automation, deployment pipelines, and system configuration for an EHR provider in a HIPAA-regulated environment.
+- Automated deployment and configuration management; monitored system health and security events across production healthcare infrastructure.
+
+### CommandLink · Nov 2022 – Jun 2023 · Remote
+
+**Network Engineer**
+
+- Engineered enterprise SD-WAN, MPLS, and cloud connectivity with security as a design requirement.
+- Configured firewalls, VPNs, and network segmentation; collaborated with security teams on network-layer incident response.
+
+### Team Cymru · Apr 2022 – Aug 2022 · Remote
+
+**Client Support Specialist**
+
+- Supported enterprise threat intelligence customers on the Pure Signal platform — IP reputation and network flow analysis — helping Fortune 500 security teams operationalize threat intel feeds into detection and response workflows.
 
 <div class="company-header">
-  <img src="/img/logos/evideon.png" alt="eVideon by Vibe Health" class="company-logo">
-  <h3>eVideon by Vibe Health</h3>
+  <img src="/img/logos/netgain.png" alt="NetGain Technologies" class="company-logo">
+  <h3>NetGain Technologies · Oct 2021 – Apr 2022 · Lexington, KY</h3>
 </div>
 
-**Cloud Systems Engineer**
+**Field Engineer**
 
-- Maximized productivity by building out infrastructure in AWS, ensuring a scalable and reliable environment for operations.
-- Played a key role in the ISO-27001 implementation, aligning security practices with international standards.
-- Assisted in researching and deploying SIEM systems to enhance the organization’s threat detection and response capabilities.
-- Acted as an integral member of the Incident Response Team, leading containment and remediation efforts to mitigate security incidents.
-- Delivered Security Awareness Training and Phishing Campaigns, promoting cybersecurity best practices across the organization.
+- Delivered on-site infrastructure and security support for managed services clients across healthcare, manufacturing, and professional services.
+- Performed network security hardening and firewall rule optimization; managed EDR, patching, and vulnerability remediation under HIPAA and PCI requirements.
 
 <div class="company-header">
-  <img src="/img/logos/netgain.png" alt="4EOS - Netgain Technologies" class="company-logo">
-  <h3>4EOS - Netgain Technologies</h3>
+  <img src="/img/logos/everstream.png" alt="Everstream" class="company-logo">
+  <h3>Everstream · Nov 2020 – Oct 2021 · Remote</h3>
 </div>
 
-**System Engineer**
+**NOC Engineer**
 
-- Streamlined operations by configuring and administering firewall rules, applications, VPNs, and IDS/IPS settings to ensure secure perimeter defense.
-- Reviewed IT systems and applications for large enterprise environments, applying security best practices and principles to protect critical data.
-- Led containment and remediation efforts as a key member of the Incident Response Team, responding swiftly to mitigate security breaches.
-- Promoted end-user security education through Security Awareness Training and Phishing Campaigns, reducing vulnerability to social engineering threats.
-- Collaborated with clients to secure and optimize business IT operations, applying strong relationship-building and technical expertise.
+- Monitored enterprise fiber infrastructure spanning 25,000+ route miles; performed real-time triage via SNMP, syslog, and proprietary platforms; escalated security-relevant events and documented incident timelines.
 
-<div class="company-header">
-  <img src="/img/logos/everstream.png" alt="Everstream Solutions" class="company-logo">
-  <h3>Everstream Solutions</h3>
-</div>
+### Rook Security · 2018 – 2019 · Indianapolis, IN
 
-**Network Operations Center Engineer**
+**Security Operations Center Analyst**
 
-- Spearheaded the resolution of customers' circuit issues, managing the entire process from alert detection to resolution.
-- Monitored network infrastructure, responding to alarms and proactively addressing network issues while ensuring effective customer communication.
-- Consistently met and exceeded performance targets, delivering high-quality service in a fast-paced environment.
+- First dedicated security operations role at a regional MSSP: monitored and triaged security events, performed vulnerability scanning with Tenable Nessus, and escalated confirmed threats with written analysis. Position ended when the company ceased operations.
 
-_Additional Experience as_ **_NOC Service Desk Technician_**, Indiana University, Purdue University Indianapolis; **_Security_** **_Analyst_**, Rook Security, Indianapolis, IN.
+### Earlier experience
 
-## Education
+IT Contractor — Napa Balkamp (2018); Kinney Group (2018, Splunk environment). Subject Matter Expert, Radiology — IU Health (2014–2017). Utility Locator — USIC (2017). Technician — Comcast (2012–2014). Deputy Sheriff — Marion County Sheriff’s Office (2009–2012), working under CJIS with daily incident documentation and evidence handling.
 
-**Western Governors University**
-Bachelor of Science in Cybersecurity | Expected September 2027
+## Projects & Public Work
 
-**Future Academic Goals:** Master of Science in Information Assurance
+- **[Scott’s Lab](https://scottslab.io/)** — Writing and open tools: [Hacking with AI](https://scottslab.io/posts/hacking-with-ai-security-engineers-guide), [Wazuh home-lab SIEM](https://scottslab.io/posts/home-lab-siem-wazuh-custom-detection), [Scrambler](https://scramble.scottslab.io), [WX Dashboard](https://wx.scottslab.io), [CyberChef](https://chef.scottslab.io)
+- **[GitHub](https://github.com/schlangens)** — Public security tooling and home lab automation, including [EventID-Scraper](https://github.com/schlangens/EventID-Scraper)
+- **AI agent tooling** — Hands-on orchestration of AI coding agents and MCP-integrated automation platforms, including scheduled jobs, sandboxed execution, and credential-scoped automation
 
 ## Certifications
 
-**Microsoft Security Compliance (In Progress)**
-- SC-900: Microsoft Security, Compliance, and Identity Fundamentals (Actively Preparing)
-- Pursuing expert-level certifications in Identity and Compliance domains
+**In progress:** CISSP — ISC2 (exam scheduled 24 August 2026) · ISC2 Candidate (through May 2027)
 
-**Industry Certifications**
-- Ransomware Negotiation and Threat Intelligence (Security Blue Team)
-- BTL1 (Security Blue Team)
-- Certified CyberDefender (CCD)
-- CompTIA CySA+
-- CompTIA Security+
-- CompTIA Network+
-- CompTIA Project+
-- CompTIA Cloud+
-- CompTIA Cloud Admin Professional
-- CompTIA Secure Cloud Professional
-- CompTIA Security Analytics Professional
-- ITIL 4 Foundation Certificate in IT Service Management
-- AWS Cloud Practitioner
-- AWS Solutions Architect, Associate
-- Azure Fundamentals (AZ-900)
-- SentinelOne Incident Responder
-- Linux Essentials from LPI
-- JNCIA Juniper Networking Associate
+**Security:** CompTIA CySA+ ce · CompTIA Security+ ce · CompTIA Security Analytics Professional (CSAP) · Blue Team Level 1 (BTL1) · Certified CyberDefender Level 2 (CCDL2) · Wazuh for Security Engineers · Ransomware Negotiation and Threat Intelligence · Microsoft Certified: Security, Compliance and Identity Fundamentals
 
-## Professional and Technical Proficiencies
+**Cloud & Infrastructure:** CompTIA Cloud+ ce · CompTIA Secure Cloud Professional (CSCP) · CompTIA Cloud Admin Professional (CCAP) · AWS Certified Cloud Practitioner · Microsoft Certified: Azure Fundamentals · CompTIA Network+ ce
 
-**Security & Compliance Frameworks**
-- NIST Cybersecurity Framework (CSF)
-- NIST 800-53 Security Controls
-- NIST Risk Management Framework (RMF)
-- ISO 27001 Information Security Management
-- CIS Critical Security Controls
-- CJIS Security Policy
+**Platform & Program:** ConnectSecure Certified Administrator (CCA) · CompTIA Project+ ce
 
-**Risk Management & Governance**
-- Enterprise Risk Assessment & Analysis
-- Security Control Implementation & Testing
-- Vulnerability Management Programs
-- Security Policy Development & Enforcement
-- Compliance Auditing & Reporting
-- Third-Party Risk Assessment
-- Business Impact Analysis
+**Roadmap:** Microsoft AZ-500 and SC-200 following CISSP; Databricks Certified Generative AI Engineer and Google Cloud AI/ML track through 2027.
 
-**Identity & Access Management**
-- Microsoft Entra ID (Azure AD) Administration
-- Privileged Access Management (PAM)
-- Multi-Factor Authentication (MFA)
-- Role-Based Access Control (RBAC)
-- Identity Governance & Lifecycle Management
-- Single Sign-On (SSO) Implementation
+## Education
 
-**Security Operations & Monitoring**
-- SIEM Operations: Microsoft Sentinel, Splunk, Wazuh (custom rules & decoders)
-- Threat Hunting & Intelligence Analysis
-- Security Event Correlation & Analysis
-- Incident Detection & Response
-- Email Security: AbnormalAI (AI-driven threat detection)
-- Security Awareness Training: KnowBe4 platform administration
-- Phishing Simulation & Analysis
-
-**Technical Platforms & Tools**
-- Microsoft Security Stack: Sentinel, Defender, Purview, Entra ID
-- Cloud Platforms: Azure, AWS
-- Vulnerability Management: Nessus Professional
-- Risk Management: Cynomi (GRC platform)
-- Endpoint Security: CrowdStrike, Tanium, SentinelOne
-- SIEM Solutions: Wazuh (deployment, custom rules, decoders), Microsoft Sentinel, Splunk
-- Email Security: AbnormalAI
-- Security Training: KnowBe4 (campaign management)
-- Network Security: Firewalls (Fortigate, Cisco), VPN, IDS/IPS
-- Configuration Management & Automation: Ansible, PowerShell, Python, Bash
-
-## Professional Affiliations
-
-- Multi-State Information Sharing and Analysis Center (MS-ISAC) - Active Member
-- Information Systems Security Association (ISSA) - Local Chapter Member
-- CISA (Cybersecurity and Infrastructure Security Agency)
-- Security Magazine
+**Western Governors University** — B.S. Cybersecurity and Information Assurance (in progress)
