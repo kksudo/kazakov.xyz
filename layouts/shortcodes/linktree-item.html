@@ -1,0 +1,12 @@
+{{- $href := .Get "href" -}}
+{{- $hint := .Get "hint" -}}
+{{- $external := hasPrefix $href "http" -}}
+<li>
+  <a href="{{ $href | safeURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+    <span class="link-tree__rail" aria-hidden="true"></span>
+    {{ trim .Inner " \n\r\t" }}
+    {{- if $hint }}
+    <span class="link-tree__hint">{{ $hint }}</span>
+    {{- end }}
+  </a>
+</li>

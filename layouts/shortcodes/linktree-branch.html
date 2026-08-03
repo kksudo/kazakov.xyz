@@ -1,0 +1,12 @@
+{{- $title := .Get "title" -}}
+{{- $open := ne (.Get "open") "false" -}}
+<div class="link-tree__branch{{ if $open }} is-open{{ end }}">
+  <button class="link-tree__toggle" type="button" aria-expanded="{{ if $open }}true{{ else }}false{{ end }}">
+    <span class="link-tree__branch-mark" aria-hidden="true"></span>
+    {{ $title }}
+    <span class="link-tree__chevron" aria-hidden="true"></span>
+  </button>
+  <ul class="link-tree__list">
+{{ .Inner }}
+  </ul>
+</div>

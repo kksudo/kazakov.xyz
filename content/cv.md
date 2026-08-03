@@ -1,14 +1,63 @@
-+++
-title = "Resume"
-description = "Scott Schlangen — Security Engineer resume"
-aliases = ["cv", "resume"]
-+++
-
-# Scott Schlangen
-
-**Security Engineer** · Detection Engineering · Vulnerability Management · Incident Response · Security Automation
-
-<i class="fa fa-envelope"></i> [scott@scottschlangen.com](mailto:scott@scottschlangen.com) · <i class="fa fa-github"></i> [GitHub](https://github.com/schlangens) · <i class="fa fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/scottschlangen) · <i class="fa fa-pencil"></i> [scottslab.io](https://scottslab.io)
+---
+title: "Resume"
+description: "Scott Schlangen — Security Engineer resume"
+aliases: ["cv", "resume"]
+eyebrow: "Career"
+subtitle: "Detection Engineering · Vulnerability Management · Incident Response · Security Automation"
+sidebar:
+  label: "Connect & work"
+  groups:
+    - title: "Contact"
+      items:
+        - label: "Email"
+          href: "mailto:scott@scottschlangen.com"
+          hint: "Mail"
+        - label: "LinkedIn"
+          href: "https://www.linkedin.com/in/scottschlangen/"
+          hint: "Network"
+        - label: "GitHub"
+          href: "https://github.com/schlangens"
+          hint: "Code"
+        - label: "Scott's Lab"
+          href: "https://scottslab.io/"
+          hint: "Lab"
+    - title: "Writing"
+      items:
+        - label: "Hacking with AI"
+          href: "https://scottslab.io/posts/hacking-with-ai-security-engineers-guide"
+          hint: "AI"
+        - label: "Wazuh home-lab SIEM"
+          href: "https://scottslab.io/posts/home-lab-siem-wazuh-custom-detection"
+          hint: "SIEM"
+        - label: "All Lab posts"
+          href: "https://scottslab.io/posts"
+          hint: "Archive"
+    - title: "Tools"
+      items:
+        - label: "Scrambler"
+          href: "https://scramble.scottslab.io"
+          hint: "PII"
+        - label: "WX Dashboard"
+          href: "https://wx.scottslab.io"
+          hint: "Weather"
+        - label: "CyberChef"
+          href: "https://chef.scottslab.io"
+          hint: "Transform"
+        - label: "EventID-Scraper"
+          href: "https://github.com/schlangens/EventID-Scraper"
+          hint: "Python"
+    - title: "This site"
+      items:
+        - label: "About"
+          href: "/about/"
+          hint: "Story"
+        - label: "Projects"
+          href: "/tools/"
+          hint: "Build"
+        - label: "Now"
+          href: "/now/"
+          hint: "Focus"
+---
 
 Indianapolis, IN · Eastern Time
 
@@ -44,7 +93,7 @@ Subject matter expert delivering managed cybersecurity services to municipal gov
 - Serve as incident response lead for a confirmed cryptominer intrusion (XMRig via IIS deserialization) at a major Indiana municipality, running forensic triage, containment scoping, and executive briefing for the CIO and cyber insurance stakeholders.
 - Lead 20–30 documented investigations per month across identity, endpoint, email, and network telemetry, including account takeover, BEC, and a third-party vendor email compromise identified through header analysis where the sender passed SPF, DKIM, and DMARC.
 - Conduct baseline security assessments across municipal clients using ConnectSecure and Rapid7; manage identity security (Entra ID, Conditional Access, Duo, Varonis), endpoint protection (CrowdStrike Falcon, JAMF), and awareness (KnowBe4).
-- Deliver threat intelligence aligned to NIST CSF 2.0 and CIS Controls; author the company-wide security SOP library for the firm’s runbook system of record.
+- Deliver threat intelligence aligned to NIST CSF 2.0 and CIS Controls; author the company-wide security SOP library for the firm's runbook system of record.
 
 <div class="company-header">
   <img src="/img/logos/carmel.png" alt="City of Carmel" class="company-logo">
@@ -121,17 +170,15 @@ Owned the cybersecurity risk program for municipal government infrastructure ser
 
 ### Earlier experience
 
-IT Contractor — Napa Balkamp (2018); Kinney Group (2018, Splunk environment). Subject Matter Expert, Radiology — IU Health (2014–2017). Utility Locator — USIC (2017). Technician — Comcast (2012–2014). Deputy Sheriff — Marion County Sheriff’s Office (2009–2012), working under CJIS with daily incident documentation and evidence handling.
+IT Contractor — Napa Balkamp (2018); Kinney Group (2018, Splunk environment). Subject Matter Expert, Radiology — IU Health (2014–2017). Utility Locator — USIC (2017). Technician — Comcast (2012–2014). Deputy Sheriff — Marion County Sheriff's Office (2009–2012), working under CJIS with daily incident documentation and evidence handling.
 
 ## Projects & Public Work
 
-- **[Scott’s Lab](https://scottslab.io/)** — Writing and open tools: [Hacking with AI](https://scottslab.io/posts/hacking-with-ai-security-engineers-guide), [Wazuh home-lab SIEM](https://scottslab.io/posts/home-lab-siem-wazuh-custom-detection), [Scrambler](https://scramble.scottslab.io), [WX Dashboard](https://wx.scottslab.io), [CyberChef](https://chef.scottslab.io)
-- **[GitHub](https://github.com/schlangens)** — Public security tooling and home lab automation, including [EventID-Scraper](https://github.com/schlangens/EventID-Scraper)
-- **AI agent tooling** — Hands-on orchestration of AI coding agents and MCP-integrated automation platforms, including scheduled jobs, sandboxed execution, and credential-scoped automation
+Hands-on orchestration of AI coding agents and MCP-integrated automation platforms, including scheduled jobs, sandboxed execution, and credential-scoped automation. Public writing, tools, and repositories are linked in the sidebar.
 
 ## Certifications
 
-**In progress:** CISSP — ISC2 (exam scheduled 24 August 2026) · ISC2 Candidate (through May 2027)
+**In progress:** CISSP — ISC2 (exam scheduled August 24, 2026) · ISC2 Candidate (through May 2027)
 
 **Security:** CompTIA CySA+ ce · CompTIA Security+ ce · CompTIA Security Analytics Professional (CSAP) · Blue Team Level 1 (BTL1) · Certified CyberDefender Level 2 (CCDL2) · Wazuh for Security Engineers · Ransomware Negotiation and Threat Intelligence · Microsoft Certified: Security, Compliance and Identity Fundamentals
 

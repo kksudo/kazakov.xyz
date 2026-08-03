@@ -1,0 +1,11 @@
+{{- $href := .Get "href" -}}
+{{- $eyebrow := .Get "eyebrow" | default "Link" -}}
+{{- $external := hasPrefix $href "http" -}}
+<a class="link-tree__root" href="{{ $href | safeURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+  <span class="link-tree__glyph" aria-hidden="true"></span>
+  <span class="link-tree__root-text">
+    <span class="link-tree__eyebrow">{{ $eyebrow }}</span>
+    {{ trim .Inner " \n\r\t" }}
+  </span>
+  <span class="link-tree__go" aria-hidden="true">{{ if $external }}↗{{ else }}→{{ end }}</span>
+</a>

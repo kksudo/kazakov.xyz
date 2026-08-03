@@ -47,13 +47,13 @@ customJS = ["js/portfolio.js"]
 
 # Social links
 [[params.social]]
-name = "Github"
+name = "GitHub"
 icon = "fa fa-github fa-2x"
 weight = 1
 url = "https://github.com/schlangens"
 target = "_blank"
 [[params.social]]
-name = "Linkedin"
+name = "LinkedIn"
 icon = "fa fa-linkedin fa-2x"
 weight = 2
 url = "https://www.linkedin.com/in/scottschlangen/"

@@ -1,0 +1,36 @@
+<section class="page-shell{{ if .Params.sidebar }} page-shell--split{{ end }}">
+  <div class="page-shell__atmosphere" aria-hidden="true"></div>
+  <div class="page-shell__inner">
+    <div class="page-layout{{ if .Params.sidebar }} page-layout--with-toc{{ end }}">
+      <article class="page-main">
+        <header class="page-header">
+          <p class="portfolio-label">{{ .Params.eyebrow | default "Portfolio" }}</p>
+          <h1 class="page-title">
+            <a class="title-link" href="{{ .Permalink | safeURL }}">
+              {{ .Title }}
+            </a>
+          </h1>
+          {{ with .Params.subtitle }}
+          <p class="page-subtitle">{{ . }}</p>
+          {{ end }}
+        </header>
+
+        <div class="page-body">
+          {{ .Content }}
+        </div>
+      </article>
+
+      {{ with .Params.sidebar }}
+      <aside class="page-toc" aria-label="{{ .label | default "Explore" }}">
+        <div class="page-toc__inner">
+          <div class="page-toc__label">{{ .label | default "Explore" }}</div>
+          {{ partial "link-tree.html" (dict
+            "compact" true
+            "branches" .groups
+          ) }}
+        </div>
+      </aside>
+      {{ end }}
+    </div>
+  </div>
+</section>
