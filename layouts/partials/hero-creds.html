@@ -3,7 +3,6 @@
   Root → full Credly profile; each row → that badge’s Credly or Learn page.
 */}}
 {{- $credlyProfile := "https://www.credly.com/users/scott-schlangen/badges" -}}
-{{- $msLearn := "https://learn.microsoft.com/en-us/users/sschlangen/credentials?tab=credentials-tab" -}}
 <aside class="hero-creds" aria-label="Credentials">
   <div class="link-tree link-tree--creds" data-link-tree>
     <a class="link-tree__root" href="{{ $credlyProfile }}" target="_blank" rel="noopener">
@@ -29,10 +28,10 @@
         (dict "src" "img/certs/az-900.png" "name" "AZ-900" "org" "Microsoft Azure" "hint" "Fundamentals" "href" "https://learn.microsoft.com/en-us/users/sschlangen/credentials/certification/azure-fundamentals?tab=credentials-tab")
       ))
       (dict "title" "Microsoft · in progress" "items" (slice
-        (dict "name" "SC-300" "org" "Identity & Access" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-200" "org" "Security Operations" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-500" "org" "Security Administration" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-100" "org" "Cybersecurity Architect" "hint" "Target: end of year" "progress" true "href" $msLearn)
+        (dict "name" "SC-300" "org" "Identity & Access" "hint" "Studying" "progress" true "href" "https://learn.microsoft.com/en-us/credentials/certifications/identity-and-access-administrator/?practice-assessment-type=certification")
+        (dict "name" "SC-200" "org" "Security Operations" "hint" "Studying" "progress" true "href" "https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification")
+        (dict "name" "SC-500" "org" "Cloud & AI Security" "hint" "Studying" "progress" true "href" "https://learn.microsoft.com/en-us/credentials/certifications/cloud-and-ai-security-engineer-associate/?practice-assessment-type=certification")
+        (dict "name" "SC-100" "org" "Cybersecurity Architect" "hint" "Target: end of year" "progress" true "href" "https://learn.microsoft.com/en-us/credentials/certifications/cybersecurity-architect-expert/")
       ))
     }}
     <div class="link-tree__branch is-open">
