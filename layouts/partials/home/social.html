@@ -1,0 +1,16 @@
+{{ with .Site.Params.social }}
+<ul>
+  {{ range sort . "weight" }}
+    {{ $mailto := hasPrefix .url "mailto:" }}
+    <li>
+      {{ if .icon }}
+        <a href="{{ .url | safeURL }}" aria-label="{{ .name }}"{{ if $mailto }} data-email="{{ strings.TrimPrefix "mailto:" .url }}"{{ end }}{{ if .rel }} rel="{{ .rel }}"{{ end }}{{ if and .target (not $mailto) }} target="{{ .target }}"{{ end }}{{ if .type }} type="{{ .type }}"{{ end }}>
+          <i class="{{ .icon }}" aria-hidden="true"></i>
+        </a>
+      {{ else }}
+        <a href="{{ .url | safeURL }}" aria-label="{{ .name }}"{{ if $mailto }} data-email="{{ strings.TrimPrefix "mailto:" .url }}"{{ end }}{{ if .rel }} rel="{{ .rel }}"{{ end }}{{ if and .target (not $mailto) }} target="{{ .target }}"{{ end }}>{{ .name }}</a>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

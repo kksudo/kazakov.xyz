@@ -1,8 +1,9 @@
 {{- $href := .Get "href" -}}
 {{- $hint := .Get "hint" -}}
 {{- $external := hasPrefix $href "http" -}}
+{{- $mailto := hasPrefix $href "mailto:" -}}
 <li>
-  <a href="{{ $href | safeURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+  <a href="{{ $href | safeURL }}"{{ if $mailto }} data-email="{{ strings.TrimPrefix "mailto:" $href }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>
     <span class="link-tree__rail" aria-hidden="true"></span>
     {{ trim .Inner " \n\r\t" }}
     {{- if $hint }}

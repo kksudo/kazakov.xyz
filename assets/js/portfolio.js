@@ -46,6 +46,17 @@
     });
   }
 
+  function initEmailLinks() {
+    document.querySelectorAll("a[data-email]").forEach(function (link) {
+      var email = link.getAttribute("data-email");
+      if (!email) return;
+
+      link.href = "mailto:" + email;
+      link.removeAttribute("target");
+    });
+  }
+
   initReveals();
   initLinkTrees();
+  initEmailLinks();
 })();

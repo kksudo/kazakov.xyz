@@ -31,7 +31,7 @@
     <ul class="link-tree__list">
       {{- range .items }}
       <li>
-        <a href="{{ .href | safeURL }}"{{ if hasPrefix .href "http" }} target="_blank" rel="noopener"{{ end }}>
+        <a href="{{ .href | safeURL }}"{{ if hasPrefix .href "mailto:" }} data-email="{{ strings.TrimPrefix "mailto:" .href }}"{{ end }}{{ if hasPrefix .href "http" }} target="_blank" rel="noopener"{{ end }}>
           <span class="link-tree__rail" aria-hidden="true"></span>
           {{ .label }}
           {{- with .hint }}

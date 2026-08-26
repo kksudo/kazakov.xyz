@@ -69,7 +69,6 @@ name = "scott@scottschlangen.com"
 icon = "fa fa-envelope fa-2x"
 weight = 4
 url = "mailto:scott@scottschlangen.com"
-target = "_blank"
 
 
 # Menu links
