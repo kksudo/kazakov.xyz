@@ -28,3 +28,10 @@ hugo --minify --gc
 ## Deployment
 
 Deployed to [Cloudflare Pages](https://pages.cloudflare.com/) via GitHub Actions on push to `main`.
+
+Required GitHub repository secrets (Settings → Secrets and variables → Actions):
+
+- `CF_API_TOKEN` — Cloudflare API token with **Cloudflare Pages — Edit**
+- `CF_ACCOUNT_ID` — Cloudflare account ID (dashboard sidebar)
+
+If deploys fail with `Missing CF_API_TOKEN`, the live site will stay on the last successful deployment until those secrets are added and the workflow is re-run.
