@@ -29,10 +29,10 @@
         (dict "src" "img/certs/az-900.png" "name" "AZ-900" "org" "Microsoft Azure" "hint" "Fundamentals" "href" "https://learn.microsoft.com/en-us/users/sschlangen/credentials/certification/azure-fundamentals?tab=credentials-tab")
       ))
       (dict "title" "Microsoft · in progress" "items" (slice
-        (dict "name" "SC-300" "org" "Microsoft Identity" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-200" "org" "Microsoft Security Ops" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-500" "org" "Microsoft Security Admin" "hint" "Studying" "progress" true "href" $msLearn)
-        (dict "name" "SC-100" "org" "Microsoft Cybersecurity Architect" "hint" "By end of year" "progress" true "href" $msLearn)
+        (dict "name" "SC-300" "org" "Identity & Access" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-200" "org" "Security Operations" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-500" "org" "Security Administration" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-100" "org" "Cybersecurity Architect" "hint" "Target: end of year" "progress" true "href" $msLearn)
       ))
     }}
     <div class="link-tree__branch is-open">
@@ -55,11 +55,13 @@
             {{- end }}
             <span class="hero-cred__text">
               <span class="hero-cred__name">{{ .name }}</span>
-              <span class="hero-cred__org">{{ .org }}</span>
+              <span class="hero-cred__meta">
+                <span class="hero-cred__org">{{ .org }}</span>
+                {{- with .hint }}
+                <span class="hero-cred__hint">{{ . }}</span>
+                {{- end }}
+              </span>
             </span>
-            {{- with .hint }}
-            <span class="link-tree__hint">{{ . }}</span>
-            {{- end }}
           </a>
         </li>
         {{- end }}
