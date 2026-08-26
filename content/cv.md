@@ -184,7 +184,7 @@ Hands-on orchestration of AI coding agents and MCP-integrated automation platfor
 
 **Security:** CompTIA CySA+ ce · CompTIA Security+ ce · CompTIA Security Analytics Professional (CSAP) · Blue Team Level 1 (BTL1) · Certified CyberDefender Level 2 (CCDL2) · Wazuh for Security Engineers · Ransomware Negotiation and Threat Intelligence
 
-**Cloud & Infrastructure:** CompTIA Cloud+ ce · CompTIA Secure Cloud Professional (CSCP) · CompTIA Cloud Admin Professional (CCAP) · AWS Certified Cloud Practitioner · Microsoft Certified: Azure Fundamentals · CompTIA Network+ ce
+**Cloud & Infrastructure:** CompTIA Cloud+ ce · CompTIA Secure Cloud Professional (CSCP) · CompTIA Cloud Admin Professional (CCAP) · AWS Certified Cloud Practitioner · Microsoft Certified: Azure Fundamentals · Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900) · CompTIA Network+ ce
 
 **Platform & Program:** ConnectSecure Certified Administrator (CCA) · CompTIA Project+ ce
 
