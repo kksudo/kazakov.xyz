@@ -58,8 +58,9 @@ sidebar:
 
 ### Learning
 
-- Preparing for the **CISSP** exam on August 24, 2026 (ISC2 Candidate through May 2027)
-- Next up: Microsoft AZ-500 and SC-200, then Databricks Generative AI Engineer and Google Cloud AI/ML through 2027
+- **CISSP** — exam passed; waiting on ISC2 endorsement review
+- Working through Microsoft **SC-300**, **SC-200**, **SC-500**, and **SC-100** by end of 2026
+- Later: Databricks Generative AI Engineer and Google Cloud AI/ML through 2027
 - Building hands-on experience with AI coding agents and MCP-integrated automation platforms
 
 ### Base

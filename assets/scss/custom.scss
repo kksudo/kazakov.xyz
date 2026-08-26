@@ -419,6 +419,20 @@ hr {
   object-fit: contain;
 }
 
+.hero-cred__logo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.45rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--fog) 55%, transparent);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--accent-deep);
+}
+
 .hero-cred__text {
   display: flex;
   flex-direction: column;

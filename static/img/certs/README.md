@@ -11,6 +11,5 @@ Downloaded from images.credly.com (issuer badge templates) for personal portfoli
 | network-plus.png | CompTIA Network+ ce |
 | aws-ccp.png | AWS Certified Cloud Practitioner |
 | az-900.png | Microsoft Azure Fundamentals |
-| sc-900.png | Microsoft Security, Compliance, and Identity Fundamentals |
 | btl1.png | Blue Team Level 1 |
-| cissp.png | ISC2 CISSP (shown as in progress) |
+| cissp.png | ISC2 CISSP (endorsement pending) |

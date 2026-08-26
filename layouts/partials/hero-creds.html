@@ -1,8 +1,9 @@
 {{/*
-  Credentials rail — link-tree list with official Credly badge logos.
-  Root → full Credly profile; each row → that badge’s Credly page.
+  Credentials rail — link-tree list with official badge logos.
+  Root → full Credly profile; each row → that badge’s Credly or Learn page.
 */}}
 {{- $credlyProfile := "https://www.credly.com/users/scott-schlangen/badges" -}}
+{{- $msLearn := "https://learn.microsoft.com/en-us/users/sschlangen/credentials?tab=credentials-tab" -}}
 <aside class="hero-creds" aria-label="Credentials">
   <div class="link-tree link-tree--creds" data-link-tree>
     <a class="link-tree__root" href="{{ $credlyProfile }}" target="_blank" rel="noopener">
@@ -19,14 +20,19 @@
         (dict "src" "img/certs/cysa.png" "name" "CySA+" "org" "CompTIA" "hint" "CE" "href" "https://www.credly.com/badges/e0f1cfd8-aa0f-43ed-aef4-af08497ff984")
         (dict "src" "img/certs/security-plus.png" "name" "Security+" "org" "CompTIA" "hint" "CE" "href" "https://www.credly.com/badges/daff6a72-0fd8-462a-9a1c-73c6572de7d7")
         (dict "src" "img/certs/btl1.png" "name" "BTL1" "org" "Security Blue Team" "hint" "Blue" "href" "https://www.credly.com/badges/cf5db216-149f-4bd5-964c-b1a3e4f4c877")
-        (dict "src" "img/certs/sc-900.png" "name" "SC-900" "org" "Microsoft" "hint" "Security" "href" "https://learn.microsoft.com/en-us/users/sschlangen/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab")
-        (dict "src" "img/certs/cissp.png" "name" "CISSP" "org" "ISC2 Candidate" "hint" "In progress" "progress" true "href" "https://www.credly.com/badges/cc01b844-1da0-4f43-9679-81d4da3906e9")
+        (dict "src" "img/certs/cissp.png" "name" "CISSP" "org" "ISC2" "hint" "Endorsement pending" "progress" true "href" $credlyProfile)
       ))
       (dict "title" "Cloud & infra" "items" (slice
         (dict "src" "img/certs/cloud-plus.png" "name" "Cloud+" "org" "CompTIA" "hint" "CE" "href" "https://www.credly.com/badges/28221ef2-152f-46ab-b463-93188b67e4c9")
         (dict "src" "img/certs/network-plus.png" "name" "Network+" "org" "CompTIA" "hint" "CE" "href" "https://www.credly.com/badges/303b7aeb-6553-416f-a297-69e435d122de")
         (dict "src" "img/certs/aws-ccp.png" "name" "Cloud Practitioner" "org" "AWS" "hint" "Foundational" "href" "https://www.credly.com/badges/4d5cfcfe-1dc1-44b9-a381-528d2ac8e0e1")
         (dict "src" "img/certs/az-900.png" "name" "AZ-900" "org" "Microsoft Azure" "hint" "Fundamentals" "href" "https://learn.microsoft.com/en-us/users/sschlangen/credentials/certification/azure-fundamentals?tab=credentials-tab")
+      ))
+      (dict "title" "Microsoft · in progress" "items" (slice
+        (dict "name" "SC-300" "org" "Microsoft Identity" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-200" "org" "Microsoft Security Ops" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-500" "org" "Microsoft Security Admin" "hint" "Studying" "progress" true "href" $msLearn)
+        (dict "name" "SC-100" "org" "Microsoft Cybersecurity Architect" "hint" "By end of year" "progress" true "href" $msLearn)
       ))
     }}
     <div class="link-tree__branch is-open">
@@ -40,9 +46,13 @@
         {{- $href := .href | default $credlyProfile -}}
         <li>
           <a class="hero-cred{{ if .progress }} hero-cred--progress{{ end }}" href="{{ $href | safeURL }}" target="_blank" rel="noopener">
+            {{- with .src }}
             <span class="hero-cred__logo">
-              <img src="{{ .src | relURL }}" alt="" width="64" height="64" loading="lazy">
+              <img src="{{ . | relURL }}" alt="" width="64" height="64" loading="lazy">
             </span>
+            {{- else }}
+            <span class="hero-cred__logo hero-cred__logo--placeholder" aria-hidden="true">MS</span>
+            {{- end }}
             <span class="hero-cred__text">
               <span class="hero-cred__name">{{ .name }}</span>
               <span class="hero-cred__org">{{ .org }}</span>

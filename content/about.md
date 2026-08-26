@@ -62,4 +62,4 @@ I got here the long way: a county sheriff's office, cable installation, a hospit
 
 The Lab is where that work gets published: home-lab SIEM with custom detections, forensics pipelines, Ansible/Ludus automation, open tools, and notes on AI in security ops. I also keep public security utilities on GitHub and experiment with AI coding agents and MCP-integrated automation in sandboxed, credential-scoped setups.
 
-I'm working toward the ISC2 CISSP (exam booked for August 2026) and finishing a B.S. in Cybersecurity and Information Assurance at Western Governors University.
+I passed the ISC2 CISSP exam and am waiting on endorsement review, I'm working through Microsoft's SC-300 → SC-200 → SC-500 → SC-100 track by end of year, and I'm finishing a B.S. in Cybersecurity and Information Assurance at Western Governors University.

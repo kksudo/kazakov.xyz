@@ -63,7 +63,7 @@ Indianapolis, IN · Eastern Time
 
 ## Summary
 
-Security engineer with eight years in cybersecurity, currently the incident response lead and vulnerability management owner for municipal government clients as an MSSP subject matter expert. Builds the tooling a security program actually runs on: a Python vulnerability-reporting framework that cut monthly analysis from hours to under 30 seconds, a Rapid7 detection exception that ended a 154-ticket false-positive flood without losing coverage, and a public GitHub of self-built security tooling. Owned a 25+ domain cybersecurity risk program end to end for a city of 100,000 residents, raising its posture score 6.7% in six months. Works across detection engineering, vulnerability management, incident response, IAM, and GRC — with current hands-on experience running AI-agent and MCP-based automation platforms and a certification track (CISSP, Databricks, Google Cloud) aimed at AI security.
+Security engineer with eight years in cybersecurity, currently the incident response lead and vulnerability management owner for municipal government clients as an MSSP subject matter expert. Builds the tooling a security program actually runs on: a Python vulnerability-reporting framework that cut monthly analysis from hours to under 30 seconds, a Rapid7 detection exception that ended a 154-ticket false-positive flood without losing coverage, and a public GitHub of self-built security tooling. Owned a 25+ domain cybersecurity risk program end to end for a city of 100,000 residents, raising its posture score 6.7% in six months. Works across detection engineering, vulnerability management, incident response, IAM, and GRC — with current hands-on experience running AI-agent and MCP-based automation platforms and a Microsoft security certification track (SC-300 through SC-100) alongside CISSP endorsement.
 
 ## Core Competencies
 
@@ -178,15 +178,17 @@ Hands-on orchestration of AI coding agents and MCP-integrated automation platfor
 
 ## Certifications
 
-**In progress:** CISSP — ISC2 (exam scheduled August 24, 2026) · ISC2 Candidate (through May 2027)
+**Pending:** CISSP — ISC2 (exam passed; endorsement review in progress)
 
-**Security:** CompTIA CySA+ ce · CompTIA Security+ ce · CompTIA Security Analytics Professional (CSAP) · Blue Team Level 1 (BTL1) · Certified CyberDefender Level 2 (CCDL2) · Wazuh for Security Engineers · Ransomware Negotiation and Threat Intelligence · Microsoft Certified: Security, Compliance and Identity Fundamentals
+**In progress:** Microsoft SC-300 · SC-200 · SC-500 · SC-100 (target: end of 2026)
+
+**Security:** CompTIA CySA+ ce · CompTIA Security+ ce · CompTIA Security Analytics Professional (CSAP) · Blue Team Level 1 (BTL1) · Certified CyberDefender Level 2 (CCDL2) · Wazuh for Security Engineers · Ransomware Negotiation and Threat Intelligence
 
 **Cloud & Infrastructure:** CompTIA Cloud+ ce · CompTIA Secure Cloud Professional (CSCP) · CompTIA Cloud Admin Professional (CCAP) · AWS Certified Cloud Practitioner · Microsoft Certified: Azure Fundamentals · CompTIA Network+ ce
 
 **Platform & Program:** ConnectSecure Certified Administrator (CCA) · CompTIA Project+ ce
 
-**Roadmap:** Microsoft AZ-500 and SC-200 following CISSP; Databricks Certified Generative AI Engineer and Google Cloud AI/ML track through 2027.
+**Roadmap:** Databricks Certified Generative AI Engineer and Google Cloud AI/ML track through 2027.
 
 ## Education
 
