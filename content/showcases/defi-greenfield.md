@@ -3,7 +3,7 @@ title = "\"We're launching a FinTech/DeFi product and need infra that holds from
 description = "CTO at Aura X Capital: AWS from scratch (EKS, Terraform, FluxCD), reusable CI/CD for ~20 services, observability stack, custom CDN. 350k+ users, 60k MAU, 1.2B+ transactions."
 date = "2026-08-27"
 weight = 0
-keywords = ["DeFi infrastructure", "FinTech startup", "greenfield AWS", "EKS", "FluxCD", "CTO", "TON", "Kirill Kazakov"]
+keywords = ["DeFi infrastructure", "FinTech startup", "greenfield AWS", "EKS", "FluxCD", "CTO", "Kirill Kazakov"]
 category = "DeFi · Greenfield"
 +++
 
