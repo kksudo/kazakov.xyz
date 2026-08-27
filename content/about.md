@@ -7,15 +7,13 @@ aliases = ["about", "about-us", "about-kirill", "contact"]
 
 **I build platforms that let engineering teams ship faster and sleep better.**
 
-> Open to senior Platform/DevOps roles — remote (UTC+3) or relocation worldwide. [Get in touch](mailto:k@kazakov.xyz?subject=Role).
-
 ---
 
-17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability — the things that let teams move fast without breaking things. Day to day that includes SLO/SLI design, incident response, post-mortems, and 4 Golden Signals dashboards.
+17 years in IT. 9+ deep in Kubernetes, AWS, Terraform, and CI/CD. I focus on developer experience, self-service platforms, and observability. Day to day that includes SLO/SLI design, incident response, post-mortems, and 4 Golden Signals dashboards.
 
 **Part-time CTO at [Aura X Capital](https://aura-x.co/)** — architecting the platform end-to-end for a DeFi/FinTech product with 350k+ users and 1.2B+ transactions.
 
-Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family. On the AWS side I owned projects from business case to delivery: Scope of Work, **AWS Well-Architected reviews**, MORA/MODA assessments — within an official AWS Partner, where my client migrations qualified for AWS partner funding.
+Previously at **[GlobalDots](https://www.globaldots.com/)** — DevOps as a Service across FinTech, AI Security, and Government. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family. On the AWS side I owned projects from business case to delivery: Scope of Work, AWS Well-Architected reviews, MORA/MODA assessments. All of it inside an official AWS Partner, where my client migrations qualified for AWS partner funding.
 
 ## CV / Résumé
 

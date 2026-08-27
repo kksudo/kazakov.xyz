@@ -7,4 +7,4 @@ keywords = ["scaling infrastructure", "greenfield AWS", "platform engineering", 
 category = "Scale · Architecture"
 +++
 
-I've architected greenfield AWS for 350k+ users and 1.2B+ transactions, built self-service CI/CD for ~20 services from day one, and helped product and platform scale together. Platform engineering and developer experience are what make that sustainable.
+I've architected greenfield AWS for 350k+ users and 1.2B+ transactions, built self-service CI/CD for ~20 services from day one, and helped product and platform scale together.
