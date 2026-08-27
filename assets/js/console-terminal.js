@@ -24,18 +24,18 @@
     console.log('%c  certs       %c— certifications', GREEN, WHITE);
     console.log('%c  contact     %c— reach out', GREEN, WHITE);
     console.log('%c  projects    %c— open source', GREEN, WHITE);
-    console.log('%c  hire        %c— you know what to do', GREEN, WHITE);
+    console.log('%c  consult     %c— audits and architecture reviews', GREEN, WHITE);
     console.log('%c  sudo("...")  %c— try anything', YELLOW, WHITE);
     return '💡 Pro tip: try sudo("hire-me")';
   };
 
   window.whoami = function () {
     console.log('%c Kirill Kazakov', BOLD);
-    console.log('%c Platform & DevOps Engineer · CTO · Author', MONO);
+    console.log('%c CTO · Platform & DevOps Engineer · Author', MONO);
     console.log('%c 17 years in IT, 9+ in Kubernetes/AWS/Terraform', MONO);
     console.log('%c Currently: CTO @ Aura X Capital (350k+ users, 1.2B+ tx)', MONO);
     console.log('%c Previously: GlobalDots (DevOps as a Service)', MONO);
-    return 'Saint Petersburg, Russia';
+    return 'Remote, UTC+3';
   };
 
   window.skills = function () {
@@ -78,9 +78,10 @@
     return 'Star ⭐ if you like it';
   };
 
-  window.hire = function () {
-    console.log('%c 🚀 Interested in working together?', BOLD);
+  window.consult = function () {
+    console.log('%c 🚀 Fixed-scope audits, architecture reviews, hourly consulting', BOLD);
     console.log('%c', 'font-size:1px;padding:40px 120px;background:url(https://kazakov.xyz/img/og-image.png) no-repeat center/contain');
+    console.log('%c  Showcases and pricing: kazakov.xyz/showcases', MONO);
     console.log('%c  Reach out: k@kazakov.xyz', MONO);
     console.log('%c  Or connect on LinkedIn: linkedin.com/in/kazakovk', MONO);
     return 'Looking forward to it! 🤝';
@@ -93,7 +94,7 @@
     if (cmd === 'hire-me') {
       console.log('%c', 'font-size:40px', '🎉');
       console.log('%c ACCESS GRANTED', 'color:#4caf50;font-size:20px;font-weight:bold');
-      console.log('%c Sending CV to your inbox...', MONO);
+      console.log('%c Provisioning a CTO to your cluster...', MONO);
       console.log('%c Just kidding. But seriously:', MONO);
       console.log('%c → k@kazakov.xyz', GREEN);
       console.log('%c → linkedin.com/in/kazakovk', GREEN);
