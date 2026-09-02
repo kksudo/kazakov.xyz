@@ -15,4 +15,4 @@ Downloaded from images.credly.com (issuer badge templates) for personal portfoli
 | btl1.png | Blue Team Level 1 |
 | ccdl2.png | Certified CyberDefender Level 2 (CCDL2) |
 | ransomware-negotiation.png | Ransomware Negotiation and Threat Intelligence |
-| cissp.png | ISC2 CISSP (endorsement pending) |
+| cissp.png | ISC2 CISSP |

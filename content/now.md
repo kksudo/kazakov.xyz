@@ -58,7 +58,7 @@ sidebar:
 
 ### Learning
 
-- **CISSP** — exam passed; waiting on ISC2 endorsement review
+- Earned **CISSP** (ISC2)
 - Working through Microsoft **SC-300**, **SC-200**, **SC-500**, and **SC-100** by end of 2026
 - Later: Databricks Generative AI Engineer and Google Cloud AI/ML through 2027
 - Building hands-on experience with AI coding agents and MCP-integrated automation platforms
@@ -68,4 +68,4 @@ sidebar:
 - Indianapolis, IN (Eastern Time)
 - Clear problems, honest trade-offs, and tooling operators will actually use
 
-*Last updated: August 2026*
+*Last updated: September 2026*
