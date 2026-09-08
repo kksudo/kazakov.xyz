@@ -78,14 +78,23 @@ body.colorscheme-dark::before {
   z-index: 1;
 }
 
-// Konami hint — sits below social links, fades in then out
+// Konami hint — gamepad + key sequence, always visible, brighter on hover
 .konami-hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
   text-align: center;
   font-family: "SF Mono", Consolas, monospace;
   font-size: 1.2rem;
   margin: 1.5rem 0 0;
-  opacity: 0;
-  animation: hint-ghost 20s 3s ease-in-out forwards;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 
   kbd {
     font-family: inherit;
@@ -98,12 +107,88 @@ body.colorscheme-dark::before {
   }
 }
 
-@keyframes hint-ghost {
-  0%   { opacity: 0; }
-  5%   { opacity: 0.25; }
-  15%  { opacity: 0.25; }
-  20%  { opacity: 0; }
-  100% { opacity: 0; }
+// NES gamepad next to the hint
+.konami-pad {
+  display: block;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 20rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pad-btn {
+    transition: fill 0.08s ease;
+  }
+
+  .pad-btn.pressed {
+    fill: $link-color;
+  }
+}
+
+@mixin konami-pad-dark {
+  .konami-hint {
+    opacity: 0.35;
+  }
+
+  .konami-pad .pad-btn.pressed {
+    fill: $link-color-dark;
+  }
+}
+
+body.colorscheme-dark {
+  @include konami-pad-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include konami-pad-dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .konami-pad .pad-btn {
+    transition: none;
+  }
+}
+
+// ============================================
+// Toasty! — bottom-right pop-in after the Konami code
+// ============================================
+
+.toasty {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  pointer-events: none;
+  transform: translateX(110%);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+
+  img {
+    display: block;
+    width: 24rem;
+    max-width: 60vw;
+    height: auto;
+  }
+
+  &.toasty-show {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toasty {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    &.toasty-show {
+      opacity: 1;
+    }
+  }
 }
 
 // ============================================

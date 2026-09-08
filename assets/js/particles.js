@@ -146,13 +146,115 @@
   // ↑↑↓↓←→←→BA
   // ============================================
 
-  var konamiSeq = [38,38,40,40,37,39,37,39,66,65];
+  // Sequence in pad slots, so it never depends on the keyboard layout
+  var konamiSeq = ['up','up','down','down','left','right','left','right','b','a'];
+
+  // Physical key (e.code) first — that is layout- and case-independent by definition.
+  // e.key covers browsers without e.code, and carries the Russian layout: physical
+  // B and A type "и" and "ф" when someone forgets to switch back.
+  var padByCode = {
+    ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right',
+    KeyB: 'b', KeyA: 'a'
+  };
+  var padByKey = {
+    arrowup: 'up', arrowdown: 'down', arrowleft: 'left', arrowright: 'right',
+    b: 'b', a: 'a', 'и': 'b', 'ф': 'a'
+  };
+  var padByKeyCode = { 38: 'up', 40: 'down', 37: 'left', 39: 'right', 66: 'b', 65: 'a' };
+
+  function padSlot(e) {
+    if (e.code && padByCode[e.code]) return padByCode[e.code];
+    if (e.key && padByKey[e.key.toLowerCase()]) return padByKey[e.key.toLowerCase()];
+    return padByKeyCode[e.keyCode] || null;
+  }
   var konamiPos = 0;
   var konamiActive = false;
+
+  // Gamepad hint: cycle the code on the SVG pad, and mirror real key presses
+  var padBtns = {};
+  var padNodes = document.querySelectorAll('.konami-pad .pad-btn');
+  for (var n = 0; n < padNodes.length; n++) {
+    padBtns[padNodes[n].getAttribute('data-key')] = padNodes[n];
+  }
+
+  var padDemoTimer = null;
+  var padDemoStep = 0;
+  var padLiveUntil = 0;
+
+  function padClear() {
+    for (var k in padBtns) padBtns[k].classList.remove('pressed');
+  }
+
+  function padPress(key) {
+    padClear();
+    if (padBtns[key]) padBtns[key].classList.add('pressed');
+  }
+
+  function padDemoTick() {
+    // Stay out of the way while the visitor is actually typing the code
+    if (Date.now() < padLiveUntil) return;
+    // Three idle ticks between loops so the sequence reads as a sequence
+    if (padDemoStep < konamiSeq.length) {
+      padPress(konamiSeq[padDemoStep]);
+    } else {
+      padClear();
+    }
+    padDemoStep = (padDemoStep + 1) % (konamiSeq.length + 3);
+  }
+
+  function padDemoStop() {
+    if (padDemoTimer) {
+      clearInterval(padDemoTimer);
+      padDemoTimer = null;
+    }
+  }
+
+  function padDemoStart() {
+    if (!padDemoTimer) padDemoTimer = setInterval(padDemoTick, 420);
+  }
+
+  // Run the loop only while the pad is actually on screen, so a decorative
+  // element does not keep a timer alive for the whole page lifetime
+  var padEl = document.querySelector('.konami-pad');
+  if (padEl && padNodes.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          padDemoStart();
+        } else {
+          padDemoStop();
+          padClear();
+        }
+      }).observe(padEl);
+    } else {
+      padDemoStart();
+    }
+  }
 
   function hueForAngle(angle) {
     // Rainbow colors based on angle
     return 'hsl(' + angle + ',90%,60%)';
+  }
+
+  // Toasty! — Dan Forden pops in at the peak of the explosion, MK-on-Genesis style.
+  // Both halves are optional: the markup only renders the parts whose asset exists.
+  function playToasty() {
+    var audio = document.getElementById('toasty-audio');
+    if (audio) {
+      audio.currentTime = 0;
+      var played = audio.play();
+      // Autoplay policy or a broken file rejects the promise; the pop-in still happens
+      if (played && played.catch) played.catch(function () {});
+    }
+
+    var box = document.getElementById('toasty');
+    var img = document.getElementById('toasty-img');
+    if (!box || !img || !img.complete || !img.naturalWidth) return;
+
+    box.classList.add('toasty-show');
+    setTimeout(function () {
+      box.classList.remove('toasty-show');
+    }, 1600);
   }
 
   function triggerKonami() {
@@ -285,6 +387,9 @@
       setTimeout(function () { overlay.remove(); }, 500);
     }
 
+    // Toasty at the peak of the explosion
+    setTimeout(playToasty, 600);
+
     // Start: dismiss panel on outside click (with delay so the triggering keypress doesn't count)
     setTimeout(function () {
       document.addEventListener('click', dismissPanel);
@@ -295,14 +400,25 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    if (e.keyCode === konamiSeq[konamiPos]) {
+    // Keys outside the pad (modifiers, Tab) are ignored rather than treated as
+    // a wrong key — holding Shift to type B must not kill a correct attempt
+    var slot = padSlot(e);
+    if (!slot) return;
+
+    // Light up the key the visitor actually pressed and hold off the demo loop
+    padLiveUntil = Date.now() + 2000;
+    padPress(slot);
+
+    if (slot === konamiSeq[konamiPos]) {
       konamiPos++;
       if (konamiPos === konamiSeq.length) {
         konamiPos = 0;
+        padDemoStop();
         triggerKonami();
       }
     } else {
-      konamiPos = 0;
+      // Restarting from the first key still counts as a start
+      konamiPos = slot === konamiSeq[0] ? 1 : 0;
     }
   });
 })();
