@@ -209,8 +209,26 @@
     }
   }
 
-  if (padNodes.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    padDemoTimer = setInterval(padDemoTick, 420);
+  function padDemoStart() {
+    if (!padDemoTimer) padDemoTimer = setInterval(padDemoTick, 420);
+  }
+
+  // Run the loop only while the pad is actually on screen, so a decorative
+  // element does not keep a timer alive for the whole page lifetime
+  var padEl = document.querySelector('.konami-pad');
+  if (padEl && padNodes.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          padDemoStart();
+        } else {
+          padDemoStop();
+          padClear();
+        }
+      }).observe(padEl);
+    } else {
+      padDemoStart();
+    }
   }
 
   function hueForAngle(angle) {
@@ -382,11 +400,10 @@
   }
 
   document.addEventListener('keydown', function (e) {
+    // Keys outside the pad (modifiers, Tab) are ignored rather than treated as
+    // a wrong key — holding Shift to type B must not kill a correct attempt
     var slot = padSlot(e);
-    if (!slot) {
-      konamiPos = 0;
-      return;
-    }
+    if (!slot) return;
 
     // Light up the key the visitor actually pressed and hold off the demo loop
     padLiveUntil = Date.now() + 2000;

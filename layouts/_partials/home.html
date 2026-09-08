@@ -6,7 +6,7 @@
 {{ if or $toastyImg $toastySound }}
 <div class="toasty" id="toasty" aria-hidden="true">
   {{ with $toastyImg }}<img src="{{ .RelPermalink }}" alt="" id="toasty-img">{{ end }}
-  {{ with $toastySound }}<audio id="toasty-audio" preload="auto" src="{{ .RelPermalink }}"></audio>{{ end }}
+  {{ with $toastySound }}<audio id="toasty-audio" preload="none" src="{{ .RelPermalink }}"></audio>{{ end }}
 </div>
 {{ end }}<section class="container centered">
   <div class="about">
@@ -63,13 +63,5 @@
 
   {{ partialCached "home/extensions.html" . }}
 </section>
-
-{{/* Toasty! — Dan Forden pops in after the Konami code, MK-on-Genesis style.
-     Both files are optional and gitignored: drop static/img/toasty.png and
-     static/audio/toasty.mp3 in place to arm it. Missing files = no easter egg. */}}
-<div class="toasty" id="toasty" aria-hidden="true">
-  <img src="/img/toasty.png" alt="" id="toasty-img">
-  <audio id="toasty-audio" preload="none" src="/audio/toasty.mp3"></audio>
-</div>
 
 {{ partialCached "home/sections.html" . }}
