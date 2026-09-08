@@ -16,7 +16,49 @@
 
     {{ partialCached "home/social.html" . }}
 
-    <p class="konami-hint" id="konami-hint">try: <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></p>
+    <p class="konami-hint" id="konami-hint">
+      <span class="konami-pad">
+        <svg viewBox="0 0 220 96" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="pad-shell" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e6e6e2"/>
+              <stop offset="1" stop-color="#c9c9c3"/>
+            </linearGradient>
+            <linearGradient id="pad-button" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e04a45"/>
+              <stop offset="1" stop-color="#b71f1c"/>
+            </linearGradient>
+          </defs>
+
+          <!-- shell -->
+          <rect x="2" y="2" width="216" height="92" rx="5" fill="url(#pad-shell)" stroke="#8f8f89" stroke-width="1.5"/>
+          <rect x="9" y="9" width="202" height="78" rx="3" fill="none" stroke="#7a1f1f" stroke-width="1.5"/>
+
+          <!-- D-pad -->
+          <path d="M38 25h16v15h15v16H54v15H38V56H23V40h15z" fill="#1c1c1c"/>
+          <rect class="pad-btn" data-key="up"    x="38" y="25" width="16" height="15" fill="transparent"/>
+          <rect class="pad-btn" data-key="down"  x="38" y="56" width="16" height="15" fill="transparent"/>
+          <rect class="pad-btn" data-key="left"  x="23" y="40" width="15" height="16" fill="transparent"/>
+          <rect class="pad-btn" data-key="right" x="54" y="40" width="15" height="16" fill="transparent"/>
+          <circle cx="46" cy="48" r="7" fill="#2c2c2c"/>
+
+          <!-- select / start panel -->
+          <rect x="78" y="30" width="64" height="36" rx="3" fill="#1c1c1c"/>
+          <rect x="84" y="40" width="22" height="8" rx="4" fill="url(#pad-button)"/>
+          <rect x="114" y="40" width="22" height="8" rx="4" fill="url(#pad-button)"/>
+          <text x="95" y="60" text-anchor="middle" font-size="6" fill="#d8d8d4" font-family="Helvetica, Arial, sans-serif">SELECT</text>
+          <text x="125" y="60" text-anchor="middle" font-size="6" fill="#d8d8d4" font-family="Helvetica, Arial, sans-serif">START</text>
+
+          <!-- B / A -->
+          <rect x="144" y="33" width="68" height="32" rx="16" fill="#1c1c1c"/>
+          <circle class="pad-btn" data-key="b" cx="163" cy="49" r="11" fill="url(#pad-button)"/>
+          <circle class="pad-btn" data-key="a" cx="193" cy="49" r="11" fill="url(#pad-button)"/>
+          <text x="163" y="79" text-anchor="middle" font-size="9" fill="#3a3a3a" font-family="Helvetica, Arial, sans-serif">B</text>
+          <text x="193" y="79" text-anchor="middle" font-size="9" fill="#3a3a3a" font-family="Helvetica, Arial, sans-serif">A</text>
+        </svg>
+      </span>
+      <span class="konami-hint-text">try: <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></span>
+    </p>
   </div>
 
   {{ partialCached "home/extensions.html" . }}
