@@ -146,12 +146,31 @@
   // ↑↑↓↓←→←→BA
   // ============================================
 
-  var konamiSeq = [38,38,40,40,37,39,37,39,66,65];
+  // Sequence in pad slots, so it never depends on the keyboard layout
+  var konamiSeq = ['up','up','down','down','left','right','left','right','b','a'];
+
+  // Physical key (e.code) first — that is layout- and case-independent by definition.
+  // e.key covers browsers without e.code, and carries the Russian layout: physical
+  // B and A type "и" and "ф" when someone forgets to switch back.
+  var padByCode = {
+    ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right',
+    KeyB: 'b', KeyA: 'a'
+  };
+  var padByKey = {
+    arrowup: 'up', arrowdown: 'down', arrowleft: 'left', arrowright: 'right',
+    b: 'b', a: 'a', 'и': 'b', 'ф': 'a'
+  };
+  var padByKeyCode = { 38: 'up', 40: 'down', 37: 'left', 39: 'right', 66: 'b', 65: 'a' };
+
+  function padSlot(e) {
+    if (e.code && padByCode[e.code]) return padByCode[e.code];
+    if (e.key && padByKey[e.key.toLowerCase()]) return padByKey[e.key.toLowerCase()];
+    return padByKeyCode[e.keyCode] || null;
+  }
   var konamiPos = 0;
   var konamiActive = false;
 
   // Gamepad hint: cycle the code on the SVG pad, and mirror real key presses
-  var padKeys = { 38: 'up', 40: 'down', 37: 'left', 39: 'right', 66: 'b', 65: 'a' };
   var padBtns = {};
   var padNodes = document.querySelectorAll('.konami-pad .pad-btn');
   for (var n = 0; n < padNodes.length; n++) {
@@ -176,7 +195,7 @@
     if (Date.now() < padLiveUntil) return;
     // Three idle ticks between loops so the sequence reads as a sequence
     if (padDemoStep < konamiSeq.length) {
-      padPress(padKeys[konamiSeq[padDemoStep]]);
+      padPress(konamiSeq[padDemoStep]);
     } else {
       padClear();
     }
@@ -363,24 +382,26 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    if (e.keyCode === konamiSeq[konamiPos]) {
+    var slot = padSlot(e);
+    if (!slot) {
+      konamiPos = 0;
+      return;
+    }
+
+    // Light up the key the visitor actually pressed and hold off the demo loop
+    padLiveUntil = Date.now() + 2000;
+    padPress(slot);
+
+    if (slot === konamiSeq[konamiPos]) {
       konamiPos++;
-      // Light up the key the visitor actually pressed and hold off the demo loop
-      padLiveUntil = Date.now() + 2000;
-      padPress(padKeys[e.keyCode]);
       if (konamiPos === konamiSeq.length) {
         konamiPos = 0;
         padDemoStop();
         triggerKonami();
       }
     } else {
-      konamiPos = 0;
       // Restarting from the first key still counts as a start
-      if (e.keyCode === konamiSeq[0]) konamiPos = 1;
-      if (padKeys[e.keyCode]) {
-        padLiveUntil = Date.now() + 2000;
-        padPress(padKeys[e.keyCode]);
-      }
+      konamiPos = slot === konamiSeq[0] ? 1 : 0;
     }
   });
 })();
