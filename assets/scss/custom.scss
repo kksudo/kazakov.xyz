@@ -107,6 +107,43 @@ body.colorscheme-dark::before {
 }
 
 // ============================================
+// Toasty! — bottom-right pop-in after the Konami code
+// ============================================
+
+.toasty {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  pointer-events: none;
+  transform: translateX(110%);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+
+  img {
+    display: block;
+    width: 24rem;
+    max-width: 60vw;
+    height: auto;
+  }
+
+  &.toasty-show {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toasty {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    &.toasty-show {
+      opacity: 1;
+    }
+  }
+}
+
+// ============================================
 // Konami quick-links panel
 // ============================================
 

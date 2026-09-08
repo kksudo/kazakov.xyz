@@ -155,6 +155,27 @@
     return 'hsl(' + angle + ',90%,60%)';
   }
 
+  // Toasty! — Dan Forden pops in at the peak of the explosion, MK-on-Genesis style.
+  // Both halves are optional: the markup only renders the parts whose asset exists.
+  function playToasty() {
+    var audio = document.getElementById('toasty-audio');
+    if (audio) {
+      audio.currentTime = 0;
+      var played = audio.play();
+      // Autoplay policy or a broken file rejects the promise; the pop-in still happens
+      if (played && played.catch) played.catch(function () {});
+    }
+
+    var box = document.getElementById('toasty');
+    var img = document.getElementById('toasty-img');
+    if (!box || !img || !img.complete || !img.naturalWidth) return;
+
+    box.classList.add('toasty-show');
+    setTimeout(function () {
+      box.classList.remove('toasty-show');
+    }, 1600);
+  }
+
   function triggerKonami() {
     if (konamiActive) return;
     konamiActive = true;
@@ -284,6 +305,9 @@
       overlay.style.opacity = '0';
       setTimeout(function () { overlay.remove(); }, 500);
     }
+
+    // Toasty at the peak of the explosion
+    setTimeout(playToasty, 600);
 
     // Start: dismiss panel on outside click (with delay so the triggering keypress doesn't count)
     setTimeout(function () {
