@@ -34,10 +34,6 @@ opencode.json
 # CV PDFs are by-request only, never committed
 static/files/
 
-# Toasty! easter egg assets — third-party sample and frame, never committed
-assets/sound/toasty.*
-assets/img/toasty.*
-
 # Other
 .playwright/
 .playwright-mcp/
