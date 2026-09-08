@@ -150,6 +150,50 @@
   var konamiPos = 0;
   var konamiActive = false;
 
+  // Gamepad hint: cycle the code on the SVG pad, and mirror real key presses
+  var padKeys = { 38: 'up', 40: 'down', 37: 'left', 39: 'right', 66: 'b', 65: 'a' };
+  var padBtns = {};
+  var padNodes = document.querySelectorAll('.konami-pad .pad-btn');
+  for (var n = 0; n < padNodes.length; n++) {
+    padBtns[padNodes[n].getAttribute('data-key')] = padNodes[n];
+  }
+
+  var padDemoTimer = null;
+  var padDemoStep = 0;
+  var padLiveUntil = 0;
+
+  function padClear() {
+    for (var k in padBtns) padBtns[k].classList.remove('pressed');
+  }
+
+  function padPress(key) {
+    padClear();
+    if (padBtns[key]) padBtns[key].classList.add('pressed');
+  }
+
+  function padDemoTick() {
+    // Stay out of the way while the visitor is actually typing the code
+    if (Date.now() < padLiveUntil) return;
+    // Three idle ticks between loops so the sequence reads as a sequence
+    if (padDemoStep < konamiSeq.length) {
+      padPress(padKeys[konamiSeq[padDemoStep]]);
+    } else {
+      padClear();
+    }
+    padDemoStep = (padDemoStep + 1) % (konamiSeq.length + 3);
+  }
+
+  function padDemoStop() {
+    if (padDemoTimer) {
+      clearInterval(padDemoTimer);
+      padDemoTimer = null;
+    }
+  }
+
+  if (padNodes.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    padDemoTimer = setInterval(padDemoTick, 420);
+  }
+
   function hueForAngle(angle) {
     // Rainbow colors based on angle
     return 'hsl(' + angle + ',90%,60%)';
@@ -297,12 +341,22 @@
   document.addEventListener('keydown', function (e) {
     if (e.keyCode === konamiSeq[konamiPos]) {
       konamiPos++;
+      // Light up the key the visitor actually pressed and hold off the demo loop
+      padLiveUntil = Date.now() + 2000;
+      padPress(padKeys[e.keyCode]);
       if (konamiPos === konamiSeq.length) {
         konamiPos = 0;
+        padDemoStop();
         triggerKonami();
       }
     } else {
       konamiPos = 0;
+      // Restarting from the first key still counts as a start
+      if (e.keyCode === konamiSeq[0]) konamiPos = 1;
+      if (padKeys[e.keyCode]) {
+        padLiveUntil = Date.now() + 2000;
+        padPress(padKeys[e.keyCode]);
+      }
     }
   });
 })();
