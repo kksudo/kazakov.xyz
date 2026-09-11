@@ -9,6 +9,9 @@ sidebar:
   groups:
     - title: "Writing"
       items:
+        - label: "SOAR lab write-up"
+          href: "https://soardemo.scottslab.io/writeup"
+          hint: "SOAR"
         - label: "Hacking with AI"
           href: "https://scottslab.io/posts/hacking-with-ai-security-engineers-guide"
           hint: "Ops"
@@ -34,9 +37,9 @@ sidebar:
           hint: "Transform"
     - title: "GitHub"
       items:
-        - label: "EventID-Scraper"
-          href: "https://github.com/schlangens/EventID-Scraper"
-          hint: "Python"
+        - label: "soar-lab"
+          href: "https://github.com/schlangens/soar-lab"
+          hint: "SOAR"
         - label: "Public tooling"
           href: "https://github.com/schlangens"
           hint: "Profile"
@@ -61,7 +64,7 @@ sidebar:
 - Earned **CISSP** (ISC2)
 - Working through Microsoft **SC-300**, **SC-200**, **SC-500**, and **SC-100** by end of 2026
 - Later: Databricks Generative AI Engineer and Google Cloud AI/ML through 2027
-- Building hands-on experience with AI coding agents and MCP-integrated automation platforms
+- Building hands-on experience with AI coding agents and MCP-integrated automation platforms; the [SOAR lab](https://soardemo.scottslab.io) is the current test bed
 
 ### Base
 
