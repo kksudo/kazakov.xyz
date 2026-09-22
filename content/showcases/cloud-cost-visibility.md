@@ -5,6 +5,7 @@ date = "2026-02-18"
 weight = 5
 keywords = ["cloud cost", "KEDA", "Karpenter", "cost visibility", "right-sizing", "FinOps", "Kubernetes cost", "Kirill Kazakov"]
 category = "FinOps · Cost"
+stage = "Tune it"
 metric = "&minus;5%"
 metricLabel = "infra cost"
 +++

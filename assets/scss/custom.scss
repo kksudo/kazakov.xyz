@@ -335,18 +335,18 @@ body.colorscheme-dark {
   }
 }
 
-// Showcases page — editorial rows: index, the question, the answer.
-// No boxes: hairline rules carry the rhythm instead. Colours mirror the
-// theme variables ($link-color #1565c0 / #42a5f5, $alt-bg-color #e0e0e0 /
-// #424242) so the page stays the same site as the home page and About.
+// Showcases page — a tree: one trunk, a branch per platform stage, cases
+// hanging off it. Colours mirror the theme variables ($link-color
+// #1565c0 / #42a5f5, $alt-bg-color #e0e0e0 / #424242) so the page reads as
+// the same site as the home page and About.
 .content .showcases {
-  max-width: 120rem;
+  max-width: 104rem;
   margin-left: auto;
   margin-right: auto;
 
   header {
     margin-top: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
   }
 
   header h1 {
@@ -358,40 +358,101 @@ body.colorscheme-dark {
     font-size: 1.05em;
     color: #555;
     margin: 0;
-    max-width: 46ch;
+    max-width: 52ch;
   }
 
-  .showcase-rows {
-    border-top: 1px solid #e0e0e0;
-  }
+  // The trunk
+  .showcase-tree {
+    position: relative;
+    padding-left: 4rem;
 
-  .showcase-row {
-    display: grid;
-    grid-template-columns: 5rem minmax(0, 1fr);
-    column-gap: 3.2rem;
-    padding: 4rem 0;
-    border-bottom: 1px solid #e0e0e0;
-    align-items: start;
-
-    @media (min-width: 860px) {
-      grid-template-columns: 6rem minmax(0, 1fr) minmax(0, 1.05fr);
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.7rem;
+      top: 1rem;
+      bottom: 1rem;
+      width: 2px;
+      background: #e0e0e0;
     }
   }
 
-  .showcase-index {
-    margin: 0.6rem 0 0;
-    font-size: 1.3rem;
-    color: #8a8a8a;
-    font-variant-numeric: tabular-nums;
+  .showcase-branch {
+    position: relative;
+    padding-bottom: 4.5rem;
 
-    @media (max-width: 859px) {
-      grid-row: 1;
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .showcase-stage {
+    position: relative;
+    margin-bottom: 2.4rem;
+
+    // The node on the trunk
+    &::before {
+      content: "";
+      position: absolute;
+      left: -4rem;
+      top: 0.9rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 5px;
+      background: #1565c0;
+      box-shadow: 0 0 0 6px #fafafa;
+    }
+
+    h2 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+      margin: 0.4rem 0 0;
+      font-size: 1.5rem;
+      color: #666;
+    }
+  }
+
+  // A case hanging off the branch
+  .showcase-leaf {
+    position: relative;
+    padding: 0 0 2.6rem 3.6rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e0e0e0;
+    }
+
+    // The twig reaching the case
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.3rem;
+      width: 2.4rem;
+      height: 2px;
+      background: #e0e0e0;
+    }
+
+    &:last-child::before {
+      bottom: auto;
+      height: 1.3rem;
     }
   }
 
   .showcase-tag {
-    margin: 0;
-    font-size: 1.2rem;
+    margin: 0 0 0.3rem;
+    font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -399,44 +460,21 @@ body.colorscheme-dark {
   }
 
   .showcase-question {
-    margin: 0.8rem 0 0;
-    font-size: 2.8rem;
-    line-height: 1.18;
-    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+    font-size: 1.95rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
     font-weight: 600;
   }
 
-  .showcase-metric {
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    margin: 1.8rem 0 0;
-
-    b {
-      font-size: 3.4rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    span {
-      font-size: 1.3rem;
-      color: #777;
-    }
-  }
-
   .showcase-answer {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 1.6;
     color: #555;
+    max-width: 78ch;
 
-    @media (max-width: 859px) {
-      grid-column: 1 / -1;
-      margin-top: 1.6rem;
-    }
-
-    // The theme justifies and hyphenates every <p> in .content; in a narrow
-    // column that opens rivers and breaks words mid-line.
+    // The theme justifies and hyphenates every <p> in .content, which opens
+    // rivers and breaks words mid-line at this measure.
     p {
       margin: 0 0 0.8rem;
       text-align: left;
@@ -448,22 +486,55 @@ body.colorscheme-dark {
     }
   }
 
+  .showcase-metric {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin: 1.2rem 0 0;
+    padding: 0.5rem 1.3rem;
+    border-radius: 980px;
+    background: rgba(21, 101, 192, 0.08);
+
+    b {
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    span {
+      font-size: 1.15rem;
+      color: #666;
+    }
+  }
+
   .showcases-cta {
-    margin: 5rem 0 2rem;
+    margin: 4rem 0 2rem;
     text-align: center;
     font-size: 1.9rem;
+  }
+
+  @media (max-width: 640px) {
+    .showcase-tree { padding-left: 2.6rem; }
+    .showcase-stage::before { left: -2.6rem; }
+    .showcase-leaf { padding-left: 2.4rem; }
+    .showcase-leaf::after { width: 1.6rem; }
   }
 }
 
 // Dark theme for Showcases (shared by explicit dark and auto+dark)
 @mixin showcases-dark-theme {
   .intro { color: #a0a0a0; }
-  .showcase-rows { border-top-color: #424242; }
-  .showcase-row { border-bottom-color: #424242; }
-  .showcase-index { color: #777; }
+  .showcase-tree::before,
+  .showcase-leaf::before,
+  .showcase-leaf::after { background: #424242; }
+  .showcase-stage::before { background: #42a5f5; box-shadow: 0 0 0 6px #212121; }
+  .showcase-stage p { color: #9a9a9a; }
   .showcase-tag { color: #42a5f5; }
-  .showcase-metric span { color: #999; }
   .showcase-answer { color: #b0b0b0; }
+  .showcase-metric {
+    background: rgba(66, 165, 245, 0.14);
+    span { color: #9a9a9a; }
+  }
 }
 
 body.colorscheme-dark .content .showcases {

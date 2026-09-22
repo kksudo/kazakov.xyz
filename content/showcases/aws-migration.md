@@ -5,6 +5,7 @@ date = "2026-02-18"
 weight = 4
 keywords = ["AWS migration", "cloud migration", "MORA", "MODA", "cloud architecture", "Kirill Kazakov"]
 category = "AWS · Migration"
+stage = "Build it"
 +++
 
 I've run SoW-based AWS assessments, MORA/MODA-driven analysis, and designed both target architecture and migration architecture for multiple clients. Outcome: a clear path from current state to production-ready cloud.

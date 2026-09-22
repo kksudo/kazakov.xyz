@@ -2,6 +2,7 @@
 {{ define "content" }}
 {{ $contact := "mailto:k@kazakov.xyz" }}
 {{ with (index (where .Site.Params.social "name" "k@kazakov.xyz") 0) }}{{ $contact = .url }}{{ end }}
+{{ $cases := sort .Paginator.Pages ".Params.weight" }}
 <section class="container list showcases">
   <header>
     <h1 class="title">
@@ -14,21 +15,41 @@
     {{ end }}
   </header>
 
-  <div class="showcase-rows">
-    {{ range $i, $case := sort .Paginator.Pages ".Params.weight" }}
-    <article class="showcase-row">
-      <p class="showcase-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</p>
-      <div class="showcase-ask">
+  {{/* One branch per stage, in the order the section front matter lists them.
+       A case with no stage still renders, in an unlabelled branch at the end. */}}
+  <div class="showcase-tree">
+    {{ range .Params.stages }}
+    {{ $stage := . }}
+    {{ with where $cases "Params.stage" $stage.name }}
+    <section class="showcase-branch">
+      <div class="showcase-stage">
+        <h2>{{ $stage.name }}</h2>
+        {{ with $stage.tagline }}<p>{{ . }}</p>{{ end }}
+      </div>
+      {{ range $case := . }}
+      <article class="showcase-leaf">
         {{ with $case.Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
-        <h2 class="showcase-question">{{ $case.Title }}</h2>
+        <h3 class="showcase-question">{{ $case.Title }}</h3>
+        <div class="showcase-answer">{{ $case.Content }}</div>
         {{ with $case.Params.metric }}
         <p class="showcase-metric"><b>{{ . | safeHTML }}</b><span>{{ $case.Params.metricLabel }}</span></p>
         {{ end }}
-      </div>
-      <div class="showcase-answer">
-        {{ $case.Content }}
-      </div>
-    </article>
+      </article>
+      {{ end }}
+    </section>
+    {{ end }}
+    {{ end }}
+
+    {{ with where $cases "Params.stage" nil }}
+    <section class="showcase-branch">
+      {{ range $case := . }}
+      <article class="showcase-leaf">
+        {{ with $case.Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
+        <h3 class="showcase-question">{{ $case.Title }}</h3>
+        <div class="showcase-answer">{{ $case.Content }}</div>
+      </article>
+      {{ end }}
+    </section>
     {{ end }}
   </div>
 
