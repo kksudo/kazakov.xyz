@@ -14,20 +14,26 @@
     {{ end }}
   </header>
 
-  <div class="showcases-cards">
-    {{ range $i, $page := sort .Paginator.Pages ".Params.weight" }}
-    <article class="showcase-card{{ if eq $i 0 }} showcase-card-lead{{ end }}">
-      {{ with $page.Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
-      <h2 class="showcase-quote">{{ $page.Title }}</h2>
-      <div class="showcase-outcome">
-        {{ $page.Content }}
+  <div class="showcase-rows">
+    {{ range $i, $case := sort .Paginator.Pages ".Params.weight" }}
+    <article class="showcase-row">
+      <p class="showcase-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</p>
+      <div class="showcase-ask">
+        {{ with $case.Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
+        <h2 class="showcase-question">{{ $case.Title }}</h2>
+        {{ with $case.Params.metric }}
+        <p class="showcase-metric"><b>{{ . | safeHTML }}</b><span>{{ $case.Params.metricLabel }}</span></p>
+        {{ end }}
+      </div>
+      <div class="showcase-answer">
+        {{ $case.Content }}
       </div>
     </article>
     {{ end }}
   </div>
 
-  <div class="showcases-cta-block">
-    Want to discuss your stack? <a href="{{ $contact }}">Get in touch</a>.
-  </div>
+  <p class="showcases-cta">
+    Want to discuss your stack? <a href="{{ $contact }}">Get in touch &rsaquo;</a>
+  </p>
 </section>
 {{ end }}
