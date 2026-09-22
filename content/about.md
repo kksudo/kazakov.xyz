@@ -1,11 +1,11 @@
 +++
 title = "About"
-description = "Kirill Kazakov — platform and DevOps engineer, Kubernetes and AWS. Co-author of the Kubernetes Cookbook, instructor, hackathon judge. 17 years in IT."
+description = "Kirill Kazakov — CTO at Aura X Capital, an RWA-in-DeFi platform. Platform and DevOps engineer, Kubernetes and AWS. Co-author of the Kubernetes Cookbook, instructor, hackathon judge. 17 years in IT."
 date = "2022-11-08T12:43:38+03:00"
 aliases = ["about", "about-us", "about-kirill", "contact"]
 +++
 
-**Platform and DevOps engineer. Kubernetes and AWS. 17 years in IT, 9 of them running Kubernetes in production.**
+**CTO at Aura X Capital, an RWA-in-DeFi platform. Platform and DevOps engineer — Kubernetes and AWS, 17 years in IT, 9 of them running Kubernetes in production.**
 
 ---
 
