@@ -5,6 +5,7 @@ date = "2026-02-18"
 weight = 2
 keywords = ["observability", "Grafana", "Prometheus", "Loki", "OpenTelemetry", "SRE", "incident response", "Golden Signals", "Kirill Kazakov"]
 category = "Observability · SRE"
+stage = "Run it"
 metric = "3 h &rarr; s"
 metricLabel = "node warm-up"
 +++

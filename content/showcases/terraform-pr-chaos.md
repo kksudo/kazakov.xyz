@@ -5,6 +5,7 @@ date = "2026-02-18"
 weight = 6
 keywords = ["Terraform", "Atlantis", "IaC", "GitOps", "infrastructure as code", "Terraform workflow", "Kirill Kazakov"]
 category = "Terraform · GitOps"
+stage = "Ship it"
 +++
 
 Atlantis (or similar): plan and apply right in the pull request. Reviewers see `terraform plan` output, approvals gate apply, and state stays consistent. Terraform changes become reviewable and safe instead of "run plan locally and hope."

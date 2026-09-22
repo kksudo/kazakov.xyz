@@ -5,6 +5,7 @@ date = "2026-02-18"
 weight = 3
 keywords = ["scaling infrastructure", "greenfield AWS", "platform engineering", "developer experience", "startup DevOps", "DeFi infra", "Kirill Kazakov"]
 category = "Scale · Architecture"
+stage = "Run it"
 metric = "100+"
 metricLabel = "microservices"
 +++

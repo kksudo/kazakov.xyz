@@ -5,6 +5,7 @@ date = "2026-08-27"
 weight = 0
 keywords = ["DeFi infrastructure", "FinTech startup", "greenfield AWS", "EKS", "FluxCD", "CTO", "Kirill Kazakov"]
 category = "DeFi · Greenfield"
+stage = "Build it"
 metric = "1.2B+"
 metricLabel = "transactions"
 +++
