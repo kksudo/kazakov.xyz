@@ -337,7 +337,9 @@ body.colorscheme-dark {
 
 // Showcases page — case cards
 .content .showcases {
-  max-width: 72rem;
+  // Wider than the theme's 90rem container: nine cases are a lot of text,
+  // and three or four columns need the room.
+  max-width: 132rem;
   margin-left: auto;
   margin-right: auto;
 
@@ -369,6 +371,11 @@ body.colorscheme-dark {
 
     @media (min-width: 1000px) {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    // Eight cases follow the lead one, so four columns fill exactly two rows.
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -403,6 +410,27 @@ body.colorscheme-dark {
     .showcase-outcome {
       font-size: 1.05em;
       max-width: 52rem;
+    }
+
+    // Full width would leave the answer hanging in a 52rem column with a
+    // hole beside it, so the lead splits: question left, answer right.
+    @media (min-width: 1000px) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      column-gap: 3rem;
+      align-items: start;
+
+      .showcase-tag {
+        grid-column: 1 / -1;
+      }
+
+      .showcase-quote {
+        margin-bottom: 0;
+      }
+
+      .showcase-outcome {
+        max-width: none;
+      }
     }
   }
 
