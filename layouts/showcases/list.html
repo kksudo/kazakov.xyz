@@ -3,31 +3,40 @@
 {{ $contact := "mailto:k@kazakov.xyz" }}
 {{ with (index (where .Site.Params.social "name" "k@kazakov.xyz") 0) }}{{ $contact = .url }}{{ end }}
 <section class="container list showcases">
-  <header>
-    <h1 class="title">
-      <a class="title-link" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-    </h1>
-    {{ with .Content }}
-    <div class="intro">{{ . }}</div>
-    {{ else }}
-    <p class="intro">Common problems teams bring me — and what the fix looked like.</p>
-    {{ end }}
-  </header>
+  <div class="showcases-shell">
 
-  <div class="showcases-cards">
-    {{ range $i, $page := sort .Paginator.Pages ".Params.weight" }}
-    <article class="showcase-card{{ if eq $i 0 }} showcase-card-lead{{ end }}">
-      {{ with $page.Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
-      <h2 class="showcase-quote">{{ $page.Title }}</h2>
-      <div class="showcase-outcome">
-        {{ $page.Content }}
-      </div>
-    </article>
-    {{ end }}
-  </div>
+    {{/* The same card as the home page — avatar, name, one line, the social
+         row — so this page reads as the second half of that page. */}}
+    <aside class="showcases-card">
+      {{ partialCached "home/avatar.html" . }}
+      <p class="showcases-name">{{ .Site.Params.author }}</p>
+      <p class="showcases-role">{{ index .Site.Params.info 0 }}</p>
+      {{ with .Content }}<div class="showcases-blurb">{{ . }}</div>{{ end }}
+      <div class="showcases-social">{{ partialCached "home/social.html" . }}</div>
+      <p class="showcases-contact"><a href="{{ $contact }}">Get in touch &rsaquo;</a></p>
+    </aside>
 
-  <div class="showcases-cta-block">
-    Want to discuss your stack? <a href="{{ $contact }}">Get in touch</a>.
+    <div class="showcases-list">
+      <h1 class="showcases-heading">{{ .Title }}</h1>
+
+      {{ range $case := sort .Paginator.Pages ".Params.weight" }}
+      <article class="case">
+        <p class="case-meta">{{ replace $case.Params.category " · " "<br>" | safeHTML }}</p>
+        <div class="case-main">
+          <h2 class="case-title">{{ $case.Title }}</h2>
+          {{ with $case.Params.ask }}<p class="case-ask">&ldquo;{{ . }}&rdquo;</p>{{ end }}
+          <div class="case-text">{{ $case.Content }}</div>
+          <ul class="case-chips">
+            {{ with $case.Params.metric }}
+            <li class="chip chip-metric">{{ . | safeHTML }} <span>{{ $case.Params.metricLabel }}</span></li>
+            {{ end }}
+            {{ range $case.Params.stack }}<li class="chip">{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
   </div>
 </section>
 {{ end }}

@@ -7,4 +7,4 @@ date = "2026-02-18"
 keywords = ["DevOps showcases", "platform engineering", "CI/CD", "observability", "ArgoCD", "Terraform", "Kubernetes", "Kirill Kazakov"]
 +++
 
-Common problems teams bring me — and what the fix looked like. Every card is a real engagement.
+Common problems teams bring me — and what the fix looked like. Every case is a real engagement.
