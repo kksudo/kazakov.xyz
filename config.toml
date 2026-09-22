@@ -29,7 +29,7 @@ priority = 0.5
 customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
 info = ["Platform & DevOps Engineering · Kubernetes and AWS", "Co-author of the Kubernetes Cookbook · Instructor · Awards judge"]
-description = "Kirill Kazakov — platform and DevOps engineer. Kubernetes, AWS, Terraform, CI/CD; 17 years in IT, 9 running Kubernetes in production. Co-author of the Kubernetes Cookbook, instructor, awards judge."
+description = "Kirill Kazakov — platform and DevOps engineer. Kubernetes, AWS, Terraform, CI/CD; 17 years in IT, 9 of them running Kubernetes in production. Co-author of the Kubernetes Cookbook, instructor, awards judge."
 keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, EKS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, Argo Workflows, GitOps, FluxCD, Karpenter, KEDA, AWS Well-Architected, Prometheus, Grafana, observability, cloud, kazakov.xyz"
 # SERP title (default for all pages; theme uses this in <title>)
 HeadTitle = "Kirill Kazakov — DevOps & Platform Engineering"
