@@ -2,79 +2,41 @@
 {{ define "content" }}
 {{ $contact := "mailto:k@kazakov.xyz" }}
 {{ with (index (where .Site.Params.social "name" "k@kazakov.xyz") 0) }}{{ $contact = .url }}{{ end }}
-<section class="container list showcases-variant-a">
-  <header>
-    <h1 class="title">
-      <a class="title-link" href="{{ .Permalink | safeURL }}">{{ .Title }}</a>
-    </h1>
-    {{ with .Content }}
-    <div class="intro">{{ . }}</div>
-    {{ else }}
-    <p class="intro">Common problems teams bring me — and what the fix looked like.</p>
-    {{ end }}
-    <p class="intro-nav">
-      <a href="#pricing-heading">Jump to pricing ↓</a>
-    </p>
-  </header>
+<section class="container list showcases">
+  <div class="showcases-shell">
 
-  <div class="showcases-cards">
-    {{ range sort .Paginator.Pages ".Params.weight" }}
-    <article class="showcase-card">
-      {{ with .Params.category }}<p class="showcase-tag">{{ . }}</p>{{ end }}
-      <p class="showcase-quote">{{ .Title }}</p>
-      <div class="showcase-outcome">
-        {{ .Content }}
-      </div>
-      <p class="showcase-cta"><a href="{{ $contact }}">Let&rsquo;s talk &rarr;</a></p>
-    </article>
-    {{ end }}
-  </div>
+    {{/* The same card as the home page — avatar, name, one line, the social
+         row — so this page reads as the second half of that page. */}}
+    <aside class="showcases-card">
+      {{ partialCached "home/avatar.html" . }}
+      <p class="showcases-name">{{ .Site.Params.author }}</p>
+      <p class="showcases-role">{{ index .Site.Params.info 0 }}</p>
+      {{ with .Content }}<div class="showcases-blurb">{{ . }}</div>{{ end }}
+      <div class="showcases-social">{{ partialCached "home/social.html" . }}</div>
+      <p class="showcases-contact"><a href="{{ $contact }}">Get in touch &rsaquo;</a></p>
+    </aside>
 
-  <div class="showcases-cta-block">
-    Want to discuss your stack? <a href="{{ $contact }}">Get in touch</a>.<br>
-    <span class="showcases-cta-pricing-hint">From $200/h and fixed-scope audits — <a href="#pricing-heading">see Pricing</a>.</span>
-  </div>
+    <div class="showcases-list">
+      <h1 class="showcases-heading">{{ .Title }}</h1>
 
-  <section class="showcases-pricing" aria-labelledby="pricing-heading">
-    <h2 id="pricing-heading">Pricing</h2>
-    <p class="showcases-pricing-intro">Transparent pricing for fixed-scope audits and roadmaps. Custom engagements available.</p>
-    <div class="showcases-pricing-grid">
-      <div class="showcase-price-card">
-        <h3>Platform &amp; CI/CD Audit</h3>
-        <ul>
-          <li>Pipeline and tooling review</li>
-          <li>Self-service and Golden Path recommendations</li>
-        </ul>
-        <p class="timeline">Delivery: ~1–2 weeks</p>
-        <a href="{{ $contact }}" class="cta-btn">Get started</a>
-      </div>
-      <div class="showcase-price-card popular">
-        <span class="badge-popular">Popular</span>
-        <h3>Observability &amp; SRE Review</h3>
-        <ul>
-          <li>Metrics, logs, traces gap analysis</li>
-          <li>SLO and runbook recommendations</li>
-        </ul>
-        <p class="timeline">Delivery: ~1 week</p>
-        <a href="{{ $contact }}" class="cta-btn">Get started</a>
-      </div>
-      <div class="showcase-price-card">
-        <h3>GitOps &amp; Delivery Roadmap</h3>
-        <ul>
-          <li>Argo CD / Flux adoption assessment</li>
-          <li>Namespace and repo structure</li>
-        </ul>
-        <p class="timeline">Delivery: ~2 weeks</p>
-        <a href="{{ $contact }}" class="cta-btn">Get started</a>
-      </div>
-      <div class="showcase-price-card hourly">
-        <h3>Hourly consultation</h3>
-        <p>Troubleshooting, architecture review, team interviews.</p>
-        <p class="price-range">$200 – $450 / hour</p>
-        <p class="note">Rate depends on scope and engagement length.</p>
-        <a href="{{ $contact }}" class="cta-btn">Get in touch</a>
-      </div>
+      {{ range $case := sort .Paginator.Pages ".Params.weight" }}
+      <article class="case">
+        <p class="case-meta">{{ replace $case.Params.category " · " "<br>" | safeHTML }}</p>
+        <div class="case-main">
+          <h2 class="case-title">{{ $case.Title }}</h2>
+          {{ with $case.Params.ask }}<p class="case-ask">&ldquo;{{ . }}&rdquo;</p>{{ end }}
+          <div class="case-text">{{ $case.Content }}</div>
+          <ul class="case-chips">
+            {{ with $case.Params.metric }}
+            <li class="chip chip-metric">{{ . | safeHTML }} <span>{{ $case.Params.metricLabel }}</span></li>
+            {{ end }}
+            {{ range $case.Params.stack }}<li class="chip">{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+      {{ end }}
     </div>
-  </section>
+
+  </div>
 </section>
 {{ end }}

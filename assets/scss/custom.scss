@@ -292,7 +292,7 @@ body.colorscheme-dark {
 }
 
 // Showcases page — accordion items (fallback when not using variant A)
-.content .list:not(.showcases-variant-a) details {
+.content .list:not(.showcases) details {
   margin-bottom: 1.2rem;
   border: 1px solid var(--border-color, #ddd);
   border-radius: 6px;
@@ -335,104 +335,165 @@ body.colorscheme-dark {
   }
 }
 
-// Showcases page — Variant A (Vercel-style cards)
-.content .showcases-variant-a {
-  max-width: 72rem;
+// Showcases — the same card as the home page on the left, the engagements on
+// the right. Colours and type come from the theme ($link-color #1565c0 /
+// #42a5f5, $alt-bg-color #e0e0e0 / #424242): this has to read as the same
+// site, not a second one.
+//
+// Grouping rule for a case block: small gaps inside it, a large gap between
+// blocks, and the whole block lights up as one object on hover. A heading
+// belongs to its body because they sit closer to each other than to anything
+// else — not because a line was drawn between them.
+.content .showcases {
+  max-width: 116rem;
   margin-left: auto;
   margin-right: auto;
 
-  header {
-    margin-top: 0;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  header h1 {
-    margin: 0 0 0.5rem;
-  }
-
-  .intro {
-    font-size: 1em;
-    opacity: 0.9;
-    margin: 0;
-  }
-
-  .intro-nav {
-    font-size: 0.9em;
-    margin: 0.5rem 0 0;
-    opacity: 0.7;
-
-    a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-  }
-
-  .showcases-cards {
+  .showcases-shell {
     display: grid;
-    gap: 1.25rem;
     grid-template-columns: 1fr;
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    @media (min-width: 1000px) {
+      grid-template-columns: 30rem minmax(0, 1fr);
+      gap: 7rem;
+      align-items: start;
     }
   }
 
-  // Card: tag -> pain quote -> visible outcome -> single CTA pinned to bottom
-  .showcase-card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1.5rem 1.5rem 1.25rem;
-    background: #fafafa;
-    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  // ---- left card: mirrors the home page ----
+  .showcases-card {
+    @media (min-width: 1000px) {
+      position: sticky;
+      top: 4rem;
+      padding-top: 1rem;
+    }
 
-    &:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-      border-color: #c5c5c5;
+    .avatar img {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      margin-bottom: 1.6rem;
     }
   }
 
-  .showcase-tag {
-    font-size: 0.72em;
+  .showcases-name {
+    margin: 0;
+    font-size: 2.6rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1565c0;
-    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 
-  .showcase-quote {
-    font-size: 1.08em;
-    font-weight: 600;
-    font-style: italic;
+  .showcases-role {
+    margin: 0.6rem 0 0;
+    font-size: 1.5rem;
+    color: #555;
     line-height: 1.45;
-    margin: 0 0 1rem;
-    padding-left: 0.9rem;
-    border-left: 3px solid #1565c0;
   }
 
-  .showcase-outcome {
-    font-size: 0.95em;
+  .showcases-blurb {
+    margin-top: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.6;
-    margin: 0 0 1rem;
-    opacity: 0.92;
-
-    &::before {
-      content: "Outcome";
-      display: block;
-      font-size: 0.72em;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #888;
-      margin-bottom: 0.35rem;
-    }
+    color: #555;
 
     p {
-      margin: 0 0 0.5rem;
+      margin: 0;
+      text-align: left;
+      hyphens: none;
+    }
+  }
+
+  .showcases-social ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 2.2rem 0 0;
+    padding: 0;
+
+    i {
+      font-size: 1.9rem;
+    }
+  }
+
+  .showcases-contact {
+    margin: 2.2rem 0 0;
+    font-size: 1.5rem;
+  }
+
+  // ---- right column ----
+  .showcases-heading {
+    margin: 0 0 2.4rem;
+    font-size: 3.4rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+
+    @media (min-width: 1000px) {
+      padding-top: 1rem;
+    }
+  }
+
+  // ---- one engagement ----
+  .case {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 2rem;
+    margin: 0 -2rem 2.4rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background-color 0.18s ease, border-color 0.18s ease;
+
+    @media (min-width: 720px) {
+      grid-template-columns: 11rem minmax(0, 1fr);
+      gap: 2.4rem;
+    }
+
+    &:hover {
+      background: rgba(21, 101, 192, 0.05);
+      border-color: #e0e0e0;
+    }
+  }
+
+  .case-meta {
+    margin: 0.7rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    line-height: 1.5;
+  }
+
+  .case-title {
+    margin: 0;
+    font-size: 2.1rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+
+  // Sits tight under the title: it is the client's words about that result.
+  .case-ask {
+    margin: 0.5rem 0 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #777;
+  }
+
+  .case-text {
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.65;
+    color: #555;
+    max-width: 68ch;
+
+    p {
+      margin: 0 0 0.8rem;
+      text-align: left;
+      hyphens: none;
 
       &:last-child {
         margin-bottom: 0;
@@ -440,191 +501,68 @@ body.colorscheme-dark {
     }
   }
 
-  .showcase-cta {
-    margin: auto 0 0;
-    padding-top: 0.25rem;
-    font-size: 0.9em;
-
-    a {
-      font-weight: 500;
-    }
+  .case-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    list-style: none;
+    margin: 1.6rem 0 0;
+    padding: 0;
   }
 
-  .showcases-cta-block {
-    margin-top: 2.5rem;
-    padding: 1.5rem 1.25rem;
-    text-align: center;
-    font-size: 1em;
-    background: #f0f0f0;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+  .chip {
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0.7rem 1.2rem;
+    border-radius: 980px;
+    background: rgba(21, 101, 192, 0.08);
+    color: #1565c0;
+    white-space: nowrap;
   }
 
-  .showcases-cta-pricing-hint {
-    font-size: 0.85em;
-    opacity: 0.7;
-    display: inline-block;
-    margin-top: 0.25rem;
-  }
-
-  .showcases-pricing {
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid #e0e0e0;
-  }
-
-  .showcases-pricing h2 {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
+  .chip-metric {
     font-weight: 600;
-    margin: 0 0 0.5rem;
-  }
+    background: #1565c0;
+    color: #fff;
 
-  .showcases-pricing-intro {
-    font-size: 1em;
-    margin-bottom: 2rem;
-  }
-
-  .showcases-pricing-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .showcase-price-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1.35rem 1.25rem;
-    background: #fafafa;
-    position: relative;
-    font-size: 1em;
-
-    &.popular {
-      border-color: #1565c0;
-      box-shadow: 0 0 0 1px #1565c0;
-    }
-
-    .badge-popular {
-      display: inline-block;
-      font-size: 0.7em;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #1565c0;
-      border: 1px solid #1565c0;
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
-      margin-bottom: 0.5rem;
-    }
-
-    h3 {
-      font-size: 1.15em;
-      font-weight: 600;
-      margin: 0 0 0.75rem;
-    }
-
-    ul {
-      margin: 0 0 1rem;
-      padding-left: 1.2rem;
-      font-size: 1em;
-      line-height: 1.55;
-      opacity: 0.9;
-    }
-
-    .timeline {
-      font-size: 0.95em;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      font-size: 1em;
-      font-weight: 500;
-    }
-
-    &.hourly {
-      padding: 1rem 1.25rem;
-      text-align: center;
-
-      h3, p, .price-range, .note, .cta-btn {
-        max-width: 22rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .price-range {
-        font-size: 1.1em;
-        font-weight: 600;
-        margin: 0.25rem auto 0.5rem;
-      }
-
-      .note {
-        font-size: 0.95em;
-        color: #555;
-        margin-bottom: 0.75rem;
-      }
-
-      p {
-        margin-bottom: 0.25rem;
-      }
-
-      @media (min-width: 640px) {
-        grid-column: 1 / -1;
-      }
+    span {
+      font-weight: 400;
+      opacity: 0.85;
+      margin-left: 0.3rem;
     }
   }
 }
 
-// Reduce motion
-@media (prefers-reduced-motion: reduce) {
-  .content .showcases-variant-a {
-    .showcase-card {
-      transition: none;
-
-      &:hover {
-        transform: none;
-      }
-    }
-  }
-}
-
-// Dark theme for Showcases variant A (shared by explicit dark and auto+dark)
+// Dark theme for Showcases (shared by explicit dark and auto+dark)
 @mixin showcases-dark-theme {
-  header { border-bottom-color: #424242; }
-  .intro-nav a { color: #42a5f5; }
-  .showcase-card {
+  .showcases-role,
+  .showcases-blurb { color: #a0a0a0; }
+  .case:hover {
+    background: rgba(66, 165, 245, 0.07);
     border-color: #424242;
-    background: #2d2d2d;
-    &:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); border-color: #5a5a5a; }
   }
-  .showcase-tag { color: #42a5f5; }
-  .showcase-quote { border-left-color: #42a5f5; }
-  .showcase-outcome::before { color: #999; }
-  .showcases-cta-block { background: #424242; border-color: #424242; }
-  .showcases-pricing { border-top-color: #424242; }
-  .showcase-price-card {
-    border-color: #505050;
-    background: #2d2d2d;
-    .timeline, .note { color: #999; }
-    .badge-popular { color: #42a5f5; border-color: #42a5f5; }
-    &.popular { border-color: #42a5f5; box-shadow: 0 0 0 1px #42a5f5; }
+  .case-meta { color: #8a8a8a; }
+  .case-ask { color: #9a9a9a; }
+  .case-text { color: #b0b0b0; }
+  .chip {
+    background: rgba(66, 165, 245, 0.14);
+    color: #42a5f5;
+  }
+  .chip-metric {
+    background: #42a5f5;
+    color: #212121;
   }
 }
 
-body.colorscheme-dark .content .showcases-variant-a {
+body.colorscheme-dark .content .showcases {
   @include showcases-dark-theme;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .content .showcases-variant-a {
+  body.colorscheme-auto .content .showcases {
     @include showcases-dark-theme;
   }
 }
-
 
 // ============================================
 // About / Single Page Styling
