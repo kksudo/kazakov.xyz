@@ -13,7 +13,7 @@ I build the layer other engineers deploy on: CI/CD that no one has to wait for, 
 
 ## Work
 
-**CTO at [Aura X Capital](https://aura-x.co/)** since July 2024. DeFi platform. I built the AWS baseline from an empty account — EKS, Terraform, FluxCD, Prometheus, Grafana and Loki — plus reusable GitHub Actions workflows shared by roughly 20 services. I also designed [CDNN](https://cdnn.cloud/), a custom CDN the platform uses to stay reachable in regions where third-party CDNs are blocked. The company reports 350,000+ users, 60,000 MAU and 1.2B+ transactions in its investor deck.
+**CTO at [Aura X Capital](https://aura-x.co/)** since July 2024. The platform's flagship line is RWA in DeFi — liquidity vaults for tokenized real-world-asset funds from [Centrifuge](https://centrifuge.io/): deJAAA (AAA-rated CLOs), deJTRSY (short-term US Treasuries) and deHYB (high-yield corporate bonds), with subscription and redemption in USDC ([announcement](https://x.com/aura_yields/status/2102064106500976778)). I built the AWS baseline under it from an empty account — EKS, Terraform, FluxCD, Prometheus, Grafana and Loki — plus reusable GitHub Actions workflows shared by roughly 20 services. I also designed [CDNN](https://cdnn.cloud/), a custom CDN the platform uses to stay reachable in regions where third-party CDNs are blocked. The company reports 350,000+ users, 60,000 MAU and 1.2B+ transactions in its investor deck.
 
 **[GlobalDots](https://www.globaldots.com/)** since 2022 — DevOps as a service for clients in FinTech, AI security and the public sector. CI/CD platforms for 100+ microservices, observability stacks, GitOps with the Argo family. On AWS engagements I owned the work from scope to delivery, including Well-Architected reviews and MORA/MODA assessments.
 
