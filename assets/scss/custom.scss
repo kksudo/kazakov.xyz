@@ -335,140 +335,112 @@ body.colorscheme-dark {
   }
 }
 
-// Showcases page — case cards
+// Showcases page — editorial rows: index, the question, the answer.
+// No boxes: hairline rules carry the rhythm instead. Colours mirror the
+// theme variables ($link-color #1565c0 / #42a5f5, $alt-bg-color #e0e0e0 /
+// #424242) so the page stays the same site as the home page and About.
 .content .showcases {
-  // Wider than the theme's 90rem container: nine cases are a lot of text,
-  // and three or four columns need the room.
-  max-width: 132rem;
+  max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
 
   header {
     margin-top: 0;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 4rem;
   }
 
   header h1 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 1.2rem;
+    letter-spacing: -0.03em;
   }
 
   .intro {
-    font-size: 1em;
-    opacity: 0.9;
+    font-size: 1.05em;
+    color: #555;
     margin: 0;
+    max-width: 46ch;
   }
 
-  .showcases-cards {
+  .showcase-rows {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .showcase-row {
     display: grid;
-    gap: 1.25rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    column-gap: 3.2rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: start;
 
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1000px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    // Eight cases follow the lead one, so four columns fill exactly two rows.
-    @media (min-width: 1280px) {
-      grid-template-columns: repeat(4, 1fr);
+    @media (min-width: 860px) {
+      grid-template-columns: 6rem minmax(0, 1fr) minmax(0, 1.05fr);
     }
   }
 
-  // Card: tag -> the question a client actually asks -> what the fix was
-  .showcase-card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1.5rem;
-    background: #fafafa;
-    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  .showcase-index {
+    margin: 0.6rem 0 0;
+    font-size: 1.3rem;
+    color: #8a8a8a;
+    font-variant-numeric: tabular-nums;
 
-    &:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-      border-color: #c5c5c5;
+    @media (max-width: 859px) {
+      grid-row: 1;
     }
-  }
-
-  // The lead case carries the page: full width, its own accent, larger type
-  .showcase-card-lead {
-    grid-column: 1 / -1;
-    border-left: 4px solid #1565c0;
-    padding: 2rem 2rem 1.75rem;
-
-    .showcase-quote {
-      font-size: 1.45em;
-      line-height: 1.3;
-    }
-
-    .showcase-outcome {
-      font-size: 1.05em;
-      max-width: 52rem;
-    }
-
-    // Full width would leave the answer hanging in a 52rem column with a
-    // hole beside it, so the lead splits: question left, answer right.
-    @media (min-width: 1000px) {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-      column-gap: 3rem;
-      align-items: start;
-
-      .showcase-tag {
-        grid-column: 1 / -1;
-      }
-
-      .showcase-quote {
-        margin-bottom: 0;
-      }
-
-      .showcase-outcome {
-        max-width: none;
-      }
-    }
-  }
-
-  // The theme justifies and hyphenates every <p> in .content. In a
-  // three-column grid that opens rivers, breaks words mid-line, and throws
-  // the separator in a tag to the far edge. Cards opt out.
-  .showcase-tag,
-  .showcase-outcome p {
-    text-align: left;
-    hyphens: none;
   }
 
   .showcase-tag {
-    font-size: 0.72em;
-    text-wrap: balance;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1565c0;
-    margin: 0 0 0.6rem;
-  }
-
-  .showcase-quote {
-    font-size: 1.1em;
-    font-weight: 600;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.9rem;
-  }
-
-  .showcase-outcome {
-    font-size: 0.95em;
-    line-height: 1.6;
     margin: 0;
-    opacity: 0.92;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1565c0;
+  }
 
+  .showcase-question {
+    margin: 0.8rem 0 0;
+    font-size: 2.8rem;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .showcase-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin: 1.8rem 0 0;
+
+    b {
+      font-size: 3.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    span {
+      font-size: 1.3rem;
+      color: #777;
+    }
+  }
+
+  .showcase-answer {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    color: #555;
+
+    @media (max-width: 859px) {
+      grid-column: 1 / -1;
+      margin-top: 1.6rem;
+    }
+
+    // The theme justifies and hyphenates every <p> in .content; in a narrow
+    // column that opens rivers and breaks words mid-line.
     p {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.8rem;
+      text-align: left;
+      hyphens: none;
 
       &:last-child {
         margin-bottom: 0;
@@ -476,39 +448,22 @@ body.colorscheme-dark {
     }
   }
 
-  .showcases-cta-block {
-    margin-top: 2.5rem;
-    padding: 1.75rem 1.25rem;
+  .showcases-cta {
+    margin: 5rem 0 2rem;
     text-align: center;
-    font-size: 1.05em;
-    background: #f0f0f0;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-  }
-}
-
-// Reduce motion
-@media (prefers-reduced-motion: reduce) {
-  .content .showcases .showcase-card {
-    transition: none;
-
-    &:hover {
-      transform: none;
-    }
+    font-size: 1.9rem;
   }
 }
 
 // Dark theme for Showcases (shared by explicit dark and auto+dark)
 @mixin showcases-dark-theme {
-  header { border-bottom-color: #424242; }
-  .showcase-card {
-    border-color: #424242;
-    background: #2d2d2d;
-    &:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); border-color: #5a5a5a; }
-  }
-  .showcase-card-lead { border-left-color: #42a5f5; }
+  .intro { color: #a0a0a0; }
+  .showcase-rows { border-top-color: #424242; }
+  .showcase-row { border-bottom-color: #424242; }
+  .showcase-index { color: #777; }
   .showcase-tag { color: #42a5f5; }
-  .showcases-cta-block { background: #424242; border-color: #424242; }
+  .showcase-metric span { color: #999; }
+  .showcase-answer { color: #b0b0b0; }
 }
 
 body.colorscheme-dark .content .showcases {
