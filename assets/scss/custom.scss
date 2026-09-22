@@ -292,7 +292,7 @@ body.colorscheme-dark {
 }
 
 // Showcases page — accordion items (fallback when not using variant A)
-.content .list:not(.showcases-variant-a) details {
+.content .list:not(.showcases) details {
   margin-bottom: 1.2rem;
   border: 1px solid var(--border-color, #ddd);
   border-radius: 6px;
@@ -335,8 +335,8 @@ body.colorscheme-dark {
   }
 }
 
-// Showcases page — Variant A (Vercel-style cards)
-.content .showcases-variant-a {
+// Showcases page — case cards
+.content .showcases {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
@@ -358,33 +358,27 @@ body.colorscheme-dark {
     margin: 0;
   }
 
-  .intro-nav {
-    font-size: 0.9em;
-    margin: 0.5rem 0 0;
-    opacity: 0.7;
-
-    a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-  }
-
   .showcases-cards {
     display: grid;
     gap: 1.25rem;
     grid-template-columns: 1fr;
+
     @media (min-width: 640px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  // Card: tag -> pain quote -> visible outcome -> single CTA pinned to bottom
+  // Card: tag -> the question a client actually asks -> what the fix was
   .showcase-card {
     display: flex;
     flex-direction: column;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    padding: 1.5rem 1.5rem 1.25rem;
+    padding: 1.5rem;
     background: #fafafa;
     transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 
@@ -395,41 +389,55 @@ body.colorscheme-dark {
     }
   }
 
+  // The lead case carries the page: full width, its own accent, larger type
+  .showcase-card-lead {
+    grid-column: 1 / -1;
+    border-left: 4px solid #1565c0;
+    padding: 2rem 2rem 1.75rem;
+
+    .showcase-quote {
+      font-size: 1.45em;
+      line-height: 1.3;
+    }
+
+    .showcase-outcome {
+      font-size: 1.05em;
+      max-width: 52rem;
+    }
+  }
+
+  // The theme justifies and hyphenates every <p> in .content. In a
+  // three-column grid that opens rivers, breaks words mid-line, and throws
+  // the separator in a tag to the far edge. Cards opt out.
+  .showcase-tag,
+  .showcase-outcome p {
+    text-align: left;
+    hyphens: none;
+  }
+
   .showcase-tag {
     font-size: 0.72em;
+    text-wrap: balance;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #1565c0;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.6rem;
   }
 
   .showcase-quote {
-    font-size: 1.08em;
+    font-size: 1.1em;
     font-weight: 600;
-    font-style: italic;
-    line-height: 1.45;
-    margin: 0 0 1rem;
-    padding-left: 0.9rem;
-    border-left: 3px solid #1565c0;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
   }
 
   .showcase-outcome {
     font-size: 0.95em;
     line-height: 1.6;
-    margin: 0 0 1rem;
+    margin: 0;
     opacity: 0.92;
-
-    &::before {
-      content: "Outcome";
-      display: block;
-      font-size: 0.72em;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #888;
-      margin-bottom: 0.35rem;
-    }
 
     p {
       margin: 0 0 0.5rem;
@@ -440,187 +448,47 @@ body.colorscheme-dark {
     }
   }
 
-  .showcase-cta {
-    margin: auto 0 0;
-    padding-top: 0.25rem;
-    font-size: 0.9em;
-
-    a {
-      font-weight: 500;
-    }
-  }
-
   .showcases-cta-block {
     margin-top: 2.5rem;
-    padding: 1.5rem 1.25rem;
+    padding: 1.75rem 1.25rem;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.05em;
     background: #f0f0f0;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-  }
-
-  .showcases-cta-pricing-hint {
-    font-size: 0.85em;
-    opacity: 0.7;
-    display: inline-block;
-    margin-top: 0.25rem;
-  }
-
-  .showcases-pricing {
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid #e0e0e0;
-  }
-
-  .showcases-pricing h2 {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-  }
-
-  .showcases-pricing-intro {
-    font-size: 1em;
-    margin-bottom: 2rem;
-  }
-
-  .showcases-pricing-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .showcase-price-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1.35rem 1.25rem;
-    background: #fafafa;
-    position: relative;
-    font-size: 1em;
-
-    &.popular {
-      border-color: #1565c0;
-      box-shadow: 0 0 0 1px #1565c0;
-    }
-
-    .badge-popular {
-      display: inline-block;
-      font-size: 0.7em;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #1565c0;
-      border: 1px solid #1565c0;
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
-      margin-bottom: 0.5rem;
-    }
-
-    h3 {
-      font-size: 1.15em;
-      font-weight: 600;
-      margin: 0 0 0.75rem;
-    }
-
-    ul {
-      margin: 0 0 1rem;
-      padding-left: 1.2rem;
-      font-size: 1em;
-      line-height: 1.55;
-      opacity: 0.9;
-    }
-
-    .timeline {
-      font-size: 0.95em;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      font-size: 1em;
-      font-weight: 500;
-    }
-
-    &.hourly {
-      padding: 1rem 1.25rem;
-      text-align: center;
-
-      h3, p, .price-range, .note, .cta-btn {
-        max-width: 22rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .price-range {
-        font-size: 1.1em;
-        font-weight: 600;
-        margin: 0.25rem auto 0.5rem;
-      }
-
-      .note {
-        font-size: 0.95em;
-        color: #555;
-        margin-bottom: 0.75rem;
-      }
-
-      p {
-        margin-bottom: 0.25rem;
-      }
-
-      @media (min-width: 640px) {
-        grid-column: 1 / -1;
-      }
-    }
   }
 }
 
 // Reduce motion
 @media (prefers-reduced-motion: reduce) {
-  .content .showcases-variant-a {
-    .showcase-card {
-      transition: none;
+  .content .showcases .showcase-card {
+    transition: none;
 
-      &:hover {
-        transform: none;
-      }
+    &:hover {
+      transform: none;
     }
   }
 }
 
-// Dark theme for Showcases variant A (shared by explicit dark and auto+dark)
+// Dark theme for Showcases (shared by explicit dark and auto+dark)
 @mixin showcases-dark-theme {
   header { border-bottom-color: #424242; }
-  .intro-nav a { color: #42a5f5; }
   .showcase-card {
     border-color: #424242;
     background: #2d2d2d;
     &:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); border-color: #5a5a5a; }
   }
+  .showcase-card-lead { border-left-color: #42a5f5; }
   .showcase-tag { color: #42a5f5; }
-  .showcase-quote { border-left-color: #42a5f5; }
-  .showcase-outcome::before { color: #999; }
   .showcases-cta-block { background: #424242; border-color: #424242; }
-  .showcases-pricing { border-top-color: #424242; }
-  .showcase-price-card {
-    border-color: #505050;
-    background: #2d2d2d;
-    .timeline, .note { color: #999; }
-    .badge-popular { color: #42a5f5; border-color: #42a5f5; }
-    &.popular { border-color: #42a5f5; box-shadow: 0 0 0 1px #42a5f5; }
-  }
 }
 
-body.colorscheme-dark .content .showcases-variant-a {
+body.colorscheme-dark .content .showcases {
   @include showcases-dark-theme;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .content .showcases-variant-a {
+  body.colorscheme-auto .content .showcases {
     @include showcases-dark-theme;
   }
 }
