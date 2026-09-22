@@ -28,9 +28,9 @@ priority = 0.5
 [params]
 customSCSS = ["scss/custom.scss"]
 author = "Kirill Kazakov"
-info = ["Platform & DevOps Engineering · Kubernetes and AWS", "Co-author of the Kubernetes Cookbook · Instructor · Awards judge"]
-description = "Kirill Kazakov — platform and DevOps engineer. Kubernetes, AWS, Terraform, CI/CD; 17 years in IT, 9 of them running Kubernetes in production. Co-author of the Kubernetes Cookbook, instructor, awards judge."
-keywords = "Kirill Kazakov, DevOps, Kubernetes, AWS, EKS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, Argo Workflows, GitOps, FluxCD, Karpenter, KEDA, AWS Well-Architected, Prometheus, Grafana, observability, cloud, kazakov.xyz"
+info = ["CTO at Aura X Capital — RWA in DeFi", "Platform & DevOps Engineering · Kubernetes and AWS", "Co-author of the Kubernetes Cookbook · Instructor · Awards judge"]
+description = "Kirill Kazakov — CTO at Aura X Capital, an RWA-in-DeFi platform. Platform and DevOps engineer: Kubernetes, AWS, Terraform, CI/CD; 17 years in IT, 9 of them running Kubernetes in production. Co-author of the Kubernetes Cookbook, instructor, awards judge."
+keywords = "Kirill Kazakov, CTO, RWA, tokenized real-world assets, DeFi, DevOps, Kubernetes, AWS, EKS, Terraform, CI/CD, SRE, platform engineering, CKA, ArgoCD, Argo Workflows, GitOps, FluxCD, Karpenter, KEDA, AWS Well-Architected, Prometheus, Grafana, observability, cloud, kazakov.xyz"
 # SERP title (default for all pages; theme uses this in <title>)
 HeadTitle = "Kirill Kazakov — DevOps & Platform Engineering"
 gravatar = "k@kazakov.xyz"
